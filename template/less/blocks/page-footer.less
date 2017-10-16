@@ -1,0 +1,28 @@
+.page-footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    
+}
+
+.page-footer__info {
+    & a {
+        color: white;
+    }
+
+    & a:hover {
+        color: @color-pink-title;
+    }
+}
+
+
+
+
+
+@media @tablet-widths {
+    .page-footer__wrapper {
+        .container-fluid();
+        display: flex;
+        justify-content: space-between;
+    }
+}

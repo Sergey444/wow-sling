@@ -1,0 +1,43 @@
+.catalog {
+    text-align: center;
+    min-height: 77vh;
+}
+
+.catalog__wrapper {
+    .container-fluid();
+
+
+}
+
+.catalog__item {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 5px 10px 5px lightgrey;
+    margin:  20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
+@media @tablet-widths {
+
+    .catalog__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .catalog__item {
+        width: 40%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media @desktop-widths {
+    .catalog__item {
+        width: 20%;
+    }
+}

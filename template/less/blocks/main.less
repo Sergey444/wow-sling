@@ -1,0 +1,110 @@
+.main {
+    padding: 0;
+
+    margin: 0;
+    min-height: 95%;
+    text-align: center;
+
+}
+
+.main__wrapper {
+    .container-fluid();
+}
+
+
+
+.main__items {
+
+
+    margin: 20px auto;
+    width: 200px;
+
+}
+
+.main__item {
+    height: 100%;
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    box-shadow: 3px 3px 14px grey;
+    transition-duration: 0.5s;
+
+        &:hover {
+            transform: scale(1.015);
+            transition-duration: 0.1s;
+            box-shadow: 4px 4px 14px 0 grey;
+        }
+
+        & img {
+            height: 300px;
+        }
+}
+
+.main__logo {
+    font-family: "Great Vibes";
+    font-size: 50px;
+    color: @color-pink-title;
+    font-weight: 400;
+
+    display: inline-block;
+
+    line-height: 50px;
+
+    margin: 40px 0;
+    padding: 0;
+
+    text-shadow: @text-shadow-title;
+
+
+    animation-name:   switch;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.main__tagline {
+    font-size: 25px;
+    line-height: 37px;
+    margin: 0;
+    color: @color-pink-title;
+    text-shadow: @text-shadow-title;
+}
+
+.main__navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+@media @tablet-widths {
+    .main__navigation {
+        flex-wrap: wrap;
+        flex-direction: row;
+        max-width: 500px;
+
+
+
+    }
+
+    .main__logo {
+        font-size: 100px;
+        line-height: 100px;
+    }
+
+    .main__tagline {
+        font-size: 45px;
+        line-height: 50px;
+    }
+
+
+}
+
+@media @desktop-widths {
+
+    .main__navigation {
+        max-width: 100%;
+
+    }
+}

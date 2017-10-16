@@ -1,0 +1,57 @@
+.btn {
+    border: 1px solid transparent;
+    border-right: 1px solid @color-pink-title;
+    border-left: 1px solid @color-pink-title;
+
+    height: 40px;
+
+    outline: none;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    transition: border 400ms;
+
+    &:hover {
+        //border: 1px solid @color-pink-title;
+        color: @color-pink-title;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        transition: width 0.5s;
+        height: 1px;
+        background-color: @color-pink-title;
+        width: 0;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+
+        position: absolute;
+
+        top: -1px ;
+        transition: width 0.5s;
+        height: 1px;
+        background-color: @color-pink-title;
+        width: 0;
+
+
+        right: 0;
+    }
+
+
+    &:hover::after,
+    &:hover::before {
+        width: 100%;
+    }
+
+
+}

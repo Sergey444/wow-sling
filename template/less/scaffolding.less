@@ -1,0 +1,53 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-style: normal;
+
+    background-image: url("../img/background1.jpg");
+    background-size: 50%;
+
+
+    //background-color: rgba(158, 255, 250, 0.5);
+}
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.visually-hidden { //Лучше так скрывать, нет ошибок с инструментами для слабовидящих
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+
+    border: 0;
+
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.block-mock {
+    .mock();
+}

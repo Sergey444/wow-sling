@@ -1,0 +1,141 @@
+.goods {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.goods--nojs .goods__prev,
+.goods--nojs .goods__next {
+    display: none;
+}
+
+.goods__wrapper {
+    .container-fluid();
+    position: relative;
+
+    background-color: white;
+    box-shadow: 0 5px 10px 5px lightgrey;
+}
+.goods__title {
+    text-align: left;
+    font-size: 20px;
+    line-height: 25px;
+    margin-left:  20px;
+    margin-bottom: 20px;
+}
+
+.goods__item {
+
+    //padding: 20px 0;
+    width: 100%;
+    //width: 210px;
+    position: relative;
+
+}
+
+.goods__next,
+.goods__prev {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 245px;
+    right: 0;
+    background-image: url("../img/arrow.png");
+
+    font-size: 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    z-index: 10;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+        background-image: url("../img/arrow-hov.png");
+        background-repeat: no-repeat;
+    }
+}
+
+.goods__prev {
+    left: 0;
+    transform: scale(-1, 1);
+}
+
+.goods__img {
+    display: block;
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+
+    & img {
+       min-height: 160px;
+   }
+}
+
+.goods__wrapper {
+    overflow: hidden;
+}
+
+.goods__items {
+    width: 800%;
+    display: flex;
+    justify-content: flex-start;
+    transform: translate(-0%);
+    transition: transform 0.8s ease;
+}
+
+.goods__buttons {
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+@media @tablet-widths {
+    .goods  {
+        padding: 0;
+    }
+    .goods__items {
+        width: 400%;
+    }
+
+    .goods__item {
+        display: flex;
+        flex-direction: column;
+
+        border: 1px solid lightgrey;
+        box-shadow: @box-shadow;
+
+        margin: 20px 20px;
+    }
+    .goods__img {
+        width: 100px;
+        flex-shrink: 0;
+        margin: 0 auto;
+
+        &::after {
+            content: attr(data-title);
+            display: none;
+
+        }
+
+        &:hover::after {
+
+            display: block;
+            content: attr(data-title); /* Выводим текст */
+           position: absolute; /* Абсолютное позиционирование */
+           right: -70px; top: 0; /* Положение подсказки */
+           z-index: 1; /* Отображаем подсказку поверх других элементов */
+           background-color: rgba(249, 62, 158, 0.8); /* Полупрозрачный цвет фона */
+           font-family: Arial, sans-serif; /* Гарнитура шрифта */
+           font-size: 11px; /* Размер текста подсказки */
+           padding: 5px 10px; /* Поля */
+           border: 1px solid #333; /* Параметры рамки */
+           transform: rotate(45deg);
+
+        }
+    }
+}
+
+@media @desktop-widths {
+    .goods__items {
+        width: 200%;
+    }
+}

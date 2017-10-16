@@ -1,0 +1,40 @@
+
+
+
+
+.slider__input {
+    display: none;
+}
+
+.slider--nojs .slider__toggles {
+    display: none;
+}
+
+.slider .slider__item {
+    display: block;
+}
+
+.slider__toggle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid @color-pink-title;
+    font-size: 0;
+    transform : rotate(45deg);
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 25px;
+    transition: transform 300ms;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+#advantages-input-1:checked ~ .slider__toggles label[for="advantages-input-1"],
+#advantages-input-2:checked ~ .slider__toggles label[for="advantages-input-2"],
+#advantages-input-3:checked ~ .slider__toggles label[for="advantages-input-3"] {
+    background-color: @color-pink-title;
+    transform: rotate(90deg);
+}
