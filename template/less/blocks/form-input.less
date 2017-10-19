@@ -1,0 +1,161 @@
+.input {
+    position: relative;
+    min-height: 50px;
+
+    &--check {
+        padding-left: 60px;
+        display: block;
+        min-width: 30%;
+    }
+
+    & input {
+        display: none;
+    }
+}
+
+.input__checkbox,
+.input__radio {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -8px;
+    left: 0;
+
+    border: 2px solid #444444;
+
+    cursor: pointer;
+
+    &:hover {
+        border-color: lightblue;
+    }
+}
+
+.input__radio {
+    border-radius: 50%;
+}
+
+.input input[type="radio"]:checked +
+.input__radio::before {
+    content: "";
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: lightblue;
+}
+
+.input input[type="checkbox"]:checked +
+.input__checkbox::before,
+.input input[type="checkbox"]:checked +
+.input__checkbox::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #000000;
+
+    top: 15px;
+    left: 15px;
+
+    transform: rotate(-45deg);
+}
+
+.input input[type="checkbox"]:checked +
+.input__checkbox::after {
+    transform: rotate(45deg);
+    width: 10px;
+    left: 10px;
+    top: 20px;
+}
+
+.input__text {
+    font-size: 18px;
+    padding: 17px 0;
+
+    outline: none;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #444444;
+
+    margin-bottom: 30px;
+
+
+    &--textarea {
+        border: 2px solid #444444;
+        line-height: 19px;
+        min-height: 150px;
+    }
+
+    &:hover {
+        border-color: lightblue;
+    }
+
+    &:focus {
+         -webkit-border-color: lightblue;
+         -moz-border-color: lightblue;
+         border-color: lightblue;
+
+    }
+}
+
+.input__text--error {
+    border-color: #f0b1b1;
+}
+
+
+.input__text--phone {
+    background-image: url("../img/phone.png");
+    background-repeat: no-repeat;
+    background-position: 95% 10px;
+
+        &:hover {
+            background-image: url("../img/phone-hover.png");
+        }
+
+        &:focus {
+            background-image: url("../img/phone-hover.png");
+        }
+}
+
+.input__text--email {
+    background-image: url("../img/mail.png");
+    background-repeat: no-repeat;
+    background-position: 95% 10px;
+}
+
+
+::-webkit-input-placeholder {color:#d2d2d2;}
+::-moz-placeholder          {color:#d2d2d2;}/* Firefox 19+ */
+:-moz-placeholder           {color:#d2d2d2;}/* Firefox 18- */
+:-ms-input-placeholder      {color:#d2d2d2;}
+
+@media @tablet-widths {
+
+    .input__text {
+        margin-left: 26px;
+        padding-left: 17px;
+
+        &--phone {
+            margin: 0;
+        }
+        &--email {
+            margin: 0;
+        }
+        &--textarea {
+            margin: 0;
+        }
+
+    }
+}
+
+@media @desktop-widths {
+    .input {
+        &--check {
+            min-width: 20%;
+        }
+    }
+}
+

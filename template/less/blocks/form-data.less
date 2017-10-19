@@ -1,0 +1,129 @@
+.form-data {
+    padding: 0 30px;
+    background-color: white;
+    & label {
+        font-size: 17px;
+        line-height: 19px;
+        font-weight: bold;
+    }
+}
+
+.form-data__required-fields {
+    display: none;
+}
+
+.form-data__title {
+    display: block;
+    //color: @bg-lightblue;
+    text-transform: uppercase;
+
+    margin-top: 25px;
+    margin-bottom: 30px;
+
+    & span {
+        padding-right: 15px;
+        background-color: white;
+    }
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        margin-top: -12px;
+        //background-color: @bg-lightblue;
+    }
+}
+
+.form-data__button {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+
+@media @tablet-widths {
+    .form-data__required-fields {
+        display: inline;
+    }
+
+    .form-data {
+        padding: 0;
+        //.container-fluid();
+    }
+
+    .form-data__title {
+
+        min-width: 20%;
+        &::after {
+            display: none;
+        }
+    }
+
+    .form-data__color,
+    .form-data__phone,
+    .form-data__email {
+        background-color: lightgrey;
+    }
+
+    .form-data__block {
+
+        display: flex;
+        padding: 65px 0;
+        //align-items: baseline;
+
+        &:nth-child(odd) {
+            background-color: lightgrey;
+
+            & span {
+                background-color: lightgrey;
+            }
+
+            & input {
+                background-color: lightgrey;
+            }
+        }
+
+        &--relations {
+            
+            flex-wrap: wrap;
+        }
+
+
+    }
+
+    .form-data__block-wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: baseline;
+        .container-fluid();
+
+        &--textarea {
+            align-items: flex-start;
+        }
+    }
+
+    .form-data__choose {
+        flex-grow: 1;
+    }
+
+    .form-data__choose-item {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .form-data__choose-color {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .form-data__submit {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .form-data__button {
+        width: auto;
+    }
+}
+

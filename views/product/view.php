@@ -14,8 +14,8 @@
 							<p><?php echo $viewItem['description'];?></p>
 							<b>Цена: 3000 рублей</b>
 							<div class="goods__buttons">
-								<button class="btn  baskin" type="button">В корзину</button>
-								<button class="btn" type="button">Купить</button>
+								<a class="btn  baskin" data-id="<?php echo $viewItem['id']; ?>" href="/cart/add/<?php echo $viewItem['id'];?>"> В корзину</a>
+								<a class="btn" href="" >Купить</a>
 							</div>
 						</div>
 						<div class="one-goods__items">

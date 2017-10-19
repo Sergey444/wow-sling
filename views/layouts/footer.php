@@ -29,9 +29,9 @@
 
         </footer>
 
-
+                
 		<script src="/template/js/new-goods.js"></script>
-        <script src="/template/js/slider.js"></script>
+                <script src="/template/js/slider.js"></script>
 		<script src="/template/js/main-open.js"></script>
 		<script src="/template/js/advantages-slider.js"></script>
 		<script src="/template/js/baskin.js"></script>

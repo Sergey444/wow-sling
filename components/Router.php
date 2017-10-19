@@ -60,8 +60,10 @@ echo '</pre>';*/
 //echo '<br>controller name: '.$controllerName;
 //echo '<br>action name: '.$actionName;
                 $parameters = $segments;
+                
 //echo '<pre>';
 //print_r($parameters);
+//echo '</pre>';
                 
                 
                 

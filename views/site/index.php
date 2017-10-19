@@ -51,8 +51,8 @@
 						<p><?php echo $latestProduct['description'];?></p>
                         
 						<div class="goods__buttons">
-							<button class="btn  baskin" type="button" value="В корзину">Корзина</button>
-							<button class="btn" type="submit" value="Купить">Купить</button>
+                                                    <a class="btn  baskin" data-id = "<?php echo $latestProduct['id']; ?>" href="/cart/add/<?php echo $latestProduct['id'];?>">Корзина</a>
+                                                    <a class="btn"  href="#">Купить</a>
 						</div>
 					</li>
 

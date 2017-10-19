@@ -1,0 +1,32 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.pagination__item {
+    display: block;
+    background-color: white;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    border: 1px solid @color-pink-title;
+    color: @color-pink-title;
+    &:hover {
+
+        background-color: @color-pink-title;
+        color: white;
+    }
+}
+
+.pagination .active a{
+
+    color: white;
+    background-color: @color-pink-title;
+}
+
+@media @tablet-widths {
+    .pagination {
+        justify-content: flex-start;
+    }
+}
