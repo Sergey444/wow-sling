@@ -1,15 +1,31 @@
 .form-data {
-    padding: 0 30px;
-    background-color: white;
-    & label {
-        font-size: 17px;
-        line-height: 19px;
-        font-weight: bold;
-    }
+    padding: 20px 30px;
+
 }
+
+.form-data__wrapper {
+    .container-fluid();
+    padding: 0  30px;
+    background-color: white;
+    box-shadow: @box-shadow-block;
+}
+
+
 
 .form-data__required-fields {
     display: none;
+}
+
+.form-data__error {
+    display: none;
+    width: 280px;
+    margin-right: 30px;
+    color: red;
+    font-size: 12px;
+
+    &--show {
+        display: block;
+    }
 }
 
 .form-data__title {
@@ -39,51 +55,45 @@
     margin-bottom: 60px;
 }
 
+.form-data__submit {
+    margin: 40px 0;
+}
+
+.form-data__policy {
+    color: blue;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
 
 @media @tablet-widths {
+
+
     .form-data__required-fields {
         display: inline;
     }
 
     .form-data {
-        padding: 0;
+        padding: 20px 0;
         //.container-fluid();
     }
 
     .form-data__title {
 
-        min-width: 20%;
+        //min-width: 20%;
         &::after {
             display: none;
         }
     }
 
-    .form-data__color,
-    .form-data__phone,
-    .form-data__email {
-        background-color: lightgrey;
-    }
-
     .form-data__block {
 
         display: flex;
-        padding: 65px 0;
-        //align-items: baseline;
-
-        &:nth-child(odd) {
-            background-color: lightgrey;
-
-            & span {
-                background-color: lightgrey;
-            }
-
-            & input {
-                background-color: lightgrey;
-            }
-        }
+        padding: 20px 0;
 
         &--relations {
-            
+
             flex-wrap: wrap;
         }
 
@@ -103,6 +113,7 @@
     }
 
     .form-data__choose {
+        //display: flex;
         flex-grow: 1;
     }
 
@@ -125,5 +136,17 @@
     .form-data__button {
         width: auto;
     }
-}
 
+    .form-data__ink {
+
+        &::after {
+            content: "";
+            margin-top: 50px;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-image: url("../img/ink.png");
+            background-position: center;
+        }
+    }
+}

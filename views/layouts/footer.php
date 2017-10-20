@@ -9,31 +9,31 @@
                 </div>
 
 				<ul class="page-footer__info">
-                    <li><a href="#">Производство</a></li>
-                    <li><a href="#">Наши документы</a></li>
-					<li><a href="#">Обпатная связь</a></li>
                     <li><a href="#">Контакты</a></li>
                     <li><a href="#">Реквизиты</a></li>
+                    <li><a href="#">Производство</a></li>
+
+					<li><a href="#">Обпатная связь</a></li>
+                    <li><a href="#">Наши документы</a></li>
 				</ul>
 
 				<ul class="page-footer__info">
                     <li><a href="#">Обучение</a></li>
                     <li><a href="#">Условия оплаты</a></li>
-                    <li><a href="#">Условия возврата</a></li>
+
                     <li><a href="#">Условия доставки</a></li>
-                    <li><a href="#">Политика конфиденициальности</a></li>
+                    <li><a href="#">Условия возврата</a></li>
+                    <li><a href="#">Конфиденициальность</a></li>
                 </ul>
 
-				<span>WowSling © 2013-2017</span>
+				<p class="page-footer__copyrighted">WowSling © 2013-2017</p>
             </div>
 
         </footer>
 
-                
-		<script src="/template/js/new-goods.js"></script>
-                <script src="/template/js/slider.js"></script>
+
+
 		<script src="/template/js/main-open.js"></script>
-		<script src="/template/js/advantages-slider.js"></script>
 		<script src="/template/js/baskin.js"></script>
     </body>
 </html>

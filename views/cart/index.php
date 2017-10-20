@@ -31,7 +31,7 @@
             </table>
 
             <ul class="cart__count">
-                <a class="cart__del" href="#">Оформить заказ</a>
+                <a class="cart__del" href="/contacts/">Оформить заказ</a>
                 <div class="cart__count-items">
                     <li class="cart__count-item" >Общая стоимость:</li>
                     <li class="cart__count-item"><?php echo $totalPrice; ?> рублей</li>

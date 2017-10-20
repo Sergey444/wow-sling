@@ -2,8 +2,12 @@
     position: relative;
     min-height: 50px;
 
+    width: 200px;
+
     &--check {
-        padding-left: 60px;
+        width: auto;
+        padding-left: 40px;
+
         display: block;
         min-width: 30%;
     }
@@ -16,17 +20,17 @@
 .input__checkbox,
 .input__radio {
     position: absolute;
-    width: 40px;
-    height: 40px;
-    top: -8px;
+    width: 20px;
+    height: 20px;
+    top: 0;
     left: 0;
 
-    border: 2px solid #444444;
-
+    border: 1px solid #444444;
+    border-radius: 3px;
     cursor: pointer;
 
     &:hover {
-        border-color: lightblue;
+        border-color: @color-pink-title;
     }
 }
 
@@ -53,12 +57,12 @@
 .input__checkbox::after {
     content: "";
     position: absolute;
-    width: 20px;
+    width: 10px;
     height: 2px;
-    background-color: #000000;
+    background-color: @color-pink-title;
 
-    top: 15px;
-    left: 15px;
+    top: 9px;
+    left: 7px;
 
     transform: rotate(-45deg);
 }
@@ -66,44 +70,56 @@
 .input input[type="checkbox"]:checked +
 .input__checkbox::after {
     transform: rotate(45deg);
-    width: 10px;
-    left: 10px;
-    top: 20px;
+    width: 5px;
+    left: 5px;
+    top: 11px;
 }
 
 .input__text {
-    font-size: 18px;
+    font-size: 14px;
     padding: 17px 0;
 
     outline: none;
     width: 100%;
     border: 0;
-    border-bottom: 2px solid #444444;
+    border-bottom: 1px solid #444444;
 
     margin-bottom: 30px;
 
 
     &--textarea {
-        border: 2px solid #444444;
+
+        border: 1px solid #444444;
         line-height: 19px;
         min-height: 150px;
     }
 
     &:hover {
-        border-color: lightblue;
+        border-color: @color-pink-title;
     }
 
     &:focus {
-         -webkit-border-color: lightblue;
-         -moz-border-color: lightblue;
-         border-color: lightblue;
+         -webkit-border-color: @color-pink-title;
+         -moz-border-color: @color-pink-title;
+         border-color: @color-pink-title;
 
+    }
+
+    &--error {
+        border-color: red;
+    }
+
+    &--ok {
+        color: green;
+        border-color: green;
+
+        &:hover {
+            border-color: green;
+        }
     }
 }
 
-.input__text--error {
-    border-color: #f0b1b1;
-}
+
 
 
 .input__text--phone {
@@ -158,4 +174,3 @@
         }
     }
 }
-

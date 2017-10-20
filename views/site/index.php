@@ -1,6 +1,6 @@
-<?php include ROOT.'/views/layouts/header.php'?>
+<?php include ROOT.'/views/layouts/header.php' ?>
 
-        <section class="slider  slider-main" id="slider">
+        <section  class="slider  slider-main" id="slider">
 			<!--<div class="slider-main__overlay"></div>-->
 		</section>
 
@@ -49,7 +49,7 @@
 							<h4><?php echo $latestProduct['name']; ?></h4>
 						</a>
 						<p><?php echo $latestProduct['description'];?></p>
-                        
+
 						<div class="goods__buttons">
                                                     <a class="btn  baskin" data-id = "<?php echo $latestProduct['id']; ?>" href="/cart/add/<?php echo $latestProduct['id'];?>">Корзина</a>
                                                     <a class="btn"  href="#">Купить</a>
@@ -78,4 +78,8 @@
 			</div>
 		</section>
 
-<?php include ROOT.'/views/layouts/footer.php'?>
+        <script src="/template/js/new-goods.js"></script>
+        <script src="/template/js/slider.js"></script>
+        <script src="/template/js/advantages-slider.js"></script>
+
+<?php include ROOT.'/views/layouts/footer.php' ?>

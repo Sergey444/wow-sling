@@ -1,3 +1,5 @@
+
+
 function go() {
     window.timerId = window.setInterval(slider, 5000);
 }

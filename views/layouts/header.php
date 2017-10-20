@@ -9,7 +9,7 @@
 
 		<title>Wow Sling</title>
 	</head>
-	<body onload="go()">
+	 <body  >
         <header class="page-header">
             <h1 class="visually-hidden">Слинги</h1>
 
@@ -34,7 +34,7 @@
                         <li class="main-nav__tools-item">
 							<a class="main-nav__link  main-nav__link--bascet" href="/cart/" title="Корзина"><span id="goods">
 
-										 <?php echo Cart::countItems();?> 
+										 <?php echo Cart::countItems();?>
 
 									</span>
 							</a>
