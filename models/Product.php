@@ -28,6 +28,7 @@ class Product
             $productsList[$i]['name'] = $row['name'];
             $productsList[$i]['description'] = $row['description'];
             $productsList[$i]['img'] = $row['img'];
+            $productsList[$i]['availability'] = $row['availability'];
             $i++;
         }
         
@@ -61,6 +62,7 @@ class Product
                 $productsList[$i]['name'] = $row['name'];
                 $productsList[$i]['description'] = $row['description'];
                 $productsList[$i]['img'] = $row['img'];
+                $productsList[$i]['availability'] = $row['availability'];
                 $i++;
             }
 

@@ -3,7 +3,7 @@
     <section class="catalog">
             <div class="catalog__wrapper">
                  <?php echo $pagination->get(); ?>
-                
+
                 <ul class="catalog__items">
 
                     <?php foreach ($catalog as $product): ?>
@@ -14,17 +14,18 @@
                                     <h4><?php echo $product['name']; ?></h4>
                             </a>
                             <p><?php echo $product['description'];?></p>
-                            <div class="goods__buttons">
-                                    <a class="btn  baskin" data-id = "<?php echo $product['id']; ?>" href="/cart/add/<?php echo $product['id'];?>">Корзина</a>
-                                    <a class="btn"  href="#">Купить</a>
+                            <div class="goods__buttons <?php if ($product['availability'] > 0) { echo 'goods__buttons--this'; } ?>">
+                                    <a class="btn  goods__buttons--is  baskin" data-id = "<?php echo $product['id']; ?>" href="/cart/add/<?php echo $product['id'];?>">Корзина</a>
+                                    <a class="btn  goods__buttons--is"  href="#">Купить</a>
+                                    <a class="btn  goods__buttons--isnt" href="<?php echo $product['id']; ?>">Заказать</a>
                             </div>
                     </li>
 
                     <?php endforeach; ?>
-                    
-                    
+
+
                 </ul>
-               
+
             </div>
         </section>
 

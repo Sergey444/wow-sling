@@ -86,7 +86,26 @@
 .goods__buttons {
     margin-top: auto;
     margin-bottom: 10px;
+
+    &--is {
+        display: none;
+    }
+
+    &--isnt {
+        display: block;
+        margin: 0 20px;
+    }
+
+    &--this .goods__buttons--isnt {
+        display: none;
+    }
+
+    &--this .goods__buttons--is {
+        display: inline-block;
+    }
 }
+
+
 
 @media @tablet-widths {
     .goods  {

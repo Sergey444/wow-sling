@@ -515,12 +515,20 @@ a {
   width: 100px;
   height: 100px;
   background-image: url("../img/icons8.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .advantages__item--quality::before {
   background-image: url("../img/icons9.png");
 }
 .advantages__item--design::before {
   background-image: url("../img/icons7.png");
+}
+.advantages__item--delivery::before {
+  background-image: url("../img/del.png");
+}
+.advantages__item--return::before {
+  background-image: url("../img/ret.png");
 }
 @media (min-width: 768px) {
   .advantages {
@@ -648,6 +656,19 @@ a {
 .goods__buttons {
   margin-top: auto;
   margin-bottom: 10px;
+}
+.goods__buttons--is {
+  display: none;
+}
+.goods__buttons--isnt {
+  display: block;
+  margin: 0 20px;
+}
+.goods__buttons--this .goods__buttons--isnt {
+  display: none;
+}
+.goods__buttons--this .goods__buttons--is {
+  display: inline-block;
 }
 @media (min-width: 768px) {
   .goods {
@@ -825,9 +846,26 @@ a {
   display: flex;
   flex-direction: column;
 }
+.one-goods__availability {
+  position: relative;
+  padding-left: 30px;
+}
+.one-goods__availability::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  background-image: url('../img/no.png');
+  background-size: cover;
+}
+.one-goods__availability--ok::before {
+  background-image: url('../img/ok.png');
+}
 .one-goods__buttons .btn {
-  display: inline-block;
-  width: 100%;
+  width: 80%;
   margin: 10px 0;
   text-align: center;
 }
