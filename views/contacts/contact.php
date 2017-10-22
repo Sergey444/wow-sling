@@ -11,7 +11,8 @@
         </ul>
     <?php endif; ?>
 <section>
-<form action="" method="POST" class="form-data">
+    <?php var_dump($result); ?> 
+<form action="/contacts/checkout/" method="POST" class="form-data">
     <div class="form-data__wrapper">
 
 				 <!-- <div class="form-data__block-wrapper">
@@ -54,15 +55,15 @@
 	                        </div>
                             <div class="form-data__choose-item">
 	                            <label class="input" for="city">Улица</label>
-	                            <input class="input__text" type="text" name="Street" placeholder="Ваша улица">
+	                            <input class="input__text" type="text" name="street" placeholder="Ваша улица">
 	                        </div>
                             <div class="form-data__choose-item">
 	                            <label class="input" for="city">Дом</label>
-	                            <input class="input__text" type="text" name="second_name" placeholder="Номер дома">
+	                            <input class="input__text" type="text" name="number_house" placeholder="Номер дома">
 	                        </div>
                             <div class="form-data__choose-item">
 	                            <label class="input" for="city">Квартира</label>
-	                            <input class="input__text" type="text" name="second_name" placeholder="Номер квартиры">
+	                            <input class="input__text" type="text" name="number-flat" placeholder="Номер квартиры">
 	                        </div>
 
                             <div class="form-data__choose-item">
@@ -81,7 +82,7 @@
 
 					<div class="form-data__block-wrapper">
                         <label class="input  input--check">
-                            <input  type="checkbox">
+                            <input  type="checkbox" name="agree" value="1">
                             <span class="input__checkbox"></span>
                             Я ознакомился с <a class="form-data__policy" href="#">политикой конфиденциальности</a>
                         </label>
@@ -94,6 +95,12 @@
             </div>
         </form>
     </section>
+    
+<?php 
+        echo '<pre>';
+        print_r($_POST);
+        echo'</pre>';
+    ?>
         <script src="/template/js/valid-form.js"></script>
 <?php endif; ?>
 

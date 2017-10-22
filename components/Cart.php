@@ -28,8 +28,21 @@ class Cart
 //echo '<pre>';
 //print_r($_SESSION['products']);
 //die();
-        
+       
         return self::countItems();
+    }
+    
+    public static function deleteProduct($id) {
+        
+            $productsInCart = self::getProducts();
+            
+            unset($productsInCart[$id]);
+            
+            $_SESSION['products'] = $productsInCart;
+            
+            if (count($_SESSION['products']) == 0) {
+                unset($_SESSION['products']);
+            }
     }
     
     public static function getWordForCount($count)
@@ -82,9 +95,18 @@ class Cart
             foreach ($products as $item) {
                 $total += $item['price'] * $productsInCart[$item['id']];
             }
-        }
-        
+        }       
         return $total;
     }
+    
+    public static function clear() 
+    {
+        if (isset($_SESSION['products'])) {
+            unset($_SESSION['products']);
+        }
+    }
+    
+    
+    
     
 }

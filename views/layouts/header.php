@@ -8,8 +8,10 @@
         <link href="/template/css/style.css" rel="stylesheet">
 
 		<title>Wow Sling</title>
+
+		<!-- <script type="text/javascript" src="//vk.com/js/api/openapi.js?150"></script>  Для виджета вконтакте--> 
 	</head>
-	 <body  >
+	 <body>
         <header class="page-header">
             <h1 class="visually-hidden">Слинги</h1>
 

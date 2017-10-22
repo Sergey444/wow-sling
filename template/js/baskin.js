@@ -29,14 +29,14 @@ for (var i = 0; i < goods.length; i++) {
         function add(event) {
            event.preventDefault();
            var id = this.getAttribute('data-id');
-           console.log();
+
 
         xhr.open( 'POST', '/cart/addAjax/' + id,  true) ;
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send();
         xhr.onreadystatechange = function() {
             basc.textContent = xhr.responseText ;
-            console.log(xhr.responseText);
+            //console.log(xhr.responseText);
             };
         }
 

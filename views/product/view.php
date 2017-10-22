@@ -19,13 +19,13 @@
                                     <?php else : ?>
                                     <p class="one-goods__availability">Нет в наличии </p>
 									<p>(мы привезём Вам его через две недели прямо домой)</p>
-									<a class="vissual-hidden" href="https://ru.icons8.com/icon/13114/Отмена">
+									<a class="vissual-hidden" href="https://ru.icons8.com/icon/13114/Отмена"></a>
                                     <?php endif; ?>
 
                             <div class="goods__buttons <?php if ($viewItem['availability'] > 0) { echo 'goods__buttons--this'; } ?>">
-								<a class="btn  goods__buttons--is  baskin" data-id="<?php echo $viewItem['id']; ?>" href="/cart/add/<?php echo $viewItem['id'];?>"> В корзину</a>
+                                <a class="btn  goods__buttons--is  baskin" data-id="<?php echo $viewItem['id']; ?>" href="/cart/add/<?php echo $viewItem['id'];?>">В корзину</a>
 								<a class="btn  goods__buttons--is" href="#" >Купить</a>
-                                <a class="btn  goods__buttons--isnt" href="#">Заказать</a>
+                                      <a class="btn  goods__buttons--isnt" href="#">Заказать</a>
 							</div>
 						</div>
 

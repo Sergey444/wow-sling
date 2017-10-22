@@ -24,19 +24,19 @@
 
                         <td class="cart__table-cell"><?php echo $productsInCart[$product['id']] ?></td>
                         <td class="cart__table-cell"><?php echo $product['price'];?> </td>
-                        <td class="cart__table-cell">Удалить</td>
+                        <td class="cart__table-cell"><a href="delete/<?php echo $product['id'];?>">Удалить</td>
                     </tr>
                 <?php endforeach; ?>
 
             </table>
 
-            <ul class="cart__count">
-                <a class="cart__del" href="/contacts/">Оформить заказ</a>
-                <div class="cart__count-items">
-                    <li class="cart__count-item" >Общая стоимость:</li>
-                    <li class="cart__count-item"><?php echo $totalPrice; ?> рублей</li>
-                </div>
-            </ul>
+            <div class="cart__count">
+                <a class="cart__del" href="/cart/checkout/">Оформить заказ</a>
+                <!--<div class="cart__count-items">-->
+                <p class="cart__count-item" >Общая стоимость: <?php echo $totalPrice; ?> рублей</p>
+                   
+                <!--</div>-->
+            </div>
         <?php else: ?>
             <p>Ваша корзина пуста</p>
         <?php endif; ?>

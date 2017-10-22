@@ -25,7 +25,7 @@ class SiteController
         return true;
     }
     
-    public function actionContact() 
+ /*   public function actionContact() 
     {
 //$mail = 'slingostudio@gmail.com';
 //$subject = 'Тема письма';
@@ -49,9 +49,7 @@ class SiteController
             $errors = false;
             
             //Валидация полей
-            if (!User::checkEmail($userEmail)) {
-                $errors[] = 'Неправильный email';
-            }
+            
             
             if ($errors == false) {
                 $adminEmail = 'slingostudio@gmail.com';
@@ -64,7 +62,7 @@ class SiteController
         
         require_once(ROOT.'/views/contacts/contact.php');
         
-        return true;
+        return $result;
         
-    }
+    }*/
 }

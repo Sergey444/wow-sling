@@ -1,8 +1,20 @@
 <?php include ROOT.'/views/layouts/header.php' ?>
 
         <section  class="slider  slider-main" id="slider">
-			<!--<div class="slider-main__overlay"></div>-->
+			<!-- <div class="slider-main__overlay"></div> -->
 		</section>
+
+        <!-- <div class="cycle-slideshow  slider slider-main"
+            data-cycle-fx="scrollHorz"
+            data-cycle-pause-on-hover="true"
+            data-cycle-speed="200"
+
+            >
+            <img src="/template/img/slide1.jpg" height="300">
+            <img src="/template/img/slide2.jpg" height="300">
+            <img src="/template/img/slide3.jpg" height="300">
+            <img src="/template/img/slide4.jpg" height="300">
+        </div> -->
 
 		<section class="advantages slider slider--nojs">
 
@@ -79,8 +91,27 @@
 			</div>
 		</section>
 
+         <!-- <div class="social-blocks">
+            <div class="social-blocks__wrapper">
+
+                <div class="social-blocks__vk" id="vk_groups"></div>
+
+                <iframe class="social-blocks__inst" src='/inwidget/index.php?width=300&inline=2&view=4&toolbar=true&preview=small' scrolling='no' frameborder='no' style='height:500px;overflow:hidden;'></iframe>
+
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            VK.Widgets.Group("vk_groups", {mode: 2, width: 300, height: 415, wide: 1 }, 112449893);
+        </script> -->
+
         <script src="/template/js/new-goods.js"></script>
         <script src="/template/js/slider.js"></script>
         <script src="/template/js/advantages-slider.js"></script>
+
+        <!-- <script src="/template/js/jquery.js"></script>
+        <script src="/template/js/jquery.cycle2.min.js"></script>
+        <script src="/template/js/jquery.cycle2.shuffle.min.js"></script> -->
+
 
 <?php include ROOT.'/views/layouts/footer.php' ?>

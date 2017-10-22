@@ -25,7 +25,6 @@ body {
   line-height: 24px;
   font-family: "Open Sans", Arial, sans-serif;
   font-style: normal;
-  background-image: url("../img/background1.jpg");
   background-size: 50%;
 }
 section {
@@ -1288,5 +1287,32 @@ a {
 @media (min-width: 768px) {
   .cart__table-cell--photo {
     display: table-cell;
+  }
+}
+.social-blocks__wrapper {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .social-blocks__wrapper {
+    width: 84%;
+    /*640px / 768px ~= 84%*/
+    max-width: 1200px;
+    /*960px / .84 ~= 1142 (Центровка начнётся чуть раньше 1200px) */
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+.social-blocks__vk {
+  display: block;
+}
+.social-blocks__inst {
+  display: block;
+}
+@media (min-width: 768px) {
+  .social-blocks__wrapper {
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
