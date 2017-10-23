@@ -1,7 +1,7 @@
 .cart {
     min-height: 70%;
     text-align: center;
-    padding-bottom: 20px;
+    padding: 20px 0;
 }
 
 .cart__wrapper {
@@ -9,6 +9,7 @@
     min-height: 200px;
     background-color: white;
     box-shadow: @box-shadow-block;
+
 
 }
 
@@ -29,7 +30,8 @@
 
 .cart__count {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    margin-right: 20px;
 }
 
 .cart__count-items {
@@ -46,7 +48,11 @@
     padding: 10px;
 }
 
-
+.cart__delivery {
+    text-align: left;
+    padding-left: 10px;
+    padding: 30px;
+}
 
 
 @media @tablet-widths {

@@ -9,7 +9,7 @@
 
 		<title>Wow Sling</title>
 
-		<!-- <script type="text/javascript" src="//vk.com/js/api/openapi.js?150"></script>  Для виджета вконтакте--> 
+		<!-- <script type="text/javascript" src="//vk.com/js/api/openapi.js?150"></script>  Для виджета вконтакте-->
 	</head>
 	 <body>
         <header class="page-header">
@@ -32,17 +32,20 @@
 
 					<span class="main-nav__text">Добро пожаловать в наш магазин</span>
 					<span class="main-nav__phone">Телефон для связи: 89220099900</span>
-                    <ul class="main-nav__tools">
-                        <li class="main-nav__tools-item">
+
+					<ul class="main-nav__tools">
+						<li class="main-nav__tools-item">
 							<a class="main-nav__link  main-nav__link--bascet" href="/cart/" title="Корзина"><span id="goods">
 
-										 <?php echo Cart::countItems();?>
+										<?php echo Cart::countItems();?>
 
 									</span>
 							</a>
 						</li>
-                    </ul>
+
+					</ul>
 
                 </div>
+
             </nav>
         </header>

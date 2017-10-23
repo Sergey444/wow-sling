@@ -5,7 +5,7 @@
         <h2 class="cart__title">Корзина</h2>
 
         <?php if ($productsInCart): ?>
-            <p>Вы выбрали такие товаары: </p>
+            <p>Вы выбрали такие товары: </p>
 
             <table class="cart__table">
                 <tr class="cart__table-string">
@@ -24,19 +24,38 @@
 
                         <td class="cart__table-cell"><?php echo $productsInCart[$product['id']] ?></td>
                         <td class="cart__table-cell"><?php echo $product['price'];?> </td>
-                        <td class="cart__table-cell"><a href="delete/<?php echo $product['id'];?>">Удалить</td>
+                        <td class="cart__table-cell"><a class="cart__del" href="delete/<?php echo $product['id'];?>">Удалить</td>
                     </tr>
                 <?php endforeach; ?>
 
             </table>
 
             <div class="cart__count">
-                <a class="cart__del" href="/cart/checkout/">Оформить заказ</a>
+
                 <!--<div class="cart__count-items">-->
                 <p class="cart__count-item" >Общая стоимость: <?php echo $totalPrice; ?> рублей</p>
-                   
+
                 <!--</div>-->
+
+
             </div>
+            <form  action="checkout" method="POST" class="cart__delivery">
+                <p>Укажите каким спосообом вы хотите получить товар</p>
+                <label class="input  input--check">
+                    <input type="radio" name="delivery" value="1" checked>
+                    <span class="input__radio"></span>Доставка по России
+                </label>
+                <label class="input  input--check">
+                    <input type="radio" name="delivery" value="2">
+                    <span class="input__radio"></span>Доставка по Тюмени
+                </label>
+                <label class="input  input--check">
+                    <input type="radio" name="delivery" value="3">
+                    <span class="input__radio"></span>Самовывоз с улицы Широтная, г.Тюмень
+                </label>
+
+                <button type="submit" class="btn">Оформить заказ</button>
+            </form>
         <?php else: ?>
             <p>Ваша корзина пуста</p>
         <?php endif; ?>

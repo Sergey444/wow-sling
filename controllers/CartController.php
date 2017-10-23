@@ -62,9 +62,13 @@ class CartController
         //Статус успешного отображения товаров
         $result = false;
         
+        //Выбираем какую форму показать в зависимости от доставки
+        $delivery = Validation::checkDelivery();
+        
         //Форма отправлена?
         if (isset($_POST['submit'])) {
             //Форма отправлена? - Да
+            
             
            
             
@@ -72,19 +76,35 @@ class CartController
             $userName = $_POST['name'];
             $userPhone = $_POST['phone'];
             $userEmail = $_POST['email'];
+            
+            if (!isset($_POST['city'])) { $_POST['city'] = 'Не заполнен'; }
+            
             $userCity = $_POST['city'];
+            
+            if (!isset($_POST['post_order'])) { $_POST['post_order'] = 'Не заполнен'; }
+            
             $userPostOrder = $_POST['post_order'];
+            
+            if (!isset($_POST['street'])) { $_POST['street'] = 'Не заполнен'; }
+           
             $userStreet = $_POST['street'];
+            
+            if (!isset($_POST['number_house'])) { $_POST['number_house'] = 'Не заполнен'; }
+            
             $userHouse = $_POST['number_house'];
+            
+            if (!isset($_POST['number_flat'])) { $_POST['number_flat'] = 'Не заполнен'; }
+            
             $userFlat = $_POST['number_flat'];
+            
+            if (!isset($_POST['info'])) { $_POST['info'] = 'Не заполнен'; }
+            
             $userInfo = $_POST['info'];
             
-            if (!isset($_POST['agree'])) {
-                $_POST['agree'] = 0;
-            }
+            if (!isset($_POST['agree'])) { $_POST['agree'] = 0; }
             $userAgree = $_POST['agree'];
             
-             
+            
             
             //Валидация полей
             $errors = false;
@@ -175,4 +195,6 @@ class CartController
         return true;
         
     }
+    
+    
 }

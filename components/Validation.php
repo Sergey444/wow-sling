@@ -28,9 +28,19 @@ class Validation
     
     public static function checkAgree($agree) 
     {
-        if ($agree == 1) {
+        if ($agree == '1') {
             return true;
         }
         return false;       
+    }
+    
+    public static function checkDelivery() 
+    {
+        if (!isset($_POST['delivery'])) {
+            $delivery = 3;
+        } else {
+            $delivery = $_POST['delivery'];
+        }
+        return $delivery;
     }
 }

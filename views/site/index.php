@@ -63,8 +63,8 @@
 						<p><?php echo $latestProduct['description'];?></p>
 
 						<div class="goods__buttons <?php if ($latestProduct['availability'] > 0) { echo 'goods__buttons--this'; } ?>">
-                                <a class="btn  goods__buttons--is baskin" data-id = "<?php echo $latestProduct['id']; ?>" href="/cart/add/<?php echo $latestProduct['id'];?>">Корзина</a>
-                                <a class="btn  goods__buttons--is"  href="#">Купить</a>
+                                <a class="btn  goods__buttons--is baskin" data-id = "<?php echo $latestProduct['id']; ?>" href="/cart/add/<?php echo $latestProduct['id'];?>">В корзину</a>
+                                <a class="btn  goods__buttons--is"  href="/cart/checkout/">Купить</a>
                                 <a class="btn  goods__buttons--isnt" href="/catalog/backpack/<?php echo $latestProduct['id']; ?>">Заказать</a>
 						</div>
 					</li>

@@ -26,8 +26,8 @@ class Order
        
        $db = Db::getConnection();
        
-       $sql = "INSERT INTO product_order (user_name, user_phone, user_email, user_post_order, user_street, user_house, user_flat, user_info, user_agree, products) "
-               . "VALUES ('.$userName.','.$userEmail.','.$userCity.','.$userPostOrder.','.$userStreet.','.$userHouse.','.$userFlat.','.$userInfo.','.$userAgree.','.$products.')";
+       $sql = "INSERT INTO product_order (user_name, user_phone, user_email, user_city, user_post_order, user_street, user_house, user_flat, user_info, user_agree, products) "
+               . "VALUES ('.$userName.','.$userPhone.','.$userEmail.','.$userCity.','.$userPostOrder.','.$userStreet.','.$userHouse.','.$userFlat.','.$userInfo.','.$userAgree.','.$products.')";
 //               . 'VALUES (:user_name, :user_phone, :user_email, :user_post_order, :user_street, :user_house, :user_flat, :user_info, :user_agree, :products)';
        
        $result = $db->query($sql);

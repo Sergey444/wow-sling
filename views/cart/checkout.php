@@ -1,23 +1,26 @@
         <?php include ROOT.'/views/layouts/header.php'?>
+<section>
 
+<form action="" method="POST" class="form-data">
+    <div class="form-data__wrapper">
 <?php if ($result) : ?>
     <p>Спасибо за заказ! Мы обработаем его в ближайшее время и свяжемся с вами для подтверждения</p>
 <?php else: ?>
-    
-    <p> <?php echo $totalQuantity; ?>, на сумму: <?php echo $totalPrice; ?> рублей</p><br>
-    
-    <?php if (isset($errors) && is_array($errors)) : ?>
-        <ul>
-            <?php foreach ($errors as $error): ?>
-                <li> - <?php echo $error; ?></li>
-            <?php endforeach; ?>
-        </ul>
-    <?php endif; ?>
-<section>
-<form action="" method="POST" class="form-data">
-    <div class="form-data__wrapper">
 
-				 <div class="form-data__block-wrapper">
+
+
+
+				 <div class="form-data__block-head">
+                     <p><?php echo $totalQuantity; ?>, на сумму: <?php echo $totalPrice; ?> рублей</p><br>
+
+                     <?php if (isset($errors) && is_array($errors)) : ?>
+                         <ul>
+                             <?php foreach ($errors as $error): ?>
+                                 <li> - <?php echo $error; ?></li>
+                             <?php endforeach; ?>
+                         </ul>
+                     <?php endif; ?>
+
                 	<p class="form-data__content">Мы будем рады воплотить в жизнь ваши пожелпния! Заполните простую форму заказа, и мы свяжемся с вами, что бы уточнить детали.</p>
 
                 </div>
@@ -29,6 +32,8 @@
 	                        <!-- <span>Заполните поля</span> -->
 	                    </div>
 	                    <div class="form-data__choose">
+
+
 
                             <div class="form-data__choose-item">
                              <span class="form-data__error " id="for-name">Имя не правильное</span>
@@ -47,6 +52,9 @@
 	                            <label class="input" for="second_name">Email:</label>
 	                            <input class="input__text" type="text" name="email" placeholder="Ваш email" value="<?php echo $userEmail ?>">
 	                        </div>
+
+                            <?php if ($delivery == 1) :?>
+
                             <div class="form-data__choose-item">
 	                            <label class="input" for="city">Город</label>
 	                            <input class="input__text" type="text" name="city" placeholder="Ваш город" value="<?php echo $userCity ?>">
@@ -55,6 +63,11 @@
 	                            <label class="input" for="city">Почтовый индекс</label>
 	                            <input class="input__text" type="text" name="post_order" placeholder="Почтовый индекс" value="<?php echo $userPostOrder ?>">
 	                        </div>
+
+                            <?php endif; ?>
+
+                            <?php if ($delivery < 3) :?>
+
                             <div class="form-data__choose-item">
 	                            <label class="input" for="city">Улица</label>
 	                            <input class="input__text" type="text" name="street" placeholder="Ваша улица" value="<?php echo $userStreet ?>">
@@ -68,6 +81,9 @@
 	                            <input class="input__text" type="text" name="number_flat" placeholder="Номер квартиры" value="<?php echo $userFlat ?>">
 	                        </div>
 
+                        <?php endif; ?>
+
+                            <br>
                             <div class="form-data__choose-item">
                                 <a class="visually-hidden" href="https://ru.icons8.com/icon/10942/Звездочка">Звездочка иконка в оригинале</a>
                                 <a class="visually-hidden" href="https://ru.icons8.com/icon/49632/Перо-с-чернилами">Перо с чернилами иконка в оригинале</a>
@@ -79,12 +95,12 @@
 					</div>
 
                 </div>
-
+                <input class="visually-hidden" name="delivery" value="<?php echo $delivery ?>">
                 <div class="form-data__submit">
 
 					<div class="form-data__block-wrapper">
                         <label class="input  input--check">
-                            <input  type="checkbox" name="agree" value="1">
+                            <input  type="checkbox" name="agree" value="1"  <?php if ($userAgree == 1) { echo 'checked'; } ?>>
                             <span class="input__checkbox"></span>
                             Я ознакомился с <a class="form-data__policy" href="#">политикой конфиденциальности</a>
                         </label>
@@ -94,12 +110,14 @@
 
 					</div>
                 </div>
+
+
+
+<?php endif; ?>
+
             </div>
         </form>
     </section>
-
-        <script src="/template/js/valid-form.js"></script>
-<?php endif; ?>
-
+    <script src="/template/js/valid-form.js"></script>
 
 <?php include ROOT.'/views/layouts/footer.php'?>

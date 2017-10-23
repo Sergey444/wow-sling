@@ -112,6 +112,7 @@
 
     border-bottom: 1px solid lightgrey;
 
+
     &:hover,
     &:active {
         color: @color-pink-title;
@@ -195,12 +196,15 @@
     }
 
     .main-nav__tools {
+        position: relative;
         border-top:1px solid lightgrey;
+
     }
 
     .main-nav__item,
     .main-nav__tools-item {
         padding: 10px 0;
+
     }
 
     .main-nav__link {
@@ -251,6 +255,8 @@
 
         border: 1px solid lightgrey;
     }
+
+
 }
 
 @media @desktop-widths {
@@ -284,6 +290,10 @@
         order: 3;
         justify-content: flex-end;
         border: none;
+    }
+
+    .main-nav__sub-menu {
+        width: 100%;
     }
 
 }
