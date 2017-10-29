@@ -8,8 +8,9 @@
         <link href="/template/css/style.css" rel="stylesheet">
 
 		<title>Wow Sling</title>
-
-		<!-- <script type="text/javascript" src="//vk.com/js/api/openapi.js?150"></script>  Для виджета вконтакте-->
+		<script src="/template/js/check-menu.js"></script>
+		  
+		<script type="text/javascript" src="//vk.com/js/api/openapi.js?150"></script> <!-- Для виджета вконтакте-->
 	</head>
 	 <body>
         <header class="page-header">
@@ -23,18 +24,22 @@
 					<a class="main-nav__logo" href="/" title="Логотип">Wow Sling</a>
 
                     <ul class="main-nav__items">
-                        <li class="main-nav__item  main-nav__item--active"><a class="main-nav__link" href="/catalog/backpack/">Рюкзаки</a></li>
-                        <li class="main-nav__item  main-nav__item--active"><a class="main-nav__link" href="/catalog/mysling/">Май-слинги</a></li>
-                        <li class="main-nav__item  main-nav__item--active"><a class="main-nav__link" href="/about/">О нас</a></li>
-                        <li class="main-nav__item  main-nav__item--active"><a class="main-nav__link" href="/answers/">Вопросы и ответы</a></li>
+                        <li class="main-nav__item  "><a class="main-nav__link" href="/catalog/backpack/">Рюкзаки</a></li>
+                        <li class="main-nav__item  "><a class="main-nav__link" href="/catalog/mysling/">Май-слинги</a></li>
+                        <li class="main-nav__item  "><a class="main-nav__link" href="/content/aboutus/">О нас</a></li>
+                        <li class="main-nav__item "><a class="main-nav__link" href="/content/answers/">Вопросы и ответы</a></li>
                     </ul>
 
 
 					<span class="main-nav__text">Добро пожаловать в наш магазин</span>
-					<span class="main-nav__phone">Телефон для связи: 89220099900</span>
-
+					<div class="main-nav__phone">
+						<img title="Телефон" src="/template/img/phone.png" width="20" height="20">
+						<img title="WhatsApp" src="/template/img/whatsapp.png" width="20" height="20">
+						<img title="Viber" src="/template/img/viber.png" width="20" height="20">
+						<span >89220700090</span>
+					</div>
 					<ul class="main-nav__tools">
-						<li class="main-nav__tools-item">
+						<li class="main-nav__item">
 							<a class="main-nav__link  main-nav__link--bascet" href="/cart/" title="Корзина"><span id="goods">
 
 										<?php echo Cart::countItems();?>

@@ -32,19 +32,28 @@ class Cart
         return self::countItems();
     }
     
+
+    
     public static function deleteProduct($id) {
         
             $productsInCart = self::getProducts();
-            if ($productsInCart[$id] > 1) {
-                $productsInCart[$id]--;
-            } else {
+            
                 unset($productsInCart[$id]);
-            }
+            
             $_SESSION['products'] = $productsInCart;
             
             if (count($_SESSION['products']) == 0) {
                 unset($_SESSION['products']);
             }
+    }
+    
+    public static function deleteOneProduct($id) 
+    {
+        $productsInCart = self::getProducts();
+            if ($productsInCart[$id] > 1) {
+                $productsInCart[$id]--;
+            }
+            $_SESSION['products'] = $productsInCart; 
     }
     
     public static function getWordForCount($count)

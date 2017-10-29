@@ -12,9 +12,9 @@
                     <th class="cart__table-cell  cart__table-cell--photo">Фото</th>
                     <th class="cart__table-cell">Название</th>
 
-                    <th class="cart__table-cell">Количество</th>
+                    <th class="cart__table-cell  cart__table-cell--count">Количество</th>
                     <th class="cart__table-cell">Стоимость</th>
-                    <th class="cart__table-cell">Удалить товар</th>
+                    <th class="cart__table-cell">Удалить</th>
                 </tr>
 
                 <?php foreach ($products as $product): ?>
@@ -22,9 +22,13 @@
                         <td class="cart__table-cell  cart__table-cell--photo"><img src="/template/<?php echo $product['img']; ?>" width="50" height="50"></td>
                         <td class="cart__table-cell"><?php echo $product['name']; ?></td>
 
-                        <td class="cart__table-cell"><?php echo $productsInCart[$product['id']] ?></td>
+                        <td class="cart__table-cell  cart__table-cell--count">
+                            <a class="cart__minus"   href="/cart/deleteOne/<?php echo $product['id'];?>">-</a>
+                                <span id="<?php echo $product['id'];?>"><?php echo $productsInCart[$product['id']] ?></span>
+                            <a class="cart__plus" data-id = "<?php echo $product['id']; ?>" href="/cart/add/<?php echo $product['id'];?>">+</a>
+                        </td>
                         <td class="cart__table-cell"><?php echo $product['price'];?> </td>
-                        <td class="cart__table-cell"><a class="cart__del" href="delete/<?php echo $product['id'];?>">Удалить</td>
+                        <td class="cart__table-cell  cart__table-cell"><a class="cart__del" href="delete/<?php echo $product['id'];?>">Удалить</td>
                     </tr>
                 <?php endforeach; ?>
 
@@ -54,7 +58,7 @@
                     <span class="input__radio"></span>Самовывоз с улицы Широтная, г.Тюмень
                 </label>
 
-                <button type="submit" class="btn">Оформить заказ</button>
+                <button type="submit" class="cart__button  btn">Оформить заказ</button>
             </form>
         <?php else: ?>
             <p>Ваша корзина пуста</p>

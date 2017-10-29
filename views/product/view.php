@@ -4,7 +4,7 @@
 			<div class="one-goods__wrapper">
 
 				<div class="one-goods__top">
-					<a class="one-goods__link" data-title="Подробнее" href="#">
+					<a class="one-goods__link" >
 						<h3 class="one-goods__title"><?php echo $viewItem['name'];?></h3>
 						<img src="<?php echo '/template/'.$viewItem['img'];?>" width="400" height="500" alt="Слинг">
 					</a>
@@ -24,8 +24,8 @@
 
                             <div class="goods__buttons <?php if ($viewItem['availability'] > 0) { echo 'goods__buttons--this'; } ?>">
                                 <a class="btn  goods__buttons--is  baskin" data-id="<?php echo $viewItem['id']; ?>" href="/cart/add/<?php echo $viewItem['id'];?>">В корзину</a>
-								<a class="btn  goods__buttons--is" href="#" >Купить</a>
-                                      <a class="btn  goods__buttons--isnt" href="#">Заказать</a>
+								<a class="btn  goods__buttons--is" href="/cart/chooseone/<?php echo $viewItem['id'];?>" >Купить</a>
+                                      <a class="btn  goods__buttons--isnt" href="/cart/chooseone/<?php echo $viewItem['id'];?>/book">Заказать</a>
 							</div>
 						</div>
 

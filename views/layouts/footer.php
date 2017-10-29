@@ -9,7 +9,7 @@
                 </div>
 
 				<ul class="page-footer__info">
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="/content/contacts/">Контакты</a></li>
                     <li><a href="#">Реквизиты</a></li>
                     <li><a href="#">Производство</a></li>
 

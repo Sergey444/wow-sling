@@ -13,17 +13,19 @@
                                     <img src="<?php echo '/template/'.$product['img']; ?>" width="200" height="300" alt="Слинг">
                                     <h4><?php echo $product['name']; ?></h4>
                             </a>
-                            <p><?php echo $product['description'];?></p>
+                            
+                            
                             <div class="goods__buttons <?php if ($product['availability'] > 0) { echo 'goods__buttons--this'; } ?>">
-                                    <a class="btn  goods__buttons--is  baskin" data-id = "<?php echo $product['id']; ?>" href="/cart/add/<?php echo $product['id'];?>">Корзина</a>
-                                    <a class="btn  goods__buttons--is"  href="#">Купить</a>
+                                
+                                    <p class="catalog__price"><i><b>Цена: <?php echo $product['price'];?> &#8381</b></i></p>
+                                    <a class="btn  goods__buttons--is  baskin" data-id = "<?php echo $product['id']; ?>" href="/cart/add/<?php echo $product['id'];?>">В корзину</a>
+                                    <a class="btn  goods__buttons--is"  href="/cart/chooseone/<?php echo $product['id'];?>/buy">Купить в один клик</a>
+                                    <a class="btn  goods__buttons--isnt  goods__buttons--availability">Нет в наличии</a>
                                     <a class="btn  goods__buttons--isnt" href="<?php echo $product['id']; ?>">Заказать</a>
                             </div>
                     </li>
 
                     <?php endforeach; ?>
-
-
                 </ul>
 
             </div>

@@ -28,7 +28,9 @@ class Product
             $productsList[$i]['name'] = $row['name'];
             $productsList[$i]['description'] = $row['description'];
             $productsList[$i]['img'] = $row['img'];
+            $productsList[$i]['price'] = $row['price'];
             $productsList[$i]['availability'] = $row['availability'];
+            $productsList[$i]['category_id'] = Category::getCategory($row['category_id']);
             $i++;
         }
         
@@ -63,6 +65,7 @@ class Product
                 $productsList[$i]['description'] = $row['description'];
                 $productsList[$i]['img'] = $row['img'];
                 $productsList[$i]['availability'] = $row['availability'];
+                $productsList[$i]['price'] = $row['price'];
                 $i++;
             }
 
@@ -70,7 +73,7 @@ class Product
         }
     }
     
-    public static function getOneProduct($param, $id) 
+    public static function getOneProduct($id) 
     {
         
         $db = Db::getConnection();
@@ -126,6 +129,59 @@ class Product
         return $products;
     }
     
+    public static function getProductsList()
+    {
+        $db = Db::getConnection();
+        
+        //Получение и возврат результатов
+        $result = $db->query('SELECT * FROM backpack ORDER BY id ASC');
+        $productsList = array();
+        $i = 0;
+        while ($row = $result->fetch_assoc()) {
+            $productsList[$i]['id'] = $row['id'];
+            $productsList[$i]['name'] = $row['name'];
+            $productsList[$i]['price'] = $row['price'];
+            $productsList[$i]['availability'] = $row['availability'];
+            $productsList[$i]['category_id'] = $row['category_id'];
+            $i++;
+        }
+        return $productsList;
+    }
+    
+    
+    /**
+     * Удаляет товар с указанным id
+     * @param integer $id <p>id товара</p>
+     * $return boolean <p>Результат выполнения метода</p>
+     */
+    public static function deleteProductById($id)
+    {
+        //Соединение с базой данных
+        $db = Db::getConnection();
+        
+        //Текст запроса к базе данных
+        $result = $db->query('DELETE FROM backpack WHERE id = '.$id);
+        
+        return $result;
+    }
+    
+    
+    public static function createProduct($options)
+    {
+        //Соединение с БД
+        $db = Db::getConnection();
+        
+        //Текст запроса к БД
+        $sql = $db->query('INSERT INTO backpack (img, name, description, price, availability, category_id) VALUES ("'.$options['img'].'", "'.$options['name'].'",'
+                . ' "'.$options['description'].'", '.$options['price'].', '.$options['availability'].', '.$options['category_id'].')');
+        
+        //если запрос выполнен успешно возвращает id добавленной записи
+        if ($sql) {
+            return $db->query('SELECT id FROM backpack ORDER BY id DESC LIMIT 1');
+        }
+        
+        return 0;
+    }
     
     
 }

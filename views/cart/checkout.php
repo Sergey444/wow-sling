@@ -11,7 +11,13 @@
 
 
 				 <div class="form-data__block-head">
-                     <p><?php echo $totalQuantity; ?>, на сумму: <?php echo $totalPrice; ?> рублей</p><br>
+                     Вы выбрали:<br>
+                     <?php  foreach ($products as $product) :?>
+                         <span>- <?php echo $product['name'].' ';
+                                  echo $_SESSION['products'][$product['id']].' шт<br>';?></span>
+                     <?php endforeach; ?>
+
+                     <p>на сумму: <?php echo $totalPrice; ?> рублей.</p><br>
 
                      <?php if (isset($errors) && is_array($errors)) : ?>
                          <ul>
@@ -21,7 +27,8 @@
                          </ul>
                      <?php endif; ?>
 
-                	<p class="form-data__content">Мы будем рады воплотить в жизнь ваши пожелпния! Заполните простую форму заказа, и мы свяжемся с вами, что бы уточнить детали.</p>
+                	<p class="form-data__content">Мы будем рады воплотить в жизнь ваши пожелания!
+                         Заполните простую форму заказа, и мы свяжемся с вами, что бы уточнить детали.</p>
 
                 </div>
 

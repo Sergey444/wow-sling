@@ -16,14 +16,19 @@ class CartController
         
     }
     
-    public function actionDelete($id) {
-        
+    public function actionDelete($id) 
+    {
         //Удаление товара из корзины
         echo Cart::deleteProduct($id);
-        
-        
-        
+            
         //возвращаем пользователя на страницу
+        header("Location: /cart/");
+    }
+    
+    public function actionDeleteOne($id) 
+    {
+        echo Cart::deleteOneProduct($id);
+        
         header("Location: /cart/");
     }
     
@@ -31,7 +36,7 @@ class CartController
     {
         //Добавляем товар в корзину
         echo Cart::addProduct($id);
-        
+        //var_dump($_SESSION['products']);
        
         return true;
     }
@@ -195,6 +200,4 @@ class CartController
         return true;
         
     }
-    
-    
 }

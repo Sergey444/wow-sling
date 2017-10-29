@@ -4,18 +4,6 @@
 			<!-- <div class="slider-main__overlay"></div> -->
 		</section>
 
-        <!-- <div class="cycle-slideshow  slider slider-main"
-            data-cycle-fx="scrollHorz"
-            data-cycle-pause-on-hover="true"
-            data-cycle-speed="200"
-
-            >
-            <img src="/template/img/slide1.jpg" height="300">
-            <img src="/template/img/slide2.jpg" height="300">
-            <img src="/template/img/slide3.jpg" height="300">
-            <img src="/template/img/slide4.jpg" height="300">
-        </div> -->
-
 		<section class="advantages slider slider--nojs">
 
 			<div class="advantages__wrapper">
@@ -32,12 +20,14 @@
 
 					<li class="advantages__item  advantages__item--design  ">
 						<h3 class="advantages__item-title">Индивидуальный дизайн</h3>
-						<p>Вы можете заказать слинг по индивидуальному дизайну! Свяжитесь с нами: slingostudio@gmail.com</p>
+						<p>Вы можете заказать слинг по индивидуальному дизайну! </p>
+                                                <a class="btn" href="">Свяжитесь с нами</a>
 					</li>
 
 					<li class="advantages__item  advantages__item--help ">
 						<h3 class="advantages__item-title">Помощь</h3>
-						<p>Бесплатная помощь слингоконсультанта до и после покупки</p>
+						<p>Бесплатная помощь слингоконсультанта до и после покупки в нашем магазине</p>
+                                                
 					</li>
 				</ul>
 
@@ -56,16 +46,18 @@
 				<ul class="goods__items">
                                         <?php foreach ($latestProducts as $latestProduct): ?>
 					<li class="goods__item">
-						<a class="goods__img" data-title="Подробнее" href="/catalog/backpack/<?php echo $latestProduct['id']; ?>">
+						<a class="goods__img" data-title="Подробнее" href="/catalog/<?php echo $latestProduct['category_id']; ?>/<?php echo $latestProduct['id']; ?>">
 							<img src="<?php echo '/template/'.$latestProduct['img']; ?>" width="200" height="300" alt="Слинг">
 							<h4><?php echo $latestProduct['name']; ?></h4>
 						</a>
 						<p><?php echo $latestProduct['description'];?></p>
 
 						<div class="goods__buttons <?php if ($latestProduct['availability'] > 0) { echo 'goods__buttons--this'; } ?>">
+                                                    <p class="catalog__price"><i><b>Цена: <?php echo $latestProduct['price'];?> &#8381</b></i></p>
                                 <a class="btn  goods__buttons--is baskin" data-id = "<?php echo $latestProduct['id']; ?>" href="/cart/add/<?php echo $latestProduct['id'];?>">В корзину</a>
-                                <a class="btn  goods__buttons--is"  href="/cart/checkout/">Купить</a>
-                                <a class="btn  goods__buttons--isnt" href="/catalog/backpack/<?php echo $latestProduct['id']; ?>">Заказать</a>
+                                <a class="btn  goods__buttons--is"  href="/cart/chooseone/<?php echo $latestProduct['id'];?>/buy">Купить</a>
+                                <a class="btn  goods__buttons--isnt">Нет в наличии</a>
+                                <a class="btn  goods__buttons--isnt" href="/catalog/<?php echo $latestProduct['category_id']; ?>/<?php echo $latestProduct['id']; ?>">Заказать</a>
 						</div>
 					</li>
 
@@ -109,9 +101,6 @@
         <script src="/template/js/slider.js"></script>
         <script src="/template/js/advantages-slider.js"></script>
 
-        <!-- <script src="/template/js/jquery.js"></script>
-        <script src="/template/js/jquery.cycle2.min.js"></script>
-        <script src="/template/js/jquery.cycle2.shuffle.min.js"></script> -->
 
 
 <?php include ROOT.'/views/layouts/footer.php' ?>

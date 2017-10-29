@@ -20,6 +20,8 @@ class SiteController
 //print_r($latestProducts);
 //echo '</pre>';
         
+        
+        
         require_once(ROOT.'/views/site/index.php');
         
         return true;

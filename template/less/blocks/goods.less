@@ -87,6 +87,18 @@
     margin-top: auto;
     margin-bottom: 10px;
 
+    &--availability {
+        cursor: default;
+         &:hover {
+             color: black;
+         }
+    }
+
+    &--availability::after,
+    &--availability::before {
+           display: none;
+    }
+
     &--is {
         display: none;
     }
@@ -94,15 +106,18 @@
     &--isnt {
         display: block;
         margin: 0 20px;
+        margin-top: 10px;
     }
 
     &--this .goods__buttons--isnt {
         display: none;
+
     }
 
     &--this .goods__buttons--is {
-        display: inline-block;
-
+        display: block;
+        margin: 0 20px;
+        margin-top: 10px;
     }
 }
 
