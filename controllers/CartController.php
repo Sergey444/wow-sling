@@ -133,7 +133,9 @@ class CartController
                 //Сохраняем заказ в базе данных
                 
                 //Собираем информацию о заказе
-                $productsInCart = Cart::getProducts();
+                //$productsInCart = Cart::getProducts();
+               
+                $productsInCart = $_SESSION['products'];
                 
                 //Сохраняем заказ в БД
                 $result = Order::save($userName, $userPhone, $userEmail, $userCity, $userPostOrder, $userStreet, $userHouse, $userFlat, $userInfo, $userAgree, $productsInCart);

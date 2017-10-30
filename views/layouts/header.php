@@ -9,7 +9,7 @@
 
 		<title>Wow Sling</title>
 		<script src="/template/js/check-menu.js"></script>
-		  
+
 		<script type="text/javascript" src="//vk.com/js/api/openapi.js?150"></script> <!-- Для виджета вконтакте-->
 	</head>
 	 <body>

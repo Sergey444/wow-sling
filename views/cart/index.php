@@ -19,12 +19,12 @@
 
                 <?php foreach ($products as $product): ?>
                     <tr class="cart__table-string">
-                        <td class="cart__table-cell  cart__table-cell--photo"><img src="/template/<?php echo $product['img']; ?>" width="50" height="50"></td>
+                        <td class="cart__table-cell  cart__table-cell--photo"><img src="<?php echo Product::getImage($product['id']); ?>" width="50" height="50"></td>
                         <td class="cart__table-cell"><?php echo $product['name']; ?></td>
 
                         <td class="cart__table-cell  cart__table-cell--count">
                             <a class="cart__minus"   href="/cart/deleteOne/<?php echo $product['id'];?>">-</a>
-                                <span id="<?php echo $product['id'];?>"><?php echo $productsInCart[$product['id']] ?></span>
+                                <span id="<?php echo $product['id']; ?>"> <?php echo $productsInCart[$product['id']] ?></span>
                             <a class="cart__plus" data-id = "<?php echo $product['id']; ?>" href="/cart/add/<?php echo $product['id'];?>">+</a>
                         </td>
                         <td class="cart__table-cell"><?php echo $product['price'];?> </td>

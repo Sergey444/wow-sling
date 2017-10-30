@@ -1,10 +1,10 @@
-
+<?php include ROOT.'/views/layouts/admin_header.php'?>
 
 <section>
     <div>
         <ol>
-            <li><a href="/admin">Админпанель</a></li>
-            <li><a href="/admin/product">Управление товарами</a></li>
+            <li><a href="/admin" class="admin-btn">Админпанель</a></li>
+            <li><a href="/admin/product" class="admin-btn">Управление товарами</a></li>
             <li>Удалить товар</li>
         </ol>
     </div>
@@ -17,3 +17,5 @@
         <input type="submit" name="submit" value="Удалить">
     </form>
 </section>
+
+<?php include ROOT.'/views/layouts/admin_footer.php'?>

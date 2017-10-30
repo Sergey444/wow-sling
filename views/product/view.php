@@ -6,7 +6,7 @@
 				<div class="one-goods__top">
 					<a class="one-goods__link" >
 						<h3 class="one-goods__title"><?php echo $viewItem['name'];?></h3>
-						<img src="<?php echo '/template/'.$viewItem['img'];?>" width="400" height="500" alt="Слинг">
+						<img src="<?php echo /*'/template/'.$viewItem['img'];*/Product::getImage($viewItem['id']);?>" width="400" height="500" alt="Слинг">
 					</a>
 					<div class="one-goods__info">
 
@@ -18,7 +18,7 @@
                                     <p class="one-goods__availability  one-goods__availability--ok">В наличии</p>
                                     <?php else : ?>
                                     <p class="one-goods__availability">Нет в наличии </p>
-									<p>(мы привезём Вам его через две недели прямо домой)</p>
+									<p class="one-goods__delivery">На пошив и доставку к вам этого слинга нам необходимо некоторое время<br>МЫ ДОСТАВИМ ЕГО В ВАШЕ ПОЧТОВОЕ ОТДЕЛЕНИЕ ЧЕРЕЗ ДВЕ НЕДЕЛИ  </p>
 									<a class="vissual-hidden" href="https://ru.icons8.com/icon/13114/Отмена"></a>
                                     <?php endif; ?>
 

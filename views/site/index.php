@@ -1,5 +1,5 @@
 <?php include ROOT.'/views/layouts/header.php' ?>
-
+    
         <section  class="slider  slider-main" id="slider">
 			<!-- <div class="slider-main__overlay"></div> -->
 		</section>
@@ -27,7 +27,7 @@
 					<li class="advantages__item  advantages__item--help ">
 						<h3 class="advantages__item-title">Помощь</h3>
 						<p>Бесплатная помощь слингоконсультанта до и после покупки в нашем магазине</p>
-                                                
+
 					</li>
 				</ul>
 
@@ -47,16 +47,16 @@
                                         <?php foreach ($latestProducts as $latestProduct): ?>
 					<li class="goods__item">
 						<a class="goods__img" data-title="Подробнее" href="/catalog/<?php echo $latestProduct['category_id']; ?>/<?php echo $latestProduct['id']; ?>">
-							<img src="<?php echo '/template/'.$latestProduct['img']; ?>" width="200" height="300" alt="Слинг">
+							<img src="<?php echo Product::getImage($latestProduct['id']); ?>" width="200" height="300" alt="Слинг">
 							<h4><?php echo $latestProduct['name']; ?></h4>
 						</a>
-						<p><?php echo $latestProduct['description'];?></p>
+						
 
 						<div class="goods__buttons <?php if ($latestProduct['availability'] > 0) { echo 'goods__buttons--this'; } ?>">
-                                                    <p class="catalog__price"><i><b>Цена: <?php echo $latestProduct['price'];?> &#8381</b></i></p>
+                                <p class="catalog__price"><i><b>Цена: <?php echo $latestProduct['price'];?> &#8381</b></i></p>
                                 <a class="btn  goods__buttons--is baskin" data-id = "<?php echo $latestProduct['id']; ?>" href="/cart/add/<?php echo $latestProduct['id'];?>">В корзину</a>
                                 <a class="btn  goods__buttons--is"  href="/cart/chooseone/<?php echo $latestProduct['id'];?>/buy">Купить</a>
-                                <a class="btn  goods__buttons--isnt">Нет в наличии</a>
+                                <a class="btn  goods__buttons--isnt  goods__buttons--availability">Нет в наличии</a>
                                 <a class="btn  goods__buttons--isnt" href="/catalog/<?php echo $latestProduct['category_id']; ?>/<?php echo $latestProduct['id']; ?>">Заказать</a>
 						</div>
 					</li>

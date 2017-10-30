@@ -10,7 +10,7 @@
 
                     <li class="catalog__item">
                             <a class="goods__img" data-title="Подробнее" href="<?php echo $product['id']; ?>">
-                                    <img src="<?php echo '/template/'.$product['img']; ?>" width="200" height="300" alt="Слинг">
+                                    <img src="<?php echo /*'/template/'.$product['img'];*/Product::getImage($product['id']); ?>" width="200" height="300" alt="Слинг">
                                     <h4><?php echo $product['name']; ?></h4>
                             </a>
                             
