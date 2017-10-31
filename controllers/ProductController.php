@@ -88,14 +88,21 @@ class ProductController {
             
             //Форма заполнена корректно?
             if ($errors == false) {
+                
+                // Смотрим какой способ доставки выбрал пользователь
+                $delivery = 0;
+                if ($param == 'book') {
+                    $delivery = 4;
+                }
                 //echo 'Форма заполнена корректно? Да';
                 //Сохраняем заказ в базе данных
                 
-                //Собираем информацию о заказе
-                $productsInCart = Product::getOneProduct($id);
                 
+                //Собираем информацию о заказе
+                $productsInCart[$id] = 1;
+                //var_dump($productsInCart); die();
                 //Сохраняем заказ в БД
-                $result = Order::save($userName, $userPhone, $userEmail, $userCity, $userPostOrder, $userStreet, $userHouse, $userFlat, $userInfo, $userAgree, $productsInCart);
+                $result = Order::save($userName, $userPhone, $userEmail, $userCity, $userPostOrder, $userStreet, $userHouse, $userFlat, $userInfo, $userAgree, $productsInCart, $delivery);
                 
                 
                 if ($result) {
@@ -104,7 +111,6 @@ class ProductController {
                     $messege = 'http://wow-sling/admin/orders';
                     $subject = 'Новый заказ';
                     mail($adminEmail, $subject, $messege);
-                    
                     
                     
                 }
@@ -120,6 +126,7 @@ class ProductController {
             //Форма отправлена? Нет
              
             //Получаем данные из корзины
+            
             $productsInCart = Product::getOneProduct($id);
             
             //В корзине есть товары?

@@ -12,15 +12,14 @@
 
 		<script type="text/javascript" src="//vk.com/js/api/openapi.js?150"></script> <!-- Для виджета вконтакте-->
 	</head>
-	<body>
-             
-             <header>
-                 <ul>
-                    <li> <a class="admin-btn" href="/admin">Админпанель</a></li>
-                    <li><a class="admin-btn" href="/admin/product/">Управление товарами</a></li>
-                    <li><a class="admin-btn" href="/admin/order/">Управление заказами</a></li>
+	<body class="admin">
+		<div class="admin__wrapper">
+             <header class="   admin__menu">
+
+
+                 <ul class=" admin__menu-items">
+                    <li class=" admin__menu-item"> <a class="admin-btn  admin-btn__menu" href="/admin">Админпанель</a></li>
+                    <li class="  admin__menu-item"><a class="admin-btn admin-btn__menu" href="/admin/product/">Управление товарами</a></li>
+                    <li class="  admin__menu-item"><a class="admin-btn admin-btn__menu" href="/admin/order/">Управление заказами</a></li>
                 </ul>
              </header>
-
-          
-

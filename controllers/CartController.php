@@ -134,11 +134,15 @@ class CartController
                 
                 //Собираем информацию о заказе
                 //$productsInCart = Cart::getProducts();
-               
+                if (!isset($_SESSION['products'])) {
+                    header("Location: /cart/");
+                    return true;
+                }
+                
                 $productsInCart = $_SESSION['products'];
                 
                 //Сохраняем заказ в БД
-                $result = Order::save($userName, $userPhone, $userEmail, $userCity, $userPostOrder, $userStreet, $userHouse, $userFlat, $userInfo, $userAgree, $productsInCart);
+                $result = Order::save($userName, $userPhone, $userEmail, $userCity, $userPostOrder, $userStreet, $userHouse, $userFlat, $userInfo, $userAgree, $productsInCart, $delivery);
                 
                 
                 if ($result) {
@@ -153,6 +157,8 @@ class CartController
                     
                     Cart::clear();
                 }
+                
+                
             } else {
                 //Форма заполнена корректно ? Нет 
                 

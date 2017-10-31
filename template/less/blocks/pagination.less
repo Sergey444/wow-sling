@@ -12,11 +12,16 @@
     border-radius: 50%;
     border: 1px solid @color-pink-title;
     color: @color-pink-title;
+    box-shadow: 0 0 3px 0 @color-pink-title;
     &:hover {
 
         background-color: @color-pink-title;
         color: white;
     }
+}
+
+.pagination__items {
+    display: block;
 }
 
 .pagination .active a{
@@ -28,5 +33,9 @@
 @media @tablet-widths {
     .pagination {
         justify-content: flex-start;
+    }
+
+    .pagination__items {
+        display: none;
     }
 }

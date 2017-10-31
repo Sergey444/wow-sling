@@ -10,7 +10,12 @@ class User
     {
         $db = Db::getConnection();
        
-        $result = $db->query('SELECT * FROM user where login = "'.$login.'" AND password = "'.$password.'"');
+        //$result = $db->query('SELECT * FROM user where login = "'.$login.'" AND password = "'.$password.'"');
+        
+        $result = $db->prepare('SELECT * FROM user where login = ? AND password = ? ');
+        $result->bind_param('ss', $login, $password);
+        $result->execute();
+        $result = $result->get_result();
         
         $user = $result->fetch_assoc();
         if ($user) {

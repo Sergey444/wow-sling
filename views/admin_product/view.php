@@ -1,6 +1,6 @@
-<?php include ROOT.'/views/layouts/admin_header.php'?>
+<?php include ROOT.'/views/layouts/admin_header.php'; ?>
 
-    <table class="admin-table">
+    <table class="admin__table">
 
             <tr>
                 <td>Название товара</td>
@@ -33,4 +33,4 @@
 
     </table>
 
-<?php include ROOT.'/views/layouts/admin_footer.php'?>
+<?php include ROOT.'/views/layouts/admin_footer.php'; ?>

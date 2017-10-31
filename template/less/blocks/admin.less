@@ -1,0 +1,64 @@
+.admin {
+    background-image: none;
+    position: relative;
+    background: #e5e5e5;
+
+    text-align: center;
+
+}
+
+.admin__wrapper {
+    .container-fluid();
+}
+
+.admin__menu-items {
+    margin: 20px 0;
+}
+
+
+.admin__table {
+    width: 100%;
+
+    border-collapse: collapse;
+    text-align: center;
+    //margin: 0 auto;
+}
+
+.admin__table td,
+.admin__table th {
+    border: 1px solid black;
+
+
+}
+
+.admin__form {
+    text-align: center;
+    margin: 0 auto;
+    width: 60%;
+    border: 1px solid black;
+}
+
+.admin__input,
+.admin__textarea,
+.admin__select {
+    min-width: 90%;
+    //line-height: 30px;
+    padding: 10px;
+}
+
+.admin__textarea {
+    min-height: 300px;
+}
+
+
+
+@media @tablet-widths {
+    .admin {
+        text-align: left;
+    }
+    .admin__menu-items {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+    }
+}

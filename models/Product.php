@@ -1,7 +1,7 @@
 <?php
 
-
-
+//
+//
 class Product 
 {
     const SHOW_BY_DEFAULT = 8;
@@ -27,7 +27,6 @@ class Product
             $productsList[$i]['id'] = $row['id'];
             $productsList[$i]['name'] = $row['name'];
             $productsList[$i]['description'] = $row['description'];
-            //$productsList[$i]['img'] = $row['img'];
             $productsList[$i]['price'] = $row['price'];
             $productsList[$i]['availability'] = $row['availability'];
             $productsList[$i]['category_id'] = Category::getCategory($row['category_id']);
@@ -47,6 +46,7 @@ class Product
                 $param = 1;
             }
             
+            $param = intval($param);
             $page = intval($page);
             $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
             
@@ -55,9 +55,13 @@ class Product
             $productsList = array();
 
 
-            $result = $db->query('SELECT*FROM backpack WHERE id > 0 AND category_id = '.$param.' ORDER BY availability DESC LIMIT '.self::SHOW_BY_DEFAULT.' OFFSET '.$offset.'');
-
-
+            //$result = $db->query('SELECT*FROM backpack WHERE id > 0 AND category_id = '.$param.' ORDER BY availability DESC LIMIT '.self::SHOW_BY_DEFAULT.' OFFSET '.$offset.'');
+            
+            $result = $db->prepare('SELECT*FROM backpack WHERE id > 0 AND category_id = ? ORDER BY availability DESC LIMIT '.self::SHOW_BY_DEFAULT.' OFFSET ?');
+            $result->bind_param('ii', $param, $offset);
+            $result->execute();
+            $result = $result->get_result();
+            
             $i = 0;
             while($row = $result->fetch_assoc()) {
                 $productsList[$i]['id'] = $row['id'];
@@ -76,12 +80,19 @@ class Product
     public static function getOneProduct($id) 
     {
         
+        $id = intval($id);
+        
         $db = Db::getConnection();
         
         $productItem = array();
         
         
-        $result = $db->query('SELECT*FROM backpack WHERE id = '.$id.'');
+        //$result = $db->query('SELECT*FROM backpack WHERE id = '.$id.'');
+        
+        $result = $db->prepare('SELECT*FROM backpack WHERE id = ?');
+        $result->bind_param('i', $id);
+        $result->execute();
+        $result = $result->get_result();
         
         $productItem = $result->fetch_assoc();
         
@@ -95,11 +106,16 @@ class Product
         } else {
             $param = 1;
         }
-        
+        $param = intval($param);
         
         $db = Db::getConnection();
         
-        $result = $db->query('SELECT count(id) AS count FROM backpack WHERE id > 0 AND category_id = '.$param.'');
+        //$result = $db->query('SELECT count(id) AS count FROM backpack WHERE id > 0 AND category_id = '.$param.'');
+        
+        $result = $db->prepare('SELECT count(id) AS count FROM backpack WHERE id > 0 AND category_id = ?');
+        $result->bind_param('s', $param);
+        $result->execute();
+        $result = $result->get_result();
         $row = $result->fetch_assoc();
         
         return $row['count'];
@@ -111,11 +127,19 @@ class Product
         
         $db = Db::getConnection();
         
+        
         $idsString = implode(',', $idsArray);
         
-        $sql = "SELECT * FROM backpack WHERE id IN ($idsString)";
+        $idsString = htmlspecialchars($idsString);
         
+        $sql = "SELECT * FROM backpack WHERE id IN ($idsString)";
         $result = $db->query($sql);
+        
+//        $result= $db->prepare("SELECT * FROM backpack WHERE id IN (?)");
+//        $result->bind_param('s', $idsArray);
+//        $result->execute();
+//        $result = $result->get_result();
+        
         
         $i = 0;
         while ($row = $result->fetch_assoc()) {
@@ -150,7 +174,7 @@ class Product
     
     
     /**
-     * Удаляет товар с указанным id
+     * Удаляет товар с указанным id из БД
      * @param integer $id <p>id товара</p>
      * $return boolean <p>Результат выполнения метода</p>
      */
@@ -159,9 +183,14 @@ class Product
         //Соединение с базой данных
         $db = Db::getConnection();
         
+        $id = intval($id);
         //Текст запроса к базе данных
-        $result = $db->query('DELETE FROM backpack WHERE id = '.$id);
+        //$result = $db->query('DELETE FROM backpack WHERE id = '.$id);
         
+        $result = $db->prepare('DELETE FROM backpack WHERE id = ?');
+        $result->bind_param('i', $id);
+        $result->execute();
+
         return $result;
     }
     
@@ -175,10 +204,18 @@ class Product
         //Соединение с БД
         $db = Db::getConnection();
         
+        $name = htmlspecialchars($options['name']);
+        $description = htmlspecialchars($options['description']);
+        $price = htmlspecialchars($options['price']);
+        $availability = htmlspecialchars($options['availability']);
+        $category_id = htmlspecialchars($options['category_id']);
         //Текст запроса к БД
-        $sql = $db->query('INSERT INTO backpack ( name, description, price, availability, category_id) VALUES ( "'.$options['name'].'",'
-                . ' "'.$options['description'].'", '.$options['price'].', '.$options['availability'].', '.$options['category_id'].')');
-        
+//        $sql = $db->query('INSERT INTO backpack ( name, description, price, availability, category_id) VALUES ( "'.$options['name'].'",'
+//                . ' "'.$options['description'].'", '.$options['price'].', '.$options['availability'].', '.$options['category_id'].')');
+        $sql = $db->prepare('INSERT INTO backpack ( name, description, price, availability, category_id) VALUES ( ?, ?, ?, ?, ?)');
+        $sql->bind_param('ssiii', $name, $description, $price, $availability, $category_id );
+        $sql->execute();
+        $sql = $sql->get_result();
         //если запрос выполнен успешно возвращает id добавленной записи
         if ($sql) {
             $result = $db->query('SELECT id FROM backpack ORDER BY id DESC LIMIT 1');
@@ -199,17 +236,23 @@ class Product
         //Соединение с базой данных
         $db = Db::getConnection();
         
-        $name = $options['name'];
-        //$img = $options['img'];
-        $description = $options['description'];
-        $price = $options['price'];
-        $availability = $options['availability'];
-        $category_id = $options['category_id'];
+        $id = intval($id);
+        $name = htmlspecialchars($options['name']);
+        $description = htmlspecialchars($options['description']);
+        $price = htmlspecialchars($options['price']);
+        $availability = htmlspecialchars($options['availability']);
+        $category_id = htmlspecialchars($options['category_id']);
         
         
         //Текст запроса к БД
-        $result = $db->query('UPDATE backpack SET  name="'.$name.'", description="'.$description.'", price="'.$price.'", availability="'.$availability.'",'
-                . 'category_id="'.$category_id.'" WHERE id ='.$id);
+//        $result = $db->query('UPDATE backpack SET  name="'.$name.'", description="'.$description.'", price="'.$price.'", availability="'.$availability.'",'
+//                . 'category_id="'.$category_id.'" WHERE id ='.$id);
+     
+        $result = $db->prepare('UPDATE backpack SET  name= ? , description= ? , price= ?, availability= ? , category_id= ?  WHERE id = ? ');
+        $result->bind_param('ssiiii', $name, $description, $price, $availability, $category_id, $id);
+        $result->execute();
+
+        
         
         return $result; 
     }

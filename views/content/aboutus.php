@@ -2,11 +2,11 @@
 
 
 
-     <div class="social-blocks">
+     <section class="social-blocks">
 
        <div class="social-blocks__wrapper">
 
-           <section class="about-shop  ">
+           <div class="about-shop  ">
                <div class="vk_subscribe">
                    <div id="vk_subscribe" class=""></div>
                </div>
@@ -26,7 +26,7 @@
 
                    </p>
                </div>
-           </section>
+           </div>
            <!--<div class="social-blocks__vk" id="vk_groups"></div>-->
             <div class="social__block">
                 <img class="social__block-img" src="/template/img/muy.jpg" >
@@ -38,7 +38,7 @@
 
 
        </div>
-    </div>
+   </section>
 
 
 
