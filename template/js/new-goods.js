@@ -1,59 +1,63 @@
-var goods = document.querySelector('.goods');
-    goods.classList.remove('goods--nojs');
 
-var next = document.querySelector('.goods__next');
-var prev = document.querySelector('.goods__prev');
-    next.addEventListener('click', nextGoods);
-    prev.addEventListener('click', prevGoods);
+var goods = document.getElementsByClassName('goods');
+    for (var i = 0; i < goods.length; i++) {
+        goods[i].classList.remove('goods--nojs');
+    }
 
+var next = document.getElementsByClassName('goods__next');
+var prev = document.getElementsByClassName('goods__prev');
+    for (var i = 0; i < next.length; i++) {
+        next[i].addEventListener('click', nextGoods);
+    }
+    for (var i = 0; i < prev.length; i++) {
+        prev[i].addEventListener('click', prevGoods);
+    }
 
-
-
+    var degree = 0;
 
     function nextGoods() {
-        var goodsItems = document.querySelector('.goods__items');
-        //var elem = goodsItems.style.transform;
-        var goodsWrapper = document.querySelector('.goods__wrapper');
-        var width = document.body.offsetWidth;
-        //console.log(width);
 
-        if (window.degree == undefined) {
-            window.degree = 12.5;
-        } else if (width > 1182 && window.degree >= 50 ) {
-            window.degree = 0;
+            var goodsItems = this.parentElement.querySelector('.goods__items');
+            var width = document.body.offsetWidth;
 
-        } else if (width > 750  && window.degree >= 75 ) {
-            window.degree = 0;
+            if (degree == undefined) {
+                degree = 12.5;
+            } else if (width > 1182 && degree >= 50 ) {
+                degree = 0;
 
-        } else if (width < 750  && window.degree >= 87.5 ) {
-            window.degree = 0;
+            } else if (width > 750  && degree >= 75 ) {
+                degree = 0;
 
-        } else {
-            window.degree += 12.5;
-        }
+            } else if (width < 750  && degree >= 87.5 ) {
+                degree = 0;
 
-        goodsItems.style.transform = 'translate(-' + degree + '%)';
-        //console.log(elem);
+            } else {
+
+                degree += 12.5;
+
+            }
+            goodsItems.style.transform = 'translate(-' + degree + '%)';
     }
 
     function prevGoods() {
-        var goodsItems = document.querySelector('.goods__items');
-        var elem = goodsItems.style.transform;
-        var width = document.body.offsetWidth;
 
-        if (window.degree == undefined || window.degree == 0) {
-            if (width > 1182) {
-                window.degree = 50;
-            } else if (width > 750) {
-                window.degree = 75;
+            var goodsItems = this.parentElement.querySelector('.goods__items');
+            //var elem = goodsItems.style.transform;
+            var width = document.body.offsetWidth;
+
+
+
+            if (degree == undefined || degree == 0) {
+                if (width > 1182) {
+                    degree = 50;
+                } else if (width > 750) {
+                    degree = 75;
+                } else {
+                    degree = 87.5;
+                }
             } else {
-                window.degree = 87.5;
+                degree -= 12.5;
             }
-        } else {
-            window.degree -= 12.5;
-        }
 
         goodsItems.style.transform = 'translate(-' + degree + '%)';
-
-        console.log(degree);
     }

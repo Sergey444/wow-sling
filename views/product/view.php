@@ -24,8 +24,9 @@
 
                             <div class="goods__buttons <?php if ($viewItem['availability'] > 0) { echo 'goods__buttons--this'; } ?>">
                                 <a class="btn  goods__buttons--is  baskin" data-id="<?php echo $viewItem['id']; ?>" href="/cart/add/<?php echo $viewItem['id'];?>">В корзину</a>
-								<a class="btn  goods__buttons--is" href="/cart/chooseone/<?php echo $viewItem['id'];?>" >Купить</a>
-                                      <a class="btn  goods__buttons--isnt" href="/cart/chooseone/<?php echo $viewItem['id'];?>/book">Заказать</a>
+								<a class="btn  goods__buttons--is  buy" data-id = "<?php echo $viewItem['id']; ?>"  href="/cart/chooseone/<?php echo $viewItem['id'];?>/buy">Купить в один клик</a>
+								<!-- //<a class="btn  goods__buttons--is" href="/cart/chooseone/<?php echo $viewItem['id'];?>" >Купить</a> -->
+                              <a class="btn  goods__buttons--isnt" href="/cart/chooseone/<?php echo $viewItem['id'];?>/book">Заказать</a>
 							</div>
 						</div>
 

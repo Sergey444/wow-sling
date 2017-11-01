@@ -1,0 +1,34 @@
+.hits__items {
+    width: 400%;
+}
+
+.hits__wrapper {
+
+}
+
+.hits__prev { //Такое же значение как и у goods__prev
+    left: 0;
+    transform: scale(-1, 1);
+    }
+
+
+@media @tablet-widths {
+    .hits__items {
+        width: 200%;
+    }
+}
+
+@media @desktop-widths {
+    .hits__items {
+        width: 100%;
+    }
+
+    .hits__item {
+        //width: 200%;
+    }
+
+    .hits__prev,
+    .hits__next {
+        display: none;
+    }
+}

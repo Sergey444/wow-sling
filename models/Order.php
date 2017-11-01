@@ -30,7 +30,7 @@ class Order
             $userFlat = htmlspecialchars($userFlat);
             $userInfo = htmlspecialchars($userInfo);
             $userAgree = htmlspecialchars($userAgree);
-            $productsInCart = htmlspecialchars($productsInCart);
+            $productsInCart = $productsInCart;
             $delivery = htmlspecialchars($delivery);
 
             $products = json_encode($productsInCart);

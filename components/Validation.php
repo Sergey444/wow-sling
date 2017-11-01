@@ -4,7 +4,7 @@ class Validation
 {
     public static function checkName($name) 
     {
-        if (strlen($name) >= 2) {
+        if (strlen(trim($name)) >= 2) {
             return true;
         } 
         return false;
@@ -12,7 +12,7 @@ class Validation
     
     public static function checkPhone($phone)
     {
-        if (strlen($phone) >= 6) {
+        if (strlen(trim($phone)) >= 6) {
             return true;
         }
         return false;

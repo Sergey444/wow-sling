@@ -16,10 +16,13 @@ class SiteController
         $latestProducts = array();
         $latestProducts = Product::getLatestProducts();
         
-// echo '<pre>';
-//print_r($latestProducts);
-//echo '</pre>';
+        $hitsProducts = array();
+        $hitsProducts = Product::getHitsProducts();
         
+// echo '<pre>';
+//print_r($hitsProducts);
+//echo '</pre>';
+      
         
         
         require_once(ROOT.'/views/site/index.php');

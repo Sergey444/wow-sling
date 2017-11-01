@@ -1,4 +1,4 @@
-        <?php include ROOT.'/views/layouts/header.php'?>
+        <?php include ROOT.'/views/layouts/header.php';?>
 <section>
 
 <form action="" method="POST" class="form-data">
@@ -127,4 +127,4 @@
     </section>
     <script src="/template/js/valid-form.js"></script>
 
-<?php include ROOT.'/views/layouts/footer.php'?>
+<?php include ROOT.'/views/layouts/footer.php';?>

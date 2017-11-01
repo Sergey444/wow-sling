@@ -19,7 +19,7 @@
         xhr.open( 'POST', '/cart/addAjax/' + id,  true) ;
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send();
-
+        
         xhr.onreadystatechange = function() {
             basc.textContent = xhr.responseText;
             console.log();

@@ -33,6 +33,7 @@ class AdminOrderController extends AdminBase
         //Получаем массив с идентификаторами и количеством товаров
         $productsQuantity = json_decode($order['products'], true);
         
+        
         //Получаем с идентификаторами товаров
         $productsIds = array_keys($productsQuantity);
         

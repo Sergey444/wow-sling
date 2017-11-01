@@ -37,6 +37,28 @@ class Product
         return $productsList;
     }
     
+    public static function getHitsProducts() 
+    {
+        $db = Db::getConnection();
+        
+        $productsList = array();
+        
+        $result = $db->query('SELECT*FROM backpack WHERE is_hit = 1 ORDER BY id DESC  LIMIT 4' );
+            
+        $i = 0;
+        while($row = $result->fetch_assoc()) {
+            $productsList[$i]['id'] = $row['id'];
+            $productsList[$i]['name'] = $row['name'];
+            $productsList[$i]['description'] = $row['description'];
+            $productsList[$i]['price'] = $row['price'];
+            $productsList[$i]['availability'] = $row['availability'];
+            $productsList[$i]['category_id'] = Category::getCategory($row['category_id']);
+            $i++;
+        }
+        
+        return $productsList;
+    }
+    
     public static function getCatalogProduct($param = false, $page = 1) 
     {
         if ($param) {
@@ -92,7 +114,7 @@ class Product
         $result = $db->prepare('SELECT*FROM backpack WHERE id = ?');
         $result->bind_param('i', $id);
         $result->execute();
-        $result = $result->get_result();
+        $result = $result->get_result(); 
         
         $productItem = $result->fetch_assoc();
         
@@ -126,20 +148,20 @@ class Product
         $products = array();
         
         $db = Db::getConnection();
-        
+         
         
         $idsString = implode(',', $idsArray);
         
         $idsString = htmlspecialchars($idsString);
-        
+       
         $sql = "SELECT * FROM backpack WHERE id IN ($idsString)";
         $result = $db->query($sql);
         
 //        $result= $db->prepare("SELECT * FROM backpack WHERE id IN (?)");
-//        $result->bind_param('s', $idsArray);
+//        $result->bind_param('s', $idsString);
 //        $result->execute();
 //        $result = $result->get_result();
-        
+       
         
         $i = 0;
         while ($row = $result->fetch_assoc()) {
@@ -149,7 +171,7 @@ class Product
             $products[$i]['price'] = $row['price'];
             $i++;
         }
-        
+         
         return $products;
     }
     
@@ -215,7 +237,7 @@ class Product
         $sql = $db->prepare('INSERT INTO backpack ( name, description, price, availability, category_id) VALUES ( ?, ?, ?, ?, ?)');
         $sql->bind_param('ssiii', $name, $description, $price, $availability, $category_id );
         $sql->execute();
-        $sql = $sql->get_result();
+        $sql = $sql->get_result();  
         //если запрос выполнен успешно возвращает id добавленной записи
         if ($sql) {
             $result = $db->query('SELECT id FROM backpack ORDER BY id DESC LIMIT 1');

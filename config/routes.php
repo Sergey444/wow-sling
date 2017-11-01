@@ -7,6 +7,7 @@ return array(
      'content/([a-z]+)' => 'content/index/$1',
     
     //Покупка в один клик или заказ
+    'product/ajaxChooseOne/([0-9]+)' => 'product/ajaxChooseOne/$1',
     'cart/chooseone/([0-9]+)/([a-z]+)' => 'product/chooseOne/$1/$2',
     
     //Корзина:

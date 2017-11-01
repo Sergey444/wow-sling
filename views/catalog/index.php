@@ -19,7 +19,7 @@
 
                                     <p class="catalog__price"><i><b>Цена: <?php echo $product['price'];?> &#8381</b></i></p>
                                     <a class="btn  goods__buttons--is  baskin" data-id = "<?php echo $product['id']; ?>" href="/cart/add/<?php echo $product['id'];?>">В корзину</a>
-                                    <a class="btn  goods__buttons--is"  href="/cart/chooseone/<?php echo $product['id'];?>/buy">Купить в один клик</a>
+                                    <a class="btn  goods__buttons--is  buy" data-id = "<?php echo $product['id']; ?>"  href="/cart/chooseone/<?php echo $product['id'];?>/buy">Купить в один клик</a>
                                     <a class="btn  goods__buttons--isnt  goods__buttons--availability">Нет в наличии</a>
                                     <a class="btn  goods__buttons--isnt" href="<?php echo $product['id']; ?>">Заказать</a>
                             </div>
