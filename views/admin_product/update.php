@@ -24,9 +24,15 @@
         <input class="admin__input" type="text" name="availability" placeholder="" value="<?php echo $product['availability']; ?>">
 
         <p>Категория товара</p>
+        
         <select class="admin__select" name="category_id">
             <option value="0" <?php if ($product['category_id'] == 0) echo 'selected="selected"'; ?>>Рюкзак</option>
             <option value="1" <?php if ($product['category_id'] == 1) echo 'selected="selected"'; ?>>Май-слинг</option>
+        </select>
+        <br><br>
+         <select class="admin__select" name="is_hit">
+            <option value="0" <?php if ($product['is_hit'] == 0) echo 'selected="selected"'; ?>>Не хит</option>
+            <option value="1" <?php if ($product['is_hit'] == 1) echo 'selected="selected"'; ?>>Хит</option>
         </select>
 
         <br><br>

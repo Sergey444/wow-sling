@@ -29,6 +29,13 @@
                 <?php if ($product['category_id'] == 1) echo 'Май-слинг'; ?>
                 </td>
             </tr>
+            <tr>
+            <td>Хит</td>
+               <td> 
+                    <?php if ($product['is_hit'] == 0) echo 'нет'; ?>
+                    <?php if ($product['is_hit'] == 1) echo 'да'; ?>
+               </td>
+            </tr>
 
 
     </table>

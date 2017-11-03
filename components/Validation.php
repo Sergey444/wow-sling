@@ -13,7 +13,9 @@ class Validation
     public static function checkPhone($phone)
     {
         if (strlen(trim($phone)) >= 6) {
+            if (preg_match('#[+0-9-]{6,18}#', $phone)) {
             return true;
+            }
         }
         return false;
     }
@@ -21,7 +23,9 @@ class Validation
     public static function checkEmail($email) 
     {
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            return true;
+            if (preg_match('#[0-9a-zA-Z-.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$#', $email)) {
+                return true;
+            }
         }
         return false;
     } 

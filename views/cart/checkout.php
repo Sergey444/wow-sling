@@ -4,19 +4,34 @@
 <form action="" method="POST" class="form-data">
     <div class="form-data__wrapper">
 <?php if ($result) : ?>
-    <p>Спасибо за заказ! Мы обработаем его в ближайшее время и свяжемся с вами для подтверждения</p>
+        <div class="form-data__block">
+            <p>Спасибо за заказ! Мы обработаем его в ближайшее время и свяжемся с вами для подтверждения</p>
+            
+            <a class="btn" href="/">Вернуться на главную</a>
+            
+            
+         </div>
 <?php else: ?>
 
 
 
 
-				 <div class="form-data__block-head">
+                <div class="form-data__block-head">
                      Вы выбрали:<br>
+                    <table class="form-data__table">
+                          
                      <?php  foreach ($products as $product) :?>
-                         <span>- <?php echo $product['name'].' ';
-                                  echo $_SESSION['products'][$product['id']].' шт<br>';?></span>
+                          
+                         <tr>
+                            <td><img  src="<?php echo Product::getImage($product['id']); ?>" width="70" height="130"></td>
+                            <td><p><?php echo $product['name'];?></p></td>
+                            <td><p> <?php echo $_SESSION['products'][$product['id']].' шт<br>';?></p></td>
+                         </tr>
+                    
+                        
+                         
                      <?php endforeach; ?>
-
+                    </table>   
                      <p>на сумму: <?php echo $totalPrice; ?> рублей.</p><br>
 
                      <?php if (isset($errors) && is_array($errors)) : ?>

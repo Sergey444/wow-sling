@@ -5,8 +5,8 @@
         <meta name="viewport" content="width = device-width, inicial-scale = 1">
 
         <link href="/template/css/normalize.css" rel="stylesheet">
-        <link href="/template/css/style.css" rel="stylesheet">
-
+        <!-- <link href="/template/css/style.min.css" rel="stylesheet"> -->
+		<link href="/template/css/style.css" rel="stylesheet">
 		<title>Wow Sling</title>
 		<script src="/template/js/check-menu.js"></script>
 

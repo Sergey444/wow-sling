@@ -70,7 +70,7 @@
         </div>
     </section>
 
-    </section>
+   
 
             <section class="goods  goods--nojs">
         <div class="goods__wrapper  hits__wrapper">
@@ -87,7 +87,7 @@
                     <div class="goods__buttons <?php if ($hitsProduct['availability'] > 0) { echo 'goods__buttons--this'; } ?>">
                             <p class="catalog__price"><i><b>Цена: <?php echo $hitsProduct['price'];?> &#8381</b></i></p>
                             <a class="btn  goods__buttons--is " data-id = "<?php echo $hitsProduct['id']; ?>" href="/cart/add/<?php echo $hitsProduct['id'];?>">В корзину</a>
-                            <a class="btn  goods__buttons--is"  href="/cart/chooseone/<?php echo $hitsProduct['id'];?>/buy">Купить</a>
+                            <a class="btn  goods__buttons--is buy"  data-id = "<?php echo $hitsProduct['id']; ?>" href="/cart/chooseone/<?php echo $hitsProduct['id'];?>/buy">Купить в один клик</a>
                             <a class="btn  goods__buttons--isnt  goods__buttons--availability">Нет в наличии</a>
                             <a class="btn  goods__buttons--isnt" href="/catalog/<?php echo $hitsProduct['category_id']; ?>/<?php echo $hitsProduct['id']; ?>">Заказать</a>
                     </div>

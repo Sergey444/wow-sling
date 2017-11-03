@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", go);
 
 function go() {
-    window.timerId = window.setInterval(slider, 5000);
+    window.timerId = window.setInterval(slider, 15000);
 }
 
 function slider() {

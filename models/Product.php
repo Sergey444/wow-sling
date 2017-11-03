@@ -231,11 +231,12 @@ class Product
         $price = htmlspecialchars($options['price']);
         $availability = htmlspecialchars($options['availability']);
         $category_id = htmlspecialchars($options['category_id']);
+        $is_hit = intval($options['is_hit']);
         //Текст запроса к БД
 //        $sql = $db->query('INSERT INTO backpack ( name, description, price, availability, category_id) VALUES ( "'.$options['name'].'",'
 //                . ' "'.$options['description'].'", '.$options['price'].', '.$options['availability'].', '.$options['category_id'].')');
-        $sql = $db->prepare('INSERT INTO backpack ( name, description, price, availability, category_id) VALUES ( ?, ?, ?, ?, ?)');
-        $sql->bind_param('ssiii', $name, $description, $price, $availability, $category_id );
+        $sql = $db->prepare('INSERT INTO backpack ( name, description, price, availability, category_id, is_hit) VALUES ( ?, ?, ?, ?, ?, ?)');
+        $sql->bind_param('ssiiii', $name, $description, $price, $availability, $category_id, $is_hit );
         $sql->execute();
         $sql = $sql->get_result();  
         //если запрос выполнен успешно возвращает id добавленной записи
@@ -264,14 +265,15 @@ class Product
         $price = htmlspecialchars($options['price']);
         $availability = htmlspecialchars($options['availability']);
         $category_id = htmlspecialchars($options['category_id']);
+        $is_hit = intval($options['is_hit']);
         
         
         //Текст запроса к БД
 //        $result = $db->query('UPDATE backpack SET  name="'.$name.'", description="'.$description.'", price="'.$price.'", availability="'.$availability.'",'
 //                . 'category_id="'.$category_id.'" WHERE id ='.$id);
      
-        $result = $db->prepare('UPDATE backpack SET  name= ? , description= ? , price= ?, availability= ? , category_id= ?  WHERE id = ? ');
-        $result->bind_param('ssiiii', $name, $description, $price, $availability, $category_id, $id);
+        $result = $db->prepare('UPDATE backpack SET  name= ? , description= ? , price= ?, availability= ? , category_id= ?, is_hit = ?  WHERE id = ? ');
+        $result->bind_param('ssiiiii', $name, $description, $price, $availability, $category_id, $is_hit, $id);
         $result->execute();
 
         

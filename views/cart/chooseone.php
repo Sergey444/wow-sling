@@ -12,11 +12,20 @@
 
          <div class="form-data__block-head">
              Вы выбрали:<br>
-
-                 <p>- <?php echo $products['name'];?></p>
-
-
-
+                <table class="form-data__table">
+                          
+                
+                          
+                         <tr>
+                            <td><img  src="<?php echo Product::getImage($products['id']); ?>" width="70" height="130"></td>
+                            <td><p><?php echo $products['name'];?></p></td>
+                            <td><p> 1 шт</p></td>
+                         </tr>
+                    
+                        
+                         
+                  
+                    </table>   
              <p>на сумму: <?php echo $totalPrice; ?> рублей.</p><br>
 
              <?php if (isset($errors) && is_array($errors)) : ?>

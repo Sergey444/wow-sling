@@ -81,6 +81,7 @@ class AdminProductController extends AdminBase
             $options['price'] = $_POST['price'];
             $options['availability'] = $_POST['availability'];
             $options['category_id'] = $_POST['category_id'];
+            $options['is_hit'] = $_POST['is_hit'];
         
             //Флаг ошибок в форме
             $errors = false;
@@ -135,6 +136,7 @@ class AdminProductController extends AdminBase
             $options['price'] = $_POST['price'];
             $options['availability'] = $_POST['availability'];
             $options['category_id'] = $_POST['category_id'];
+            $options['is_hit'] = $_POST['is_hit'];
             
             //Сохраняем значения
             if (Product::updateProductById($id, $options)) {

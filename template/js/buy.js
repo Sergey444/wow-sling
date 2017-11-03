@@ -4,6 +4,8 @@
     var close = form.querySelector('.modal-content__close');
     var item = form.querySelector('.modal-content__item');
 
+
+
     // var storageName = localStorage.getItem('userName');
     // var storagePhone = localStorage.getItem('userPhone');
 
@@ -14,10 +16,17 @@
     }
 
     function openForm(event) {
+        var width = document.body.offsetWidth;
+
+    if (width > 750) {
         event.preventDefault();
         var id = this.getAttribute('data-id');
-        //console.log(item);
+        var scrollHeight  = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
+
+        //console.log(scrollHeight);
         item.textContent = id;
+
+        //form.style.top = event.clientY + 'px';
 
         form.classList.add('modal-content--show');
         overlay.classList.add('modal-content--show');
@@ -28,6 +37,7 @@
         // } else {
         //     userName.focus();
         // }
+    }
     }
 
     //Закрываем форму
@@ -88,8 +98,8 @@
                         form.classList.remove('modal-content--show');
                         overlay.classList.remove('modal-content--show');
                     } else {
-                        error.textContent = xhr.responseText;
+                        error.innerHTML = xhr.responseText;
                     }
-                    console.log(xhr.responseText);
+                    //console.log(xhr.responseText);
                 };
             }

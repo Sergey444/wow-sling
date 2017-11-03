@@ -8,9 +8,12 @@
     padding: 0  30px;
     background-color: white;
     box-shadow: @box-shadow-block;
+
 }
 
-
+.form-data__block--ok {
+    min-height: 70%;
+}
 
 .form-data__required-fields {
     display: none;
@@ -67,6 +70,16 @@
     }
 }
 
+.form-data__table {
+    text-align: center;
+    margin-top: 10px;
+    & td {
+        border: 1px solid lightgrey;
+        padding: 5px 10px 0 10px;
+    }
+
+}
+
 @media @tablet-widths {
 
     .form-data__block-head {
@@ -91,7 +104,6 @@
     }
 
     .form-data__block {
-
         display: flex;
         padding: 20px 0;
 

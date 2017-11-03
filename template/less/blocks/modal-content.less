@@ -1,15 +1,15 @@
 
-
-
 .modal-content {
 
     display: none;
     min-width: 200px;
-    position:  fixed;
+    position:  absolute;
+
     z-index: 1000;
     padding: 30px;
-    left: 20%;
-    top: 2%;
+
+    overflow:  auto;
+    top: 0;
     width: 50%;
     background-color: white;
     box-shadow: 0 5px 10px 5px lightgrey;
@@ -95,8 +95,12 @@
 
 
 @media @tablet-widths {
+
+
     .modal-content {
-        top: 15%;
+        top: 5%;
+        position: fixed;
+        left: 20%;
     }
 
     .modal-content__input {

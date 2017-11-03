@@ -1,6 +1,7 @@
 .goods {
     text-align: center;
     padding: 0 20px;
+
 }
 
 .goods--nojs .goods__btn,
@@ -40,7 +41,8 @@
     height: 50px;
     top: 245px;
     right: 0;
-    background-image: url("../img/arrow.png");
+    background-image: url("../img/sprite.png");
+    background-position: 50px -30px;
 
     font-size: 0;
     outline: none;
@@ -51,8 +53,15 @@
 
     &:hover,
     &:active {
-        background-image: url("../img/arrow-hov.png");
-        background-repeat: no-repeat;
+        background-image: url("../img/sprite.png");
+        background-position: 129px -35px;
+        //background-repeat: no-repeat;
+        //top: 246px;
+
+    }
+
+    &:active {
+        top: 246px;
     }
 }
 

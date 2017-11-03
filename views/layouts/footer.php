@@ -42,7 +42,7 @@
                 <?php else : ?>
                 <form action="" class="modal-content__form" action="" method="POST" class="login-form" enctype="application/x-www-form-urlencoded">
 
-                    <p>Вы выбрали: <span class="modal-content__item">2<span></p>
+                    <p>Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа, и мы свяжемся с вами, что бы уточнить детали. <span class="visually-hidden  modal-content__item"><span></p>
                         <p id="error"></p>
                         <div class="form-data__choose-item">
                          <span class="form-data__error " id="for-name">Имя не правильное</span>
@@ -62,14 +62,6 @@
                             <input class="input__text" type="text" name="email" placeholder="Ваш email">
                         </div>
 
-                    <!-- <p>Ваше имя:</p>
-					<input class="input__text  modal-content__input" type="text" name="name" placeholder="Ваше имя">
-
-                    <p>Ваш телефон:</p>
-					<input  class="input__text  modal-content__input" type="text" name="phone" placeholder="Ваш телефон">
-
-                    <p>Ваш email:</p>
-					<input class="input__text  modal-content__input" type="text" name="email" placeholder="Ваш email"> -->
 
                     <label class="input  input--check">
                         <input  type="checkbox" name="agree" value="1">
@@ -77,7 +69,7 @@
                         Я ознакомился с <a class="form-data__policy" href="#">политикой конфиденциальности</a>
                     </label>
                     <br><br>
-					<button id="send" class="btn" name="submit" type="submit" title="Отправить">Отправить</button>
+					<button id="send" class="btn  modal-content__btn" name="submit" type="submit" title="Отправить">Отправить</button>
 				</form>
             <?php endif; ?>
 		</div>

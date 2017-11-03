@@ -12,5 +12,15 @@ class Category {
                 return 'mysling';
         }
     }
+    
+    public static function getCategoryRus($param)
+    {
+        switch ($param) {
+            case 0: 
+               return 'Рюкзак';
+            case 1: 
+                return 'Май-слинг';
+        }
+    }
 }
 

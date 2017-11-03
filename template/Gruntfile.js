@@ -1,7 +1,8 @@
 module.exports = function(grunt) {
-    
+
     grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-csso');
 
     grunt.initConfig({
             less: {
@@ -19,7 +20,17 @@ module.exports = function(grunt) {
                         nospawn: true
                     }
                 }
-            }
+            },
+            csso: {
+                style: {
+                    options: {
+                        report: "qzip"
+                    },
+                    files: {
+                        "css/style.min.css": ["css/style.css"]
+                    }
+                }
+            },
     });
 
     grunt.registerTask('default', ['less', 'watch']);

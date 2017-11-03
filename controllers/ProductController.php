@@ -119,7 +119,7 @@ class ProductController {
             //var_dump($result);
             if (!empty($errors) && $result != true) {
                 foreach ($errors as $error) {
-                     echo $error;
+                     echo $error.'<br>';
                 }
             } else {
                 echo '1';

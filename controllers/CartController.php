@@ -69,6 +69,7 @@ class CartController
         //Статус успешного отображения товаров
         $result = false;
 
+        
         //Выбираем какую форму показать в зависимости от доставки
         $delivery = Validation::checkDelivery();
 

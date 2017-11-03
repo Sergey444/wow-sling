@@ -12,7 +12,7 @@ var inputs = document.getElementsByClassName('input__text');
         var span = parent.firstElementChild;
             val = this.value.trim();
 
-        console.log(val);
+        //console.log(val);
 
         switch (this.name) {
                 case 'name':
@@ -28,7 +28,7 @@ var inputs = document.getElementsByClassName('input__text');
                     break;
 
                 case 'phone':
-                    var result = /^[+0-9]{6,12}$/.test(val);
+                    var result = /^[+0-9-]{6,18}$/.test(val);
                     if (val === '' || result === false) {
                         this.classList.remove('input__text--ok');
                         this.classList.add('input__text--error');
@@ -55,6 +55,10 @@ var inputs = document.getElementsByClassName('input__text');
                     break;
                 }
 
-
+                case 'city': {
+                    if (val != '' && val.length > 2) {
+                        this.classList.add('input__text--ok');
+                    }
+                }
         }
     }

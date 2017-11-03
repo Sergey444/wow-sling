@@ -21,6 +21,11 @@
             <option value="0">Рюкзак</option>
             <option value="1">Май-слинг</option>
         </select>
+        <br><br>
+        <select class="admin__select" name="is_hit">
+            <option value="0" >Не хит</option>
+            <option value="1" >Хит</option>
+        </select>
 
         <p>Изображение товара</p>
         <input class="admin__input" type="file" name="img">
