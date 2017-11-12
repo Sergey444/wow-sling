@@ -6,6 +6,8 @@
     var basc = document.getElementById('goods');
 
 
+
+
         for (var i = 0; i < btn.length; i++) {
            btn[i].addEventListener('click', add);
         }
@@ -22,6 +24,10 @@
         
         xhr.onreadystatechange = function() {
             basc.textContent = xhr.responseText;
+
+            formTrans.classList.add('modal-content--show');    //Переменная определена в buy.js
+            overlay.classList.add('modal-content--show');
+
             console.log();
             };
         }

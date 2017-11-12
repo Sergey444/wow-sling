@@ -15,7 +15,9 @@
 
 .one-goods__info {
     display: flex;
+    flex-direction: column;
     text-align: left;
+
     justify-content: space-between;
     margin: 20px;
     background-color: white;
@@ -68,7 +70,7 @@
  .one-goods__buttons .btn {
      //display: block;
       width: 80%;
-      margin: 10px 0;
+      margin: 10px auto;
 
       text-align: center;
 }
@@ -78,8 +80,10 @@
 }
 
 .one-goods__item {
-    padding-left: 20px;
+    padding: 0 20px;
     margin-bottom: 20px;
+    list-style: circle;
+
 }
 
 .one-goods__title {
@@ -104,10 +108,15 @@
 
     .one-goods__info {
         margin-right: 0;
+        flex-direction: row;
     }
 
     .one-goods__benefits {
         margin-left: 0;
         margin-right: 0;
     }
+
+     .one-goods__buttons .btn {
+         margin: 10px 0;
+     }
 }

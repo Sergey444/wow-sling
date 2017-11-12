@@ -27,6 +27,8 @@
                 <td>
                 <?php if ($product['category_id'] == 0) echo 'Рюкзак'; ?>
                 <?php if ($product['category_id'] == 1) echo 'Май-слинг'; ?>
+                    <?php if ($product['category_id'] == 2) echo 'Бантик'; ?>
+                    <?php if ($product['category_id'] == 3) echo 'Кокон'; ?>
                 </td>
             </tr>
             <tr>

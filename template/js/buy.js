@@ -5,11 +5,13 @@
     var item = form.querySelector('.modal-content__item');
 
 
+    var formTrans = document.getElementById('trans-form');               //Форма перехода в корзину, открывается в baskin.js
+    var closeTrans = formTrans.querySelector('.modal-content__close');
 
-    // var storageName = localStorage.getItem('userName');
-    // var storagePhone = localStorage.getItem('userPhone');
+    //var storageName = localStorage.getItem('userName');
+    //var storagePhone = localStorage.getItem('userPhone');
 
-    // console.log(name);
+
 
     for (var i = 0; i < buyBtn.length; i++) {
         buyBtn[i].addEventListener('click', openForm);
@@ -42,22 +44,26 @@
 
     //Закрываем форму
     close.addEventListener('click', closeForm);
+    closeTrans.addEventListener('click', closeForm);
 
     function closeForm(event) {
         event.preventDefault();
         form.classList.remove('modal-content--show');
         overlay.classList.remove('modal-content--show');
+        formTrans.classList.remove('modal-content--show');
     }
     overlay.addEventListener('click', function(event) {
         event.preventDefault();
         form.classList.remove('modal-content--show');
         overlay.classList.remove('modal-content--show');
+        formTrans.classList.remove('modal-content--show');
     });
     window.addEventListener("keydown", function(event) {
 		if (event.keyCode === 27) {
 		if (form.classList.contains("modal-content--show")) {
 	          form.classList.remove("modal-content--show");
               overlay.classList.remove('modal-content--show');
+              formTrans.classList.remove('modal-content--show');
 		}
 		}
 	});

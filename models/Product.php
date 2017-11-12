@@ -61,12 +61,21 @@ class Product
     
     public static function getCatalogProduct($param = false, $page = 1) 
     {
-        if ($param) {
-            if ($param == 'backpack') {
+
+        
+        switch ($param) {
+            case 'ergorukzak':
                 $param = 0;
-            } else {
+                break;
+            case 'mysling': 
                 $param = 1;
-            }
+                break;
+            case 'bantik': 
+                $param = 2;
+                break;
+            case 'cocon':
+                $param = 3;
+        }
             
             $param = intval($param);
             $page = intval($page);
@@ -79,7 +88,7 @@ class Product
 
             //$result = $db->query('SELECT*FROM backpack WHERE id > 0 AND category_id = '.$param.' ORDER BY availability DESC LIMIT '.self::SHOW_BY_DEFAULT.' OFFSET '.$offset.'');
             
-            $result = $db->prepare('SELECT*FROM backpack WHERE id > 0 AND category_id = ? ORDER BY availability DESC LIMIT '.self::SHOW_BY_DEFAULT.' OFFSET ?');
+            $result = $db->prepare('SELECT*FROM backpack WHERE id > 0 AND category_id = ? ORDER BY availability DESC  LIMIT '.self::SHOW_BY_DEFAULT.' OFFSET ? ');
             $result->bind_param('ii', $param, $offset);
             $result->execute();
             $result = $result->get_result();
@@ -97,7 +106,7 @@ class Product
 
             return $productsList;
         }
-    }
+    
     
     public static function getOneProduct($id) 
     {
@@ -123,11 +132,20 @@ class Product
     
     public static function getTotalProductsInCatalog($param)
     {
-        if ($param == 'backpack') {
-            $param = 0;
-        } else {
-            $param = 1;
+        switch ($param) {
+            case 'ergorukzak':
+                $param = 0;
+                break;
+            case 'mysling': 
+                $param = 1;
+                break;
+            case 'bantik': 
+                $param = 2;
+                break;
+            case 'cocon':
+                $param = 3;
         }
+        
         $param = intval($param);
         
         $db = Db::getConnection();
@@ -141,6 +159,14 @@ class Product
         $row = $result->fetch_assoc();
         
         return $row['count'];
+    }
+    
+    public static function getCountProduct() 
+    {
+        $db = Db::getConnection();
+        $result = $db->query('SELECT count(id) AS count FROM backpack WHERE id > 0 ')->fetch_assoc();
+        
+        return $result;
     }
     
     public static function getProductsByIds($idsArray)
@@ -302,6 +328,4 @@ class Product
         //Возвращаем путь изображения пустышки
         return $path . $noImage;
     }
-    
-    
 }

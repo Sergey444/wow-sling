@@ -1,12 +1,15 @@
 .about-shop {
     padding: 20px 20px;
     text-align: justify;
-
+        &--catalog {
+            min-height: 70%;
+        }
 }
 
 .about-shop__wrapper {
     .container-fluid();
     padding: 20px 0;
+
     background-color: white;
     box-shadow: 0 5px 10px 5px lightgrey;
 }
@@ -18,7 +21,8 @@
 
 .about-shop__content,
 .about-shop__title {
-    padding: 0 20px;
+    padding: 0 40px;
+    list-style: circle;
 }
 
 @media @tablet-widths {

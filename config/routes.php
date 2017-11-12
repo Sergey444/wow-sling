@@ -21,7 +21,10 @@ return array(
     
     'catalog/([a-z]+)/page-([0-9]+)' => 'catalog/index/$1/$2',
     'catalog/([a-z]+)/([0-9]+)' => 'product/view/$1/$2',
+    
     'catalog' => 'catalog/index',
+    
+//    'catalog' => 'catalog/show',
     
     
     //Управление товарами

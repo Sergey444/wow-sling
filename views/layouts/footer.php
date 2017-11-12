@@ -35,14 +35,16 @@
 
         </footer>
 
+        <!-- Всплавающая форма - купить в один клик -->
         <div id="form" class="modal-content  modal-content--nojs">
+            <div class="modal-content__wrapper">
 				<button class="modal-content__close" type="button" title="Закрыть">Закрыть</button>
                 <?php if(isset($result) && $result == true) : ?>
                     <p>Ваш заказ отправлен<p>
                 <?php else : ?>
                 <form action="" class="modal-content__form" action="" method="POST" class="login-form" enctype="application/x-www-form-urlencoded">
 
-                    <p>Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа, и мы свяжемся с вами, что бы уточнить детали. <span class="visually-hidden  modal-content__item"><span></p>
+                    <h3>Мы рады, что вы нашли всё необходимое в магазине Wow Sling! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.<span class="visually-hidden  modal-content__item"><span></h3>
                         <p id="error"></p>
                         <div class="form-data__choose-item">
                          <span class="form-data__error " id="for-name">Имя не правильное</span>
@@ -72,7 +74,22 @@
 					<button id="send" class="btn  modal-content__btn" name="submit" type="submit" title="Отправить">Отправить</button>
 				</form>
             <?php endif; ?>
+        </div>
 		</div>
+
+
+
+        <div id="trans-form" class="modal-content__transition  modal-content--nojs">
+            <div class="modal-content__wrapper">
+                <button class="modal-content__close" type="button" title="Закрыть">Закрыть</button>
+                <p><b>Товар добавлен в корзину</b></p>
+                <a class="btn" href="/cart/">Перейти в корзину</a>
+                <a class="btn" href="/">Перейти на главную</a>
+            </div>
+        </div>
+
+
+
         <div class="modal-content__overlay"></div>
 
         <script src="/template/js/buy.js"></script>

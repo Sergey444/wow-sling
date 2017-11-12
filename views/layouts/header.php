@@ -24,8 +24,17 @@
 					<a class="main-nav__logo" href="/" title="Логотип">Wow Sling</a>
 
                     <ul class="main-nav__items">
-                        <li class="main-nav__item  "><a class="main-nav__link" href="/catalog/backpack/">Рюкзаки</a></li>
-                        <li class="main-nav__item  "><a class="main-nav__link" href="/catalog/mysling/">Май-слинги</a></li>
+					    <li class="main-nav__item  main-nav__item--catalog">
+							<a class="main-nav__link  main-nav__link--catalog " href="#">Каталог</a>
+
+							<ul class="main-nav__sub-menu">
+		                        <li class="main-nav__item  "><a class="main-nav__link" href="/catalog/ergorukzak/">Рюкзаки</a></li>
+		                        <li class="main-nav__item  "><a class="main-nav__link" href="/catalog/mysling/">Май-слинги</a></li>
+								<li class="main-nav__item  "><a class="main-nav__link" href="/catalog/bantik/">Бантики</a></li>
+								<li class="main-nav__item  "><a class="main-nav__link" href="/catalog/cocon/">Коконы</a></li>
+							</ul>
+						</li>
+
                         <li class="main-nav__item  "><a class="main-nav__link" href="/content/aboutus/">О нас</a></li>
                         <li class="main-nav__item "><a class="main-nav__link" href="/content/answers/">Вопросы и ответы</a></li>
                     </ul>

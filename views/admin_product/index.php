@@ -20,6 +20,7 @@
             <th></th>
             <th></th>
         </tr>
+        
         <?php foreach ($productsList as $product): ?>
         <tr>
             <td><?php echo $product['id']; ?></td>

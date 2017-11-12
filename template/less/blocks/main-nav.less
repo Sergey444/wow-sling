@@ -7,7 +7,6 @@
     //background-color: white; //Можно убрать
     background-color: #f2f2f2;
     text-align: center;
-
 }
 
 
@@ -138,12 +137,19 @@
     .main-nav--closed .main-nav__item,
     .main-nav--closed .main-nav__tools-item
     {
-
         display: none;
 
         &:active {
             display: block;
         }
+    }
+
+    .main-nav__link--catalog {
+            display: none;
+    }
+
+    .main-nav__sub-menu {
+        display: block;
     }
 
     .main-nav--nojs .main-nav__toggle {
@@ -193,6 +199,8 @@
 
     }
 
+
+
     .main-nav__items,
     .main-nav__tools {
 
@@ -213,7 +221,51 @@
     .main-nav__item,
     .main-nav__tools-item {
         padding: 10px 0;
+    }
 
+    .main-nav__item--catalog  {
+        position: relative;
+
+        & a {
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+
+        &:hover .main-nav__sub-menu {
+            display: block;
+        }
+    }
+
+
+
+    .main-nav__sub-menu {
+        display: none;
+        z-index: 10;
+        width: 200px;
+        position: absolute;
+        top: 70px;
+        left: 0px;
+
+
+
+        & .main-nav__item  {
+            padding: 0;
+            margin: 0;
+            border-left: 1px solid lightgrey;
+            border-bottom: 1px solid lightgrey;
+        }
+
+        & a {
+            border: none;
+
+
+            &::after,
+            &::before {
+                display: none;
+            }
+        }
     }
 
     .main-nav__link {
@@ -223,47 +275,6 @@
         border-left: 1px solid lightgrey;
 
 
-
-        &::after {
-            content: "";
-            display: block;
-            margin-left: 50%;
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            transition: width 0.5s;
-            height: 1px;
-            background-color: @color-pink-title;
-            width: 0;
-
-        }
-
-        &::before {
-            content: "";
-            display: block;
-
-            position: absolute;
-
-            bottom: -5px;
-            transition: width 0.5s;
-            height: 1px;
-            background-color: @color-pink-title;
-            width: 0;
-            margin-left: 0;
-            margin-right: 50%;
-            right: 0;
-        }
-
-
-        &:hover::after,
-        &:hover::before {
-            width: 50%;
-        }
-
-
-
-
-
     }
 
     .main-nav__item--active .main-nav__link::before,
@@ -271,20 +282,7 @@
         display: none;
     }
 
-    .main-nav__link--bascet {
 
-        border: 1px solid lightgrey;
-        transition: 0.3s;
-
-        &::after,
-        &::before {
-            display: none;
-        }
-
-        &:hover {
-            border-color: @color-pink-title;
-        }
-    }
 
     .main-nav__item--active .main-nav__link--bascet  {
         border-color: @color-pink-title;
@@ -318,7 +316,6 @@
         & img {
             margin-right: 10px;
         }
-
     }
 
     .main-nav__items,
@@ -333,8 +330,55 @@
         border: none;
     }
 
-    .main-nav__sub-menu {
-        width: 100%;
-    }
+     .main-nav__link {
+         &::after {
+             content: "";
+             display: block;
+             margin-left: 50%;
+             position: absolute;
+             left: 0;
+             bottom: -5px;
+             transition: width 0.5s;
+             height: 1px;
+             background-color: @color-pink-title;
+             width: 0;
+         }
+
+         &::before {
+             content: "";
+             display: block;
+
+             position: absolute;
+
+             bottom: -5px;
+             transition: width 0.5s;
+             height: 1px;
+             background-color: @color-pink-title;
+             width: 0;
+             margin-left: 0;
+             margin-right: 50%;
+             right: 0;
+         }
+
+         &:hover::after,
+         &:hover::before {
+             width: 50%;
+         }
+     }
+
+     .main-nav__link--bascet {
+
+         border: 1px solid lightgrey;
+
+
+         &::after,
+         &::before {
+             display: none;
+         }
+
+         &:hover {
+             border-color: @color-pink-title;
+         }
+     }
 
 }

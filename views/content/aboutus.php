@@ -7,10 +7,12 @@
        <div class="social-blocks__wrapper">
 
            <div class="about-shop  ">
-               <div class="vk_subscribe">
-                   <div id="vk_subscribe" class=""></div>
-               </div>
+
                <div class="social-blocks__text ">
+
+                    <div class="vk_subscribe">
+                        <div id="vk_subscribe" class=""></div>
+                    </div>
                    <h4 class="about-shop__title">Привет! Давай знакомиться?</h4>
                    <p class="about-shop__content">
                         Меня зовут Аня и я создатель интернет-магазина WOW Sling! А также сертифицированный представитель ТМ "СлингУля" и слингоконсультант<br><br>
@@ -30,7 +32,7 @@
            <!--<div class="social-blocks__vk" id="vk_groups"></div>-->
             <div class="social__block">
                 <img class="social__block-img" src="/template/img/muy.jpg" >
-                <iframe class="social-blocks__inst" src='/inwidget/index.php?width=300&inline=2&view=2&toolbar=true&preview=small' scrolling='no' frameborder='no' style='overflow: hidden; height: 300px; order: 2;'></iframe>
+                <!-- <iframe class="social-blocks__inst" src='/inwidget/index.php?width=300&inline=2&view=2&toolbar=true&preview=small' scrolling='no' frameborder='no' style='overflow: hidden; height: 300px; order: 2;'></iframe> -->
 
             </div>
 

@@ -6,10 +6,10 @@
 <?php if ($result) : ?>
         <div class="form-data__block">
             <p>Спасибо за заказ! Мы обработаем его в ближайшее время и свяжемся с вами для подтверждения</p>
-            
+
             <a class="btn" href="/">Вернуться на главную</a>
-            
-            
+
+
          </div>
 <?php else: ?>
 
@@ -19,31 +19,30 @@
                 <div class="form-data__block-head">
                      Вы выбрали:<br>
                     <table class="form-data__table">
-                          
+
                      <?php  foreach ($products as $product) :?>
-                          
+
                          <tr>
                             <td><img  src="<?php echo Product::getImage($product['id']); ?>" width="70" height="130"></td>
                             <td><p><?php echo $product['name'];?></p></td>
                             <td><p> <?php echo $_SESSION['products'][$product['id']].' шт<br>';?></p></td>
                          </tr>
-                    
-                        
-                         
+
+
+
                      <?php endforeach; ?>
-                    </table>   
+                    </table>
                      <p>на сумму: <?php echo $totalPrice; ?> рублей.</p><br>
 
                      <?php if (isset($errors) && is_array($errors)) : ?>
-                         <ul>
+                         <ul class="error">
                              <?php foreach ($errors as $error): ?>
                                  <li> - <?php echo $error; ?></li>
                              <?php endforeach; ?>
                          </ul>
                      <?php endif; ?>
 
-                	<p class="form-data__content">Мы будем рады воплотить в жизнь ваши пожелания!
-                         Заполните простую форму заказа, и мы свяжемся с вами, что бы уточнить детали.</p>
+                	<h3 class="form-data__content">Мы рады, что вы нашли всё необходимое в магазине Wow Sling! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</h3>
 
                 </div>
 

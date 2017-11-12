@@ -9,6 +9,7 @@
     text-transform: uppercase;
     padding: 10px 10px;
     position: relative;
+    line-height: 25px;
     cursor: pointer;
     background-color: transparent;
     transition: border 400ms;
@@ -20,43 +21,47 @@
         color: @color-pink-title;
     }
 
-    &::after {
-        content: "";
-        display: block;
-
-        position: absolute;
-        left: 0;
-        bottom: -1px;
-        transition: width 0.5s;
-        height: 1px;
-        background-color: @color-pink-title;
-        width: 0;
-    }
-
-    &::before {
-        content: "";
-        display: block;
-
-        position: absolute;
-
-        top: -1px ;
-        transition: width 0.5s;
-        height: 1px;
-        background-color: @color-pink-title;
-        width: 0;
-
-
-        right: 0;
-    }
-
-
-    &:hover::after,
-    &:hover::before {
-        width: 100%;
-    }
-
     &:active {
         top: 1px;
     }
 
+}
+
+@media @desktop-widths {
+    .btn {
+        &::after {
+            content: "";
+            display: block;
+
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            transition: width 0.5s;
+            height: 1px;
+            background-color: @color-pink-title;
+            width: 0;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+
+            position: absolute;
+
+            top: -1px ;
+            transition: width 0.5s;
+            height: 1px;
+            background-color: @color-pink-title;
+            width: 0;
+
+
+            right: 0;
+        }
+
+
+        &:hover::after,
+        &:hover::before {
+            width: 100%;
+        }
+    }
 }

@@ -20,6 +20,8 @@
         <select class="admin__select" name="category_id">
             <option value="0">Рюкзак</option>
             <option value="1">Май-слинг</option>
+             <option value="2">Бантик</option>
+              <option value="3">Кокон</option>
         </select>
         <br><br>
         <select class="admin__select" name="is_hit">

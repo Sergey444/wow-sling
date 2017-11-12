@@ -112,9 +112,7 @@ class ProductController {
                     
                     $result = true;
                 }
-            } 
-               
-                
+            }      
         }
             //var_dump($result);
             if (!empty($errors) && $result != true) {

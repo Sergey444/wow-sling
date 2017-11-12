@@ -28,6 +28,8 @@
         <select class="admin__select" name="category_id">
             <option value="0" <?php if ($product['category_id'] == 0) echo 'selected="selected"'; ?>>Рюкзак</option>
             <option value="1" <?php if ($product['category_id'] == 1) echo 'selected="selected"'; ?>>Май-слинг</option>
+            <option value="2" <?php if ($product['category_id'] == 2) echo 'selected="selected"'; ?>>Бантик</option>
+            <option value="3" <?php if ($product['category_id'] == 3) echo 'selected="selected"'; ?>>Кокон</option>
         </select>
         <br><br>
          <select class="admin__select" name="is_hit">
