@@ -955,6 +955,7 @@ a {
   margin: 0 15px;
   display: flex;
   flex-direction: column;
+  max-width: 800px;
 }
 .one-goods__availability {
   position: relative;
@@ -996,6 +997,9 @@ a {
 }
 .one-goods__delivery {
   color: #f93e9e;
+}
+.one-goods__link {
+  min-width: 300px;
 }
 @media (min-width: 768px) {
   .one-goods__top {
