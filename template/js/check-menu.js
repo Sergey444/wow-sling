@@ -1,3 +1,5 @@
+
+//Подсветка меню
  document.addEventListener("DOMContentLoaded", function() {
      var elems = document.getElementsByClassName('main-nav__link');
      var href = window.location.href;

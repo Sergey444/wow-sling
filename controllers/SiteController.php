@@ -3,34 +3,32 @@
 //include_once ROOT.'/models/NewItems.php';
 include_once ROOT.'/models/Product.php';
 
-class SiteController 
+class SiteController
 {
-    
+
     public function actionIndex()
     {
 // $new = array();
  //$new = NewItems::getNewList();
 
-        
-        
+
+
         $latestProducts = array();
         $latestProducts = Product::getLatestProducts();
-        
+
         $hitsProducts = array();
         $hitsProducts = Product::getHitsProducts();
-        
+
 // echo '<pre>';
 //print_r($hitsProducts);
 //echo '</pre>';
-      
-        
-        
+
         require_once(ROOT.'/views/site/index.php');
-        
+
         return true;
     }
-    
- /*   public function actionContact() 
+
+ /*   public function actionContact()
     {
 //$mail = 'slingostudio@gmail.com';
 //$subject = 'Тема письма';
@@ -45,17 +43,17 @@ class SiteController
         $userEmail = '';
         $userText = '';
         $result = false;
-        
+
         if (isset($_POST['submit'])) {
-            
+
             $userEmail = $_POST['userEmail'];
             $userText = $_POST['userText'];
-            
+
             $errors = false;
-            
+
             //Валидация полей
-            
-            
+
+
             if ($errors == false) {
                 $adminEmail = 'slingostudio@gmail.com';
                 $messege = "Текст: {$userText}. От {$userEmail}";
@@ -64,10 +62,14 @@ class SiteController
                 $result = true;
             }
         }
-        
+
         require_once(ROOT.'/views/contacts/contact.php');
-        
+
         return $result;
-        
+
     }*/
+
+
+
+    
 }

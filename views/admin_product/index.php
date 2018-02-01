@@ -1,12 +1,8 @@
 <?php include ROOT.'/views/layouts/admin_header.php';?>
 <div>
-
-
     <a href="/admin/product/create" class="admin-btn"><i></i> Добавить товар</a>
 
     <h4>Список товаров</h4>
-
-
 
     <table class="admin__table">
         <tr>
@@ -20,7 +16,7 @@
             <th></th>
             <th></th>
         </tr>
-        
+
         <?php foreach ($productsList as $product): ?>
         <tr>
             <td><?php echo $product['id']; ?></td>

@@ -14,20 +14,18 @@
 
 				<ul class="page-footer__info">
                     <li><a href="/content/contacts/">Контакты</a></li>
-                    <li><a href="#">Реквизиты</a></li>
-                    <li><a href="#">Производство</a></li>
 
-					<li><a href="#">Обратная связь</a></li>
-                    <li><a href="#">Наши документы</a></li>
+                    <li><a href="/content/proizvodstvo-slingov/" alt="Производство слингов">Производство</a></li>
+                    <li><a href="/content/politics/">Конфиденциальность</a></li>
+
+
 				</ul>
 
 				<ul class="page-footer__info">
-                    <li><a href="#">Обучение</a></li>
-                    <li><a href="#">Условия оплаты</a></li>
+                    <li><a href="/content/kak-nosit-sling/" alt="Как правильно носить слинг">Обучение</a></li>
+                    <li><a href="/content/oplata-i-dostavka/">Оплата и доставка</a></li>
+                    <li><a href="/content/vozvrat-slingov/">Условия возврата</a></li>
 
-                    <li><a href="#">Условия доставки</a></li>
-                    <li><a href="#">Условия возврата</a></li>
-                    <li><a href="/content/politics/">Конфиденициальность</a></li>
                 </ul>
 
 				<p class="page-footer__copyrighted">WowSling © 2013-2017</p>
@@ -35,14 +33,14 @@
 
         </footer>
 
-        <!-- Всплавающая форма - купить в один клик -->
+<!-- Всплавающая форма - купить в один клик -->
         <div id="form" class="modal-content  modal-content--nojs">
             <div class="modal-content__wrapper">
 				<button class="modal-content__close" type="button" title="Закрыть">Закрыть</button>
                 <?php if(isset($result) && $result == true) : ?>
                     <p>Ваш заказ отправлен<p>
                 <?php else : ?>
-                <form action="" class="modal-content__form" action="" method="POST" class="login-form" enctype="application/x-www-form-urlencoded">
+                <form action="" class="modal-content__form" method="POST" class="login-form" enctype="application/x-www-form-urlencoded">
 
                     <h3>Мы рады, что вы нашли всё необходимое в магазине Wow Sling! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.<span class="visually-hidden  modal-content__item"><span></h3>
                         <p id="error"></p>
@@ -91,10 +89,51 @@
 
 
         <div class="modal-content__overlay"></div>
+<!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter46781685 = new Ya.Metrika({
+                        id:46781685,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true
+                    });
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+
+
+    <noscript><div><img src="https://mc.yandex.ru/watch/46781685" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 
         <script src="/template/js/buy.js"></script>
         <script src="/template/js/valid-form.js"></script>
 		<script src="/template/js/main-open.js"></script>
 		<script src="/template/js/baskin.js"></script>
+
+<!-- Jivo site -->
+    <!-- BEGIN JIVOSITE CODE {literal} -->
+    <script type='text/javascript'>
+    (function(){ var widget_id = 'Bp0HPAdFHH';var d=document;var w=window;function l(){
+    var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+    <!-- {/literal} END JIVOSITE CODE -->
+
+
+
+
     </body>
 </html>

@@ -1,0 +1,144 @@
+.form-callback {
+    padding: 20px;
+
+}
+
+.form-callback__wrapper {
+    .container-fluid();
+
+    background-color: white;
+    box-shadow: 0 5px 10px 5px lightgrey;
+    overflow: hidden;
+
+    border: 10px solid white;
+    border-image: 10 repeating-linear-gradient(45deg, #f93e9e, #f93e9e 10px, transparent 10px, transparent 20px, lightgrey 20px, lightgrey 30px,transparent 30px, transparent 40px);
+}
+
+.form-callback__content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+.form-callback__left {
+    order: 1;
+    min-height: 280px;
+    padding: 20px;
+    min-width: 40%;
+    position: relative;
+}
+
+/** Скрываем форму **/
+
+.form-callback--saccess label {
+    display: none;
+}
+
+.form-callback--saccess .form-callback__sent {
+    opacity: 1;
+    z-index: 10;
+}
+
+.form-callback--saccess button {
+    display: none;
+}
+
+.form-callback__sent {
+    max-height: 200px;
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    left: 25%;
+    top: 15%;
+    transform: rotate(-45deg);
+    transition: 1s;
+
+}
+
+.form-callback__right {
+    padding: 20px;
+}
+
+.form-callback__item {
+    display: block;
+    margin: 10px 0;
+}
+
+.form-callback__input {
+    border: 1px solid lightgrey;
+}
+
+.form-callback__name {
+    min-width: 100px;
+}
+
+
+.form-callback__input {
+    width: 98%;
+    padding: 5px;
+}
+
+.form-callback__btn {
+    margin: 0 20px;
+    order: 3;
+    &--first {
+        display: none;
+    }
+}
+
+.form-callback__subtitle {
+    font-size: 20px;
+    color: @color-pink-title;
+    margin-bottom: 20px;
+}
+
+.form-callback__errors {
+    color: red;
+    margin-left: 20px;
+}
+
+
+@media @tablet-widths {
+    .form-callback {
+        padding: 20px 10px;
+    }
+
+    .form-callback__content {
+        flex-direction: row;
+    }
+
+    .form-callback__text {
+        margin: 20px 0; 
+    }
+
+    .form-callback__right {
+
+
+        max-width: 50%;
+        order: 2;
+    }
+
+    .form-callback__item  {
+        display: flex;
+    }
+
+    .form-callback__btn {
+        margin: 20px 0;
+
+        width: 100%;
+
+        &--second {
+            display: none;
+        }
+
+        &--first {
+            display: block;
+        }
+    }
+
+    .form-callback__subtitle {
+        margin-bottom: 0px;
+    }
+
+}

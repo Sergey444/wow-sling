@@ -29,7 +29,7 @@ class CartController
     {
         echo Cart::deleteOneProduct($id);
 
-        header("Location: /cart/");
+        header("Location: /cart/"); 
     }
 
     public function actionAddAjax($id)
@@ -69,7 +69,7 @@ class CartController
         //Статус успешного отображения товаров
         $result = false;
 
-        
+
         //Выбираем какую форму показать в зависимости от доставки
         $delivery = Validation::checkDelivery();
 
@@ -143,7 +143,7 @@ class CartController
                 }
 
                 $productsInCart = $_SESSION['products'];
-                
+
                 //Сохраняем заказ в БД
                 $result = Order::save($userName, $userPhone, $userEmail, $userCity, $userPostOrder, $userStreet, $userHouse, $userFlat, $userInfo, $userAgree, $productsInCart, $delivery);
 

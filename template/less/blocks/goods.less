@@ -152,31 +152,42 @@
         margin: 20px 20px;
     }
     .goods__img {
-        width: 100px;
+        //width: 100px;
         flex-shrink: 0;
         margin: 0 auto;
+        overflow: hidden;
 
-        &::after {
-            content: attr(data-title);
-            display: none;
 
+        & img {
+            transition: 0.5s;
         }
 
-        &:hover::after {
-
-            display: block;
-            content: attr(data-title); /* Выводим текст */
-           position: absolute; /* Абсолютное позиционирование */
-           right: -70px; top: 0; /* Положение подсказки */
-           z-index: 1; /* Отображаем подсказку поверх других элементов */
-           background-color: rgba(249, 62, 158, 0.8); /* Полупрозрачный цвет фона */
-           font-family: Arial, sans-serif; /* Гарнитура шрифта */
-           font-size: 11px; /* Размер текста подсказки */
-           padding: 5px 10px; /* Поля */
-           border: 1px solid #333; /* Параметры рамки */
-           transform: rotate(45deg);
-
+        & img:hover {
+            // box-shadow: 1px 0px 10px 0px @color-pink-title;
+            transform: scale(1.05);
         }
+
+        // &::after {
+        //     content: attr(data-title);
+        //     display: none;
+        //
+        // }
+        //
+        // &:hover::after {
+        //
+        //    display: block;
+        //    content: attr(data-title); /* Выводим текст */
+        //    position: absolute; /* Абсолютное позиционирование */
+        //    right: -30px; top: 0; /* Положение подсказки */
+        //    z-index: 1; /* Отображаем подсказку поверх других элементов */
+        //     background-color: rgba(249, 62, 158, 0.8); /* Полупрозрачный цвет фона */
+        //     font-family: Arial, sans-serif; /* Гарнитура шрифта */
+        //    font-size: 11px; /* Размер текста подсказки */
+        //    padding: 5px 10px; /* Поля */
+        //    border: 1px solid #333; /* Параметры рамки */
+        //    transform: rotate(45deg);
+        //
+        // }
     }
 }
 

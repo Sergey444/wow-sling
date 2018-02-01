@@ -123,7 +123,7 @@
                         <label class="input  input--check">
                             <input  type="checkbox" name="agree" value="1"  <?php if ($userAgree == 1) { echo 'checked'; } ?>>
                             <span class="input__checkbox"></span>
-                            Я ознакомился с <a class="form-data__policy" href="#">политикой конфиденциальности</a>
+                            Я ознакомился с <a class="form-data__policy" href="/content/politics/" target="_blank">политикой конфиденциальности</a>
                         </label>
 
 	                    <button type="submit" name="submit" class="form-data__button  btn">Отправить заказ</button>

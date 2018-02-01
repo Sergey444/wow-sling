@@ -109,3 +109,55 @@
                     //console.log(xhr.responseText);
                 };
             }
+
+
+
+
+
+
+
+//Форма обратной связи на главной
+
+        var call = document.getElementById('callBack');
+        var form1 = document.querySelector('.form-callback');
+        var errors = document.querySelector('.form-callback__errors');
+            call.addEventListener('click', callBack);
+
+
+
+            function callBack(event) {
+                event.preventDefault();
+                var userName = form1.querySelector('[name=name]');
+                var userPhone = form1.querySelector('[name=phone]');
+                var userEmail = form1.querySelector('[name=email]');
+                var userMessage = form1.querySelector('[name=message]');
+                var userAgree = form1.querySelector('[name=agree]');
+                var error = form1.querySelector('#error');
+
+                if (userAgree.checked) {
+                    userAgree = 1;
+                }
+
+                var body = 'name=' + encodeURIComponent(userName.value) + '&phone='+ encodeURIComponent(userPhone.value) +'&email='+ encodeURIComponent(userEmail.value) +'&message=' + encodeURIComponent(userMessage.value) +'&agree=' + encodeURIComponent(userAgree);
+
+                var xhr = new XMLHttpRequest();
+                xhr.open( 'POST', 'send/callBack',  true) ;
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhr.send(body);
+
+                xhr.onreadystatechange = function() {
+                        if (xhr.responseText == 1) {
+                            console.log(xhr.responseText);
+                            form1.classList.add('form-callback--saccess')
+                            // userName.value = '';
+                            // userPhone.value = '';
+                            // userEmail.value = '';
+                            // form.classList.remove('modal-content--show');
+                            // overlay.classList.remove('modal-content--show');
+                        } else {
+                             errors.innerHTML = xhr.responseText;
+                            //console.log(xhr.responseText);
+                        }
+                        //console.log(xhr.responseText);
+                    };
+                }

@@ -1,4 +1,5 @@
-var inputs = document.getElementsByClassName('input__text');
+// var inputs = document.getElementsByClassName('input__text');
+   var inputs = document.getElementsByTagName('input');    
 
 
     for (var i = 0; i < inputs.length; i++) {

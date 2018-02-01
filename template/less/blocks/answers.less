@@ -24,6 +24,7 @@
     padding:  20px;
     background-color: white;
     box-shadow: 0 5px 10px 5px lightgrey;
+
 }
 
 
@@ -47,9 +48,7 @@
 .answers__btn {
 
     min-width: 200px;
-
     margin-top: 30px;
-
 
 
     &:last-child {
@@ -89,34 +88,39 @@
 }
 
 .answers__content {
-    display: none;
+    _display: none;
+    opacity: 0;
+    line-height: 0px;
+    max-height: 0px;
     border: 1px solid rgba(249, 62, 158, .5);
-    margin: 20px 0;
-
+   //   margin: 20px 0;
+     padding: 0;
+    -moz-transition: .4s;
+   -ms-transition: .4s;
+   transition: .4s;
+   overflow: hidden;
 }
 
 .answers__content--active {
-    display: block;
-
+    opacity: 1;
+    max-height: 1000px;
+    _display: block;
+    line-height: 24px;
+    margin: 20px 0;
+    padding: 20px;
 
 }
 
 @media @tablet-widths {
 
-.answers__btn {
+    .answers__btn {
 
-    &--active {
+        &--active {
 
-        &::before,
-        &::after {
-            left: 50%;
+            &::before,
+            &::after {
+                left: 50%;
+            }
         }
     }
-}
-
-
-
-
-
-
 }

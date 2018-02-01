@@ -1,6 +1,6 @@
 <?php include ROOT.'/views/layouts/header.php' ?>
 
-
+    <h1 class="visually-hidden">Слингоконсультант</h1>
 
      <section class="social-blocks">
 
@@ -32,13 +32,9 @@
            <!--<div class="social-blocks__vk" id="vk_groups"></div>-->
             <div class="social__block">
                 <img class="social__block-img" src="/template/img/muy.jpg" >
-                <!-- <iframe class="social-blocks__inst" src='/inwidget/index.php?width=300&inline=2&view=2&toolbar=true&preview=small' scrolling='no' frameborder='no' style='overflow: hidden; height: 300px; order: 2;'></iframe> -->
-
+                <iframe class="social-blocks__inst" src='/inwidget/index.php?width=300&inline=2&view=2&toolbar=true&preview=small' scrolling='no' frameborder='no' style='overflow: hidden; height: 300px; order: 2;'></iframe>
+                
             </div>
-
-
-
-
        </div>
    </section>
 

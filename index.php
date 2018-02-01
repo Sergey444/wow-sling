@@ -1,11 +1,9 @@
 <?php
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
+ ini_set('display_errors', 1);
+ error_reporting(E_ALL);
 
 //echo $_SERVER['REQUEST_URI'];
-
 
 //Подключение файлов системы
 define('ROOT', dirname(__FILE__));
@@ -19,4 +17,3 @@ session_start();
 //Вызов Router
 $router = new Router();
 $router->run();
-

@@ -2,6 +2,7 @@
 
 <section class="cart">
     <div class="cart__wrapper">
+        <h1 class="visually-hidden">Купить слинг</h1>
         <h2 class="cart__title">Корзина</h2>
 
         <?php if ($productsInCart): ?>
@@ -43,7 +44,7 @@
 
 
             </div>
-            <form  action="checkout" method="POST" class="cart__delivery">
+            <!-- <form  action="checkout" method="POST" class="cart__delivery">
                 <p>Укажите каким спосообом вы хотите получить товар</p>
                 <label class="input  input--check">
                     <input type="radio" name="delivery" value="1" checked>
@@ -59,7 +60,56 @@
                 </label>
 
                 <button type="submit" class="cart__button  btn">Оформить заказ</button>
-            </form>
+            </form> -->
+
+            <?
+
+            // 1.
+            // Оплата заданной суммы с выбором валюты на сайте мерчанта
+            // Payment of the set sum with a choice of currency on merchant site
+
+            // регистрационная информация (логин, пароль #1)
+            // registration info (login, password #1)
+            $mrh_login = "wowsling";
+            $mrh_pass1 = "TDA9Ufz6rn";
+
+            // номер заказа
+            // number of order
+            $inv_id = 0;
+
+            // описание заказа
+            // order description
+            $inv_desc = "Оплата заказа в Тестовом магазине ROBOKASSA";
+
+            // сумма заказа
+            // sum of order
+            $out_summ = $totalPrice;
+            // $IncSum = $totalPrice;
+            // тип товара
+            // code of goods
+            $shp_item = 1;
+
+            // язык
+            // language
+            $culture = "ru";
+
+            // кодировка
+            // encoding
+            $encoding = "utf-8";
+
+            // формирование подписи
+            // generate signature
+            $crc  = md5("$mrh_login:$out_summ:$inv_id:$mrh_pass1:shp_Item=$shp_item");
+
+            // HTML-страница с кассой
+            // ROBOKASSA HTML-page
+            print "<html><script language=JavaScript ".
+                  "src='https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?".
+                  "MerchantLogin=$mrh_login&OutSum=$out_summ&InvId=$inv_id".
+                  "&Description=$inv_desc&SignatureValue=$crc&shp_Item=$shp_item".
+                  "&Culture=$culture&Encoding=$encoding'></script></html>";
+
+            ?>
 
         <?php else: ?>
             <p>Ваша корзина пуста</p>
@@ -70,7 +120,7 @@
         </div>
     </section>
 
-   
+
 
             <section class="goods  goods--nojs">
         <div class="goods__wrapper  hits__wrapper">
