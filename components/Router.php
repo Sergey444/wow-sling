@@ -48,14 +48,14 @@ class Router {
                 //и параметры
                 $segments = explode('/', $internalRoute);
 
-/*echo '<pre>';
-print_r($segments);
-echo '</pre>';*/
+// echo '<pre>';
+// print_r($segments);
+// echo '</pre>';
 
                 $controllerName = array_shift($segments).'Controller';
 
                 $controllerName = ucfirst($controllerName);
-            
+
                 $actionName = 'action'.ucfirst(array_shift($segments));
 
 //echo '<br>controller name: '.$controllerName;
@@ -75,18 +75,38 @@ echo '</pre>';*/
 
                 if(file_exists($controllerFile)) {
                     include_once($controllerFile);
+                } else {
+                    Router::errorPage404();
                 }
+
 
                 //Создать объект, вызвать метод(action)
                 $controllerObject = new $controllerName;
 
                 //$result = $controllerObject->$actionName($parameters);
-                $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
+                // $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
+
+                if (method_exists($controllerObject, $actionName)) {
+                     $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
+                } else {
+                    // header('HTTP/1.1 404 Not Found');
+            		// header("Status: 404 Not Found");
+            	    // header('Location: /404.html');
+                    Router::errorPage404();
+                }
+
+ //var_dump($result);
 
                 if ($result != null) {
                     break;
                 }
             }
         }
+    }
+
+    static function errorPage404() {
+        header('HTTP/1.1 404 Not Found');
+        header("Status: 404 Not Found");
+        //header('Location: /404.html');
     }
 }

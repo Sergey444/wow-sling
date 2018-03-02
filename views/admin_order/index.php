@@ -1,5 +1,7 @@
 <?php include ROOT.'/views/layouts/admin_header.php' ;?>
-        
+
+<section class="admin-content">
+    <div class="admin-content__wrapper">
             <table class="admin__table">
                 <tr>
                     <th>ID заказа</th>
@@ -24,6 +26,8 @@
                 </tr>
                 <?php endforeach; ?>
             </table>
+        </div>
+    </section>
 
 
 <?php include ROOT.'/views/layouts/admin_footer.php' ;?>

@@ -22,17 +22,19 @@
 .answers__content ,
 .answers__title {
     padding:  20px;
-    background-color: white;
-    box-shadow: 0 5px 10px 5px lightgrey;
+    background-color: @box-color;
+    box-shadow: @box-shadow-block;
 
 }
 
-
+.answers__title {
+    font-size: 20px;
+    line-height: 20px;
+}
 
 .answers__btn {
     display: block;
     background-color: white;
-
 
     text-align: center;
     margin-top: 20px;
@@ -41,15 +43,12 @@
         color: @color-pink-title;
 
     }
-
-
 }
 
 .answers__btn {
 
     min-width: 200px;
     margin-top: 30px;
-
 
     &:last-child {
         margin-bottom: 30px;
@@ -91,20 +90,20 @@
     _display: none;
     opacity: 0;
     line-height: 0px;
-    max-height: 0px;
+    //max-height: 0px;
     border: 1px solid rgba(249, 62, 158, .5);
    //   margin: 20px 0;
-     padding: 0;
-    -moz-transition: .4s;
+    padding: 0;
+   -moz-transition: .4s;
    -ms-transition: .4s;
    transition: .4s;
    overflow: hidden;
 }
 
 .answers__content--active {
-    opacity: 1;
-    max-height: 1000px;
     _display: block;
+    opacity: 1;
+    //max-height: 1500px;
     line-height: 24px;
     margin: 20px 0;
     padding: 20px;

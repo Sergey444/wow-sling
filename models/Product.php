@@ -17,8 +17,10 @@ class Product
 
         $productsList = array();
 
-        $result = $db->query('SELECT*FROM backpack WHERE availability = 1 ORDER BY id DESC  LIMIT '.$count );
-
+        // $result = $db->query('SELECT*FROM backpack WHERE availability = 1 ORDER BY id DESC  LIMIT '.$count );
+        $result = $db->query('(SELECT * FROM `backpack` WHERE availability > 0 AND category_id = 0 ORDER BY id DESC LIMIT 2) UNION
+                              (SELECT * FROM `backpack` WHERE availability > 0 AND category_id = 2 ORDER BY id DESC LIMIT 3) UNION
+                              (SELECT * FROM `backpack` WHERE availability > 0 AND category_id = 1 ORDER BY id DESC LIMIT 3)');
 
         $i = 0;
         while($row = $result->fetch_assoc()) {
@@ -30,7 +32,6 @@ class Product
             $productsList[$i]['category_id'] = Category::getCategory($row['category_id']);
             $i++;
         }
-
 
         return $productsList;
     }
@@ -60,6 +61,7 @@ class Product
     public static function getCatalogProduct($param = false, $page = 1)
     {
 
+
         switch ($param) {
             case 'ergorukzak':
                 $param = 0;
@@ -74,14 +76,14 @@ class Product
             //     $param = 3;
         }
 
-            $param = intval($param);
+            //$param = intval($param);
             $page = intval($page);
             $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
 
             $db = Db::getConnection();
 
             $productsList = array();
-
+            
             //$result = $db->query('SELECT*FROM backpack WHERE id > 0 AND category_id = '.$param.' ORDER BY availability DESC LIMIT '.self::SHOW_BY_DEFAULT.' OFFSET '.$offset.'');
 
 
@@ -199,12 +201,18 @@ class Product
         return $products;
     }
 
-    public static function getProductsList()
+    public static function getProductsList($category)
     {
         $db = Db::getConnection();
 
         //Получение и возврат результатов
-        $result = $db->query('SELECT * FROM backpack ORDER BY id ASC');
+        if ( $category === false ) {
+            $result = $db->query('SELECT * FROM backpack  ORDER BY id  DESC ');
+
+        } else {
+            $result = $db->query('SELECT * FROM backpack WHERE category_id = "'.$category.'" ORDER BY id  DESC ');
+
+        }
         $productsList = array();
         $i = 0;
         while ($row = $result->fetch_assoc()) {
@@ -262,8 +270,9 @@ class Product
         $sql = $db->prepare('INSERT INTO backpack ( name, description, price, availability, category_id, is_hit) VALUES ( ?, ?, ?, ?, ?, ?)');
         $sql->bind_param('ssiiii', $name, $description, $price, $availability, $category_id, $is_hit );
         $sql->execute();
-        $sql = $sql->get_result();
+    //    $sql = $sql->get_result();
         //если запрос выполнен успешно возвращает id добавленной записи
+
         if ($sql) {
             $result = $db->query('SELECT id FROM backpack ORDER BY id DESC LIMIT 1');
             return $result->fetch_assoc();

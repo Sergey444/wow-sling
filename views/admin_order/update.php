@@ -1,5 +1,8 @@
 <?php include ROOT.'/views/layouts/admin_header.php';?>
 
+<section class="admin-content">
+    <div class="admin-content__wrapper">
+
     <h4>Редактировать заказ #<?php echo $id; ?></h4>
         <form  class="admin__form" action="" method="POST">
 
@@ -41,5 +44,8 @@
             <br><br>
             <input class="admin-btn" type="submit" name="submit"  value="Сохранить">
         </form>
+
+    </div>
+</section>
 
 <?php include ROOT.'/views/layouts/admin_footer.php';?>

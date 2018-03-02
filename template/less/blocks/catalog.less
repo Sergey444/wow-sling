@@ -11,8 +11,8 @@
 .catalog__item {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    box-shadow: 0 5px 10px 5px lightgrey;
+    background-color: @box-color;
+    box-shadow: @box-shadow-block;
     margin:  20px;
     padding: 10px;
     border-radius: 5px;
@@ -22,7 +22,6 @@
 
 .catalog__price {
     color: @color-pink-title;
-
 }
 
 
@@ -45,5 +44,7 @@
 @media @desktop-widths {
     .catalog__item {
         width: 20%;
+
+
     }
 }

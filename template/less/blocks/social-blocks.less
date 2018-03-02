@@ -10,7 +10,7 @@
     min-width: 250px;
     height: 400px;
     margin: 0 auto;
-    box-shadow: 0 5px 10px 5px lightgrey;
+    box-shadow: @box-shadow-block;
 }
 
 .vk_subscribe {
@@ -20,8 +20,9 @@
 
 .social-blocks__text {
     padding: 20px 0;
-    background-color: white;
-    box-shadow: 0 5px 10px 5px lightgrey;
+
+    background-color: @box-color;
+    box-shadow: @box-shadow-block;
 
 
 }
@@ -55,9 +56,12 @@
 
     .vk_subscribe {
 
+    }
 
+    .social__block {
+        //min-width: 400px;
 
-
+        margin-top: 25px;
     }
 
 

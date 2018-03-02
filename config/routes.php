@@ -3,7 +3,7 @@
 return array(
 
     //Страницы контента
-     'content/([a-z]+)' => 'content/index/$1',
+     'content/([a-z-]+)$' => 'content/index/$1',
 
     //Покупка в один клик или заказ
 
@@ -15,13 +15,17 @@ return array(
     //Корзина:
     'cart/checkout' => 'cart/checkout', //actionCheckout в CartController
     'cart/deleteOne/([0-9]+)' => 'cart/deleteOne/$1',
+    'cart/deleteOneAjax/([0-9]+)' => 'cart/deleteOneAjax/$1',
+
     'cart/delete/([0-9]+)' => 'cart/delete/$1', //actionDelete в CartController
     'cart/add/([0-9]+)' => 'cart/add/$1',//actionAdd в CartController
     'cart/addAjax/([0-9]+)' => 'cart/addAjax/$1', //actionAdd в CartController
+    'cart/cartAddAjax/([0-9]+)' => 'cart/cartAddAjax/$1',
+
     'cart' => 'cart/index', //actionIndex в CartController
 
-    'catalog/([a-z]+)/page-([0-9]+)' => 'catalog/index/$1/$2',
-    'catalog/([a-z]+)/([0-9]+)' => 'product/view/$1/$2',
+    'catalog/([a-z]+)/page-([0-9])' => 'catalog/index/$1/$2',
+    'catalog/([a-z]+)/([0-9]+)$' => 'product/view/$1/$2',
     'catalog' => 'catalog/index',
 //    'catalog' => 'catalog/show',
     //Управление товарами
@@ -29,7 +33,9 @@ return array(
     'admin/product/create' => 'adminProduct/create',
     'admin/product/update/([0-9]+)' => 'adminProduct/update/$1',
     'admin/product/delete/([0-9]+)' => 'adminProduct/delete/$1',
+    'admin/product/([0-9]+)' => 'adminProduct/index/$1',
     'admin/product' => 'adminProduct/index',
+    'admin/logout' => 'admin/logout',
     //Управление категориями
     'admin/order/create' => 'adminOrder/create',
     'admin/order/update/([0-9]+)' => 'adminOrder/update/$1',
@@ -45,6 +51,9 @@ return array(
 
     //Главная страница
     '' => 'site/index',
+
+
+
 
     //'news/([0-9]+)' => 'news/view/$1',
     //'news' => 'news/index', //actionIndex в NewsController

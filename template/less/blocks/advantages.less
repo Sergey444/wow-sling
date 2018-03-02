@@ -4,8 +4,8 @@
 }
 
 .advantages__wrapper {
-    background-color: white;
-    box-shadow: 0 5px 10px 5px lightgrey;
+    background-color: @box-color;
+    box-shadow: @box-shadow-block;
 
     .container-fluid();
     text-align: center;
@@ -60,7 +60,8 @@
 
 @media @tablet-widths {
     .advantages {
-        padding: 20px 0;
+        padding: 25px 0;
+        padding-top: 50px;   
     }
 
     .advantages__toggles {

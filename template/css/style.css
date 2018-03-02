@@ -27,8 +27,10 @@ body {
   line-height: 24px;
   font-family: "Open Sans", Arial, sans-serif;
   font-style: normal;
-  background-image: url("../img/background1.jpg");
   background-size: 50%;
+}
+.body {
+  background-image: url("../img/background1.jpg");
 }
 section {
   background-color: rgba(255, 255, 255, 0.8);
@@ -137,8 +139,6 @@ textarea {
 }
 .slider-main {
   position: relative;
-  min-height: 500px;
-  background-image: url("/template/img/slide4.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -562,7 +562,7 @@ textarea {
   padding: 20px 20px;
 }
 .advantages__wrapper {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 5px 10px 5px lightgrey;
   width: auto;
   text-align: center;
@@ -616,7 +616,8 @@ textarea {
 }
 @media (min-width: 768px) {
   .advantages {
-    padding: 20px 0;
+    padding: 25px 0;
+    padding-top: 50px;
   }
   .advantages__toggles {
     display: none;
@@ -668,7 +669,7 @@ textarea {
 .goods__wrapper {
   width: auto;
   position: relative;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 5px 10px 5px lightgrey;
 }
 @media (min-width: 768px) {
@@ -776,7 +777,7 @@ textarea {
 }
 @media (min-width: 768px) {
   .goods {
-    padding: 0;
+    padding: 25px 0;
   }
   .goods__items {
     width: 400%;
@@ -795,9 +796,6 @@ textarea {
   }
   .goods__img img {
     transition: 0.5s;
-  }
-  .goods__img img:hover {
-    transform: scale(1.05);
   }
 }
 @media (min-width: 1200px) {
@@ -874,7 +872,7 @@ textarea {
 .about-shop__wrapper {
   width: auto;
   padding: 20px 0;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 5px 10px 5px lightgrey;
 }
 @media (min-width: 768px) {
@@ -904,7 +902,7 @@ textarea {
 }
 @media (min-width: 768px) {
   .about-shop {
-    padding: 20px 0;
+    padding: 25px 0;
   }
   .about-shop__wrapper {
     padding: 20px 0;
@@ -933,7 +931,7 @@ textarea {
   text-align: left;
   justify-content: space-between;
   margin: 20px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 5px 10px 5px lightgrey;
 }
 .one-goods__benefits {
@@ -982,7 +980,7 @@ textarea {
   list-style: circle;
 }
 .one-goods__title {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 5px 10px 5px lightgrey;
   padding: 20px 0;
   line-height: 20px;
@@ -1032,7 +1030,7 @@ textarea {
 .catalog__item {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 5px 10px 5px lightgrey;
   margin: 20px;
   padding: 10px;
@@ -1103,7 +1101,9 @@ textarea {
 }
 @media (min-width: 768px) {
   .section-map {
-    padding: 20px 0;
+    padding: 0;
+    padding-top: 25px;
+    margin-bottom: -7px;
   }
   .section-map__wrapper {
     width: auto;
@@ -1128,7 +1128,7 @@ textarea {
 .form-data__wrapper {
   width: auto;
   padding: 0  30px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 5px 10px 5px lightgrey;
 }
 @media (min-width: 768px) {
@@ -1279,7 +1279,7 @@ textarea {
 }
 .form-callback__wrapper {
   width: auto;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 5px 10px 5px lightgrey;
   overflow: hidden;
   border: 10px solid white;
@@ -1362,15 +1362,15 @@ textarea {
   color: red;
   margin-left: 20px;
 }
+.form-callback__text {
+  margin: 20px 0;
+}
 @media (min-width: 768px) {
   .form-callback {
-    padding: 20px 10px;
+    padding: 25px 13px;
   }
   .form-callback__content {
     flex-direction: row;
-  }
-  .form-callback__text {
-    margin: 20px 0;
   }
   .form-callback__right {
     max-width: 50%;
@@ -1566,7 +1566,7 @@ textarea {
 .cart__wrapper {
   width: auto;
   min-height: 200px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 5px 10px 5px lightgrey;
 }
 @media (min-width: 768px) {
@@ -1670,7 +1670,7 @@ textarea {
 }
 .social-blocks__text {
   padding: 20px 0;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 5px 10px 5px lightgrey;
 }
 .social-blocks__inst {
@@ -1690,6 +1690,9 @@ textarea {
   }
   .social__block-img {
     margin-bottom: 10px;
+  }
+  .social__block {
+    margin-top: 25px;
   }
 }
 .admin-btn {
@@ -1717,30 +1720,10 @@ textarea {
   top: 1px;
 }
 .admin-btn__menu {
-  display: inline-block;
-  margin: 10px;
-  position: relative;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  text-shadow: -1px -1px #000;
-  user-select: none;
-  padding: .8em 2em;
-  outline: none;
-  background-color: #000;
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%), radial-gradient(190% 100% at 50% 0%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(0, 0, 0, 0) 50%);
-  background-repeat: no-repeat;
-  background-size: 200% 100%, auto;
-  background-position: 200% 0, 0 0;
-  box-shadow: rgba(0, 0, 0, 0.3) 0 2px 5px;
-}
-.admin-btn__menu:hover {
-  transition: .5s linear;
-  background-position: -200% 0, 0 0;
-}
-.admin-btn__menu:active {
-  top: 1px;
-  box-shadow: none;
+  padding: 20px;
+  background-color: #f9ebae;
+  margin-right: 10px;
+  border-radius: 5px 5px 0 0;
 }
 .admin-btn__check {
   font-size: 0;
@@ -1758,9 +1741,7 @@ textarea {
   background-image: url("/template/img/delete-order.png");
 }
 .admin {
-  background-image: none;
-  position: relative;
-  background: #e5e5e5;
+  background-color: #cc5510;
   text-align: center;
 }
 .admin__wrapper {
@@ -1775,9 +1756,6 @@ textarea {
     margin: 0 auto;
     padding: 0;
   }
-}
-.admin__menu-items {
-  margin: 20px 0;
 }
 .admin__table {
   width: 100%;
@@ -1810,11 +1788,66 @@ textarea {
   .admin__menu-items {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 60px;
+    margin-top: 60px;
   }
 }
+.user-body {
+  background-color: #dad7d2;
+}
 .admin-login {
-  min-height: 650px;
+  padding-top: 150px;
+  background-color: rgba(0, 0, 0, 0);
+}
+.admin-login__wrapper {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+.admin-form {
+  padding: 20px;
+}
+.admin-login__input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  outline-width: none;
+  outline: none;
+  color: #000;
+}
+.admin-login__input:not(:last-child) {
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: none;
+  border-bottom: 1px solid black;
+}
+@media (min-width: 768px) {
+  .user-body {
+    background-image: url("../img/admin/3.jpg");
+    background-size: cover;
+  }
+}
+@media (min-width: 1150px) {
+  .user-body {
+    background-image: url("../img/admin/1.jpg");
+    background-size: cover;
+  }
+}
+.admin-content {
+  background-color: #f9ebae;
+  min-height: 100%;
+  padding-top: 50px;
+}
+.admin-content__wrapper {
+  width: auto;
+}
+@media (min-width: 768px) {
+  .admin-content__wrapper {
+    width: 84%;
+    /*640px / 768px ~= 84%*/
+    max-width: 1200px;
+    /*960px / .84 ~= 1142 (Центровка начнётся чуть раньше 1200px) */
+    margin: 0 auto;
+    padding: 0;
+  }
 }
 @keyframes forms {
   from {
@@ -1963,8 +1996,12 @@ textarea {
 .answers__content,
 .answers__title {
   padding: 20px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 5px 10px 5px lightgrey;
+}
+.answers__title {
+  font-size: 20px;
+  line-height: 20px;
 }
 .answers__btn {
   display: block;
@@ -2011,7 +2048,6 @@ textarea {
   _display: none;
   opacity: 0;
   line-height: 0px;
-  max-height: 0px;
   border: 1px solid rgba(249, 62, 158, 0.5);
   padding: 0;
   -moz-transition: .4s;
@@ -2020,9 +2056,8 @@ textarea {
   overflow: hidden;
 }
 .answers__content--active {
-  opacity: 1;
-  max-height: 1000px;
   _display: block;
+  opacity: 1;
   line-height: 24px;
   margin: 20px 0;
   padding: 20px;
@@ -2031,5 +2066,82 @@ textarea {
   .answers__btn--active::before,
   .answers__btn--active::after {
     left: 50%;
+  }
+}
+.reviews {
+  padding: 20px ;
+}
+.reviews--no-js {
+  display: none;
+}
+.reviews__wrapper {
+  width: auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 5px 10px 5px lightgrey;
+  padding: 20px 0;
+}
+@media (min-width: 768px) {
+  .reviews__wrapper {
+    width: 84%;
+    /*640px / 768px ~= 84%*/
+    max-width: 1200px;
+    /*960px / .84 ~= 1142 (Центровка начнётся чуть раньше 1200px) */
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+.reviews__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.reviews__link {
+  padding: 20px;
+  transition: 0.3s;
+  color: grey;
+}
+.reviews__link--close {
+  opacity: 0;
+}
+.reviews__items--hidden {
+  opacity: 0;
+  max-height: 0;
+}
+.reviews__title {
+  padding-left: 20px;
+}
+.rewiews__img {
+  border: 1px solid lightgrey;
+  margin-bottom: 20px;
+  transition: max-height 1s;
+}
+.reviews__items--hidden .rewiews__img {
+  max-height: 0;
+}
+.reviews__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.rewiews__img {
+  max-height: 300px;
+}
+@media (min-width: 768px) {
+  .reviews {
+    padding: 25px 0;
+  }
+  .reviews__items {
+    flex-direction: row;
+  }
+  .reviews__wrapper {
+    padding: 20px 0;
+  }
+  .rewiews__img:last-child {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .rewiews__img:last-child {
+    display: block;
   }
 }

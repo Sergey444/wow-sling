@@ -1,11 +1,11 @@
 <?php include ROOT.'/views/layouts/header.php' ?>
 
-
-
-
-
-        <section  class="slider  slider-main" id="slider">
-			<div class="slider-main__overlay"></div>
+        <section  class="slider  slider-main owl-carousel" id="slier">
+			<!-- <div class="slider-main__overlay"></div> -->
+            <div class="item"><img src="/template/img/slide1.jpg" alt="Производство слингов"></div>
+            <div class="item"><img src="/template/img/slide2.jpg" alt="Производство слингов"></div>
+            <div class="item"><img src="/template/img/slide3.jpg" alt="Производство слингов"></div>
+            <div class="item"><img src="/template/img/slide4.jpg" alt="Производство слингов"></div>
 		</section>
 
 
@@ -47,6 +47,17 @@
 
 		</section>
 
+        <section class="about-shop">
+			<div class="about-shop__wrapper">
+				<h4 class="about-shop__title">Интернет магазин для мам</h4>
+				<p class="about-shop__content">
+                                    WOW Sling! - это удобный шоппинг в интернете для молодых мам. В WOW Sling собраны лучшие товары для комфортного материнства
+                                    и яркого декрета: качественные слинги из натуральных тканей для деток с самого рождения, эргорюкзачки для малышей с 4 месяцев,
+                                    красивые банты для конвертов на выписку из роддома, аксессуары для маленьких принцесс.
+				</p>
+			</div>
+		</section>
+
 		<section class="goods  goods--nojs">
 			<div class="goods__wrapper">
 				<h3 class="goods__title">Новинки / Уже в продаже</h3>
@@ -77,7 +88,7 @@
 
         <section class="form-callback">
             <div class="form-callback__wrapper">
-                <h3 class="goods__title">Форма обратной связи</h3>
+                <h3 class="goods__title">Получить слингоконсультацию</h3>
 
                 <div class="form-callback__errors"></div>
 
@@ -101,14 +112,15 @@
 
                     <div class="form-callback__right">
                         <div class="form-callback__subtitle">WoW Sling - магазин слингов</div>
-                        <div class="form-callback__text">Если у вас возникли какие либо вопросы, оставьте ваши контактные данные и мы свяжемся с вами в ближайшее время. Также вы можете позвонить нам по тел. 89220700090</div>
+                        <div class="form-callback__text">Если перед покупкой вам необходима консультация, пожалуйста, заполните  форму. Мы обработаем заявку и свяжемся с вами.</div>
+                        <div>Также вы можете позвонить нам по телефону: <a href="tel:+79220700090">8-922-07-000-90</a></div><br>
                         <label class="input  input--check">
                             <input  type="checkbox" name="agree" value="1" checked>
                             <span class="input__checkbox"></span>
                             Я ознакомился с <a class="form-data__policy" href="/content/politics/" target="_blank" >политикой конфиденциальности</a>
                         </label>
 
-                        <button id="callBack" type="submit" name="submit" class="btn form-callback__btn form-callback__btn--first">Отправить</button>
+                        <button type="submit" name="submit" class="btn form-callback__btn form-callback__btn--first">Отправить</button>
                     </div>
 
                     <button type="submit" name="submit" class="btn form-callback__btn  form-callback__btn--second">Отправить</button>
@@ -146,61 +158,74 @@
 
 		</section>
 
-        <section class="about-shop">
-			<div class="about-shop__wrapper">
-				<h4 class="about-shop__title">Интернет магазин для мам</h4>
-				<p class="about-shop__content">
-                                    WOW Sling! - это удобный шоппинг в интернете для молодых мам. В WOW Sling собраны лучшие товары для комфортного материнства
-                                    и яркого декрета: качественные слинги из натуральных тканей для деток с самого рождения, эргорюкзачки для малышей с 4 месяцев,
-                                    мягкие коконы для новорожденных, красивые банты для конвертов на выписку из роддома, аксессуары для маленьких принцесс.
-				</p>
-			</div>
-		</section>
+        <section class="reviews">
+            <div class="reviews__wrapper">
+                <h3 class="goods__title" id="review">Отзывы</h3>
+                <div class="reviews__items" >
+                    <img class="rewiews__img" src="/template/img/reviews/1.jpg" alt="Отзывы" width="300" height="300">
+                    <img class="rewiews__img" src="/template/img/reviews/2.jpg" alt="Отзывы" width="300" height="300">
+                    <img class="rewiews__img" src="/template/img/reviews/3.jpg" alt="Отзывы" width="300" height="300">
+                </div>
+                <div class="reviews__items  reviews__items--additionally  reviews__items--hidden">
+                    <img class="rewiews__img" src="/template/img/reviews/4.jpg" alt="Отзывы" width="300" height="300">
+                    <img class="rewiews__img" src="/template/img/reviews/5.jpg" alt="Отзывы" width="300" height="300">
+                    <img class="rewiews__img" src="/template/img/reviews/6.jpg" alt="Отзывы" width="250" height="300">
+                </div>
+                <div class="reviews__items  reviews__items--additionally  reviews__items--hidden">
+                    <img class="rewiews__img" src="/template/img/reviews/7.jpg" alt="Отзывы" width="300" height="300">
+                    <img class="rewiews__img" src="/template/img/reviews/8.jpg" alt="Отзывы" width="300" height="300">
+                    <img class="rewiews__img" src="/template/img/reviews/9.jpg" alt="Отзывы" width="300" height="300">
+                </div>
 
 
-        <!-- <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+                <div class="reviews__buttons">
+                    <a href="#"  class="reviews__link  reviews__link--open  reviews--no-js">Показать ещё</a>
+                    <a href="#review" class="reviews__link  reviews__link--close">Скрыть</a>
+                </div>
+            </div>
+        </section>
 
 
-        <script type="text/javascript">
-            var map;
 
-            DG.then(function () {
-                map = DG.map('map', {
-                    city: 'tyumen',
-                    center: [54.98, 44.89],
-                    zoom: 13,
+        <!-- 2gis карта -->
+        <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+        <section class="section-map">
+            <div class="section-map__wrapper">
+                <a class="dg-widget-link" href="http://2gis.ru/tyumen/firm/70000001024783972/center/65.653459,57.176564/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Тюмени</a><div class="dg-widget-link"><a href="http://2gis.ru/tyumen/center/65.653459,57.176564/zoom/16/routeTab/rsType/bus/to/65.653459,57.176564╎InstaDom, семейный шоурум?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до InstaDom, семейный шоурум</a></div><script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new DGWidgetLoader({"width":640,"height":600,"borderColor":"#a3a3a3","pos":{"lat":57.176564,"lon":65.653459,"zoom":16},"opt":{"city":"tyumen"},"org":[{"id":"70000001024783972"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.<br><br></noscript>
+            </div>
+        </section>
+        <script>
+            $(document).ready(function() {
+                $(document).ready(function(){
+                  $(".owl-carousel").owlCarousel({
+                      //nav: true,
+                      loop: true,
+                      autoplay: true,
+                      autoplayTimeout: 3000,
+                      //autoplayHoverPause: true,
+                      margin: 20,
+                      //items:3,
+                      responsive: {
+                          0: {
+                              items: 1
+                          },
+                          768: {
+                              items: 1
+                          },
+                          1200: {
+                              items: 1
+                          }
+                      }
 
-                    // dragging : false,
-                    // touchZoom: false,
-                    // scrollWheelZoom: false,
-                    // doubleClickZoom: false,
-                    // boxZoom: false,
-                    // geoclicker: false,
-                    // zoomControl: false,
-                    // fullscreenControl: false
+                  });
                 });
-
-                DG.marker([54.98, 82.89]).addTo(map).bindPopup('Вы кликнули по мне!');
             });
-
         </script>
 
-           <div id="map" style="width: 100%; height:400px"></div> -->
-
-<!-- "borderColor":"#a3a3a3", -->
-
-        <!-- <section class="section-map">
-            <div class="section-map__wrapper">
-
-                <a class="dg-widget-link" href="http://2gis.ru/tyumen/firm/70000001025525747/center/65.657066,57.175668/zoom/16?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть на карте Тюмени</a><div class="dg-widget-link"><a href="http://2gis.ru/tyumen/firm/70000001025525747/photos/70000001025525747/center/65.657066,57.175668/zoom/17?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=photos">Фотографии компании</a></div><div class="dg-widget-link"><a    href="http://2gis.ru/tyumen/center/65.657066,57.175668/zoom/16/routeTab/rsType/bus/to/65.657066,57.175668╎Тюмень Сити Молл, торгово-развлекательный центр?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=route">Найти проезд до Тюмень Сити Молл, торгово-развлекательный центр</a></div><script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script><script charset="utf-8">new  DGWidgetLoader({  "pos":{"lat":57.175668,"lon":65.657066,"zoom":15, "touchZoom": false, "boxZoom": false, "geoclicker": false, "fullscreenControl": true,},"opt":{"city":"tyumen"},"org":[{"id":"70000001025525747"}]});</script><noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript. Включите его в настройках вашего браузера.</noscript>
-
-            </div>
-        </section> -->
-
-
+        <script src="/template/js/reviews.js"></script>
         <script src="/template/js/new-goods.js"></script>
         <script src="/template/js/hits.js"></script>
-        <script src="/template/js/slider.js"></script>
+        <!-- <script src="/template/js/slider.js"></script> -->
         <script src="/template/js/advantages-slider.js"></script>
 
 

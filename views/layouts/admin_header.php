@@ -15,11 +15,12 @@
 	<body class="admin">
 		<div class="admin__wrapper">
              <header class="   admin__menu">
-
-
                  <ul class=" admin__menu-items">
-                    <li class=" admin__menu-item"> <a class="admin-btn  admin-btn__menu" href="/admin">Админпанель</a></li>
-                    <li class="  admin__menu-item"><a class="admin-btn admin-btn__menu" href="/admin/product/">Управление товарами</a></li>
-                    <li class="  admin__menu-item"><a class="admin-btn admin-btn__menu" href="/admin/order/">Управление заказами</a></li>
+                    <li class=" admin__menu-item"> <a class="admin-btn__menu " href="/admin">Админпанель</a></li>
+                    <li class="  admin__menu-item"><a class="admin-btn__menu" href="/admin/product/">Управление товарами</a></li>
+                    <li class="  admin__menu-item"><a class="admin-btn__menu" href="/admin/order/">Управление заказами</a></li>
+					<li class="  admin__menu-item"><a class="admin-btn__menu" href="/">На сайт</a></li>
+					<li class="  admin__menu-item"><a class="admin-btn__menu" href="/admin/logout/">Выход</a></li>
                 </ul>
              </header>
+		 </div>

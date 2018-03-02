@@ -1,4 +1,7 @@
 <?php include ROOT.'/views/layouts/admin_header.php';?>
+
+<section class="admin-content">
+    <div class="admin-content__wrapper">
         <h5>Информация о заказе</h5>
 
         <?php echo Order::getDeliveryText($order['delivery']); ?>
@@ -77,5 +80,8 @@
         </table>
 
         <a class="admin-btn" href="/admin/order/">Назад</a>
+
+    </div>
+</section>
 
 <?php include ROOT.'/views/layouts/admin_footer.php';?>

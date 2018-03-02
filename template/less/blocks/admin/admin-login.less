@@ -1,5 +1,54 @@
+.user-body {
+    background-color: #dad7d2;
+}
 
 .admin-login {
+    padding-top: 150px;
+    background-color: rgba(0, 0, 0, 0);
+}
 
-    min-height: 650px;
+.admin-login__wrapper {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    //border: 1px solid green;
+}
+
+.admin-form {
+    padding: 20px;
+}
+
+.admin-login__input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    outline-width: none;
+    outline: none;
+    color: #000;
+
+    &:not(:last-child) {
+        background-color: rgba(0, 0, 0, 0)!important;
+        border: none;
+        border-bottom: 1px solid black;
+    }
+}
+
+
+@media @tablet-widths {
+    .user-body {
+        background-image:  url("../img/admin/3.jpg");
+        background-size: cover;
+    }
+}
+
+
+@media (min-width: 1150px) {
+    .user-body {
+        background-image: url("../img/admin/1.jpg");
+        background-size: cover;
+    }
+
+    .admin-login__wrapper {
+
+    }
 }

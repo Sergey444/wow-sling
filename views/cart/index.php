@@ -24,9 +24,9 @@
                         <td class="cart__table-cell"><?php echo $product['name']; ?></td>
 
                         <td class="cart__table-cell  cart__table-cell--count">
-                            <a class="cart__minus"   href="/cart/deleteOne/<?php echo $product['id'];?>">-</a>
-                                <span id="<?php echo $product['id']; ?>"> <?php echo $productsInCart[$product['id']] ?></span>
-                            <a class="cart__plus" data-id = "<?php echo $product['id']; ?>" href="/cart/add/<?php echo $product['id'];?>">+</a>
+                            <a class="cart__minus  cart__change" data-id="<?php echo $product['id'];?>"  href="/cart/deleteOne/<?php echo $product['id'];?>">-</a>
+                                <span class="cart__result" id="<?php echo $product['id']; ?>"> <?php echo $productsInCart[$product['id']] ?></span>
+                            <a class="cart__plus  cart__change" data-id = "<?php echo $product['id']; ?>" href="/cart/add/<?php echo $product['id'];?>">+</a>
                         </td>
                         <td class="cart__table-cell"><?php echo $product['price'];?> </td>
                         <td class="cart__table-cell  cart__table-cell"><a class="cart__del" href="delete/<?php echo $product['id'];?>">Удалить</td>
@@ -35,16 +35,53 @@
 
             </table>
 
+
+            <!--<script type="text/javascript">
+                //Для добавления Ajax-ом в корзину
+                // var btn = document.getElementsByClassName('cart__change');
+                //
+                // for (var i = 0; i < btn.length; i++) {
+                //     btn[i].addEventListener('click', changeBask);
+                // }
+                //
+                //     function changeBask(event) {
+                //         event.preventDefault();
+                //         var product = this.getAttribute('data-id');
+                //         var cartResult = document.getElementById(product);
+                //         var goods = document.getElementById('goods');
+                //         var change = this.textContent;
+                //         if (change == '-') {
+                //             var result = '/cart/deleteOneAjax/';
+                //         } else {
+                //             var result = '/cart/cartAddAjax/';
+                //         }
+                //
+                //         var xhr = new XMLHttpRequest();
+                //         xhr.open( 'POST', result + product,  true) ;
+                //         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                //         xhr.send();
+                //
+                //         xhr.onreadystatechange = function() {
+                //
+                //                 console.log(xhr.responseText);
+                //                     var item = xhr.responseText.split('/');
+                //
+                //                     console.log(item);
+                //                     cartResult.innerHTML = item[0];
+                //                     goods.innerHTML = item[1];
+                //         };
+                //     }
+            </script>-->
+
             <div class="cart__count">
 
-                <!--<div class="cart__count-items">-->
-                <p class="cart__count-item" >Общая стоимость: <?php echo $totalPrice; ?> рублей</p>
-
-                <!--</div>-->
+                <div class="cart__count-items">
+                    <p class="cart__count-item" >Общая стоимость: <?php echo $totalPrice; ?> рублей</p>
+                </div>
 
 
             </div>
-            <!-- <form  action="checkout" method="POST" class="cart__delivery">
+            <form  action="checkout" method="POST" class="cart__delivery">
                 <p>Укажите каким спосообом вы хотите получить товар</p>
                 <label class="input  input--check">
                     <input type="radio" name="delivery" value="1" checked>
@@ -60,54 +97,54 @@
                 </label>
 
                 <button type="submit" class="cart__button  btn">Оформить заказ</button>
-            </form> -->
+            </form>
 
             <?
 
-            // 1.
+            // 1. Кнопка робокассы
             // Оплата заданной суммы с выбором валюты на сайте мерчанта
             // Payment of the set sum with a choice of currency on merchant site
 
             // регистрационная информация (логин, пароль #1)
             // registration info (login, password #1)
-            $mrh_login = "wowsling";
-            $mrh_pass1 = "TDA9Ufz6rn";
-
-            // номер заказа
-            // number of order
-            $inv_id = 0;
-
-            // описание заказа
-            // order description
-            $inv_desc = "Оплата заказа в Тестовом магазине ROBOKASSA";
-
-            // сумма заказа
-            // sum of order
-            $out_summ = $totalPrice;
-            // $IncSum = $totalPrice;
-            // тип товара
-            // code of goods
-            $shp_item = 1;
-
-            // язык
-            // language
-            $culture = "ru";
-
-            // кодировка
-            // encoding
-            $encoding = "utf-8";
-
-            // формирование подписи
-            // generate signature
-            $crc  = md5("$mrh_login:$out_summ:$inv_id:$mrh_pass1:shp_Item=$shp_item");
-
-            // HTML-страница с кассой
-            // ROBOKASSA HTML-page
-            print "<html><script language=JavaScript ".
-                  "src='https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?".
-                  "MerchantLogin=$mrh_login&OutSum=$out_summ&InvId=$inv_id".
-                  "&Description=$inv_desc&SignatureValue=$crc&shp_Item=$shp_item".
-                  "&Culture=$culture&Encoding=$encoding'></script></html>";
+            // $mrh_login = "wowsling";
+            // $mrh_pass1 = "TDA9Ufz6rn";
+            //
+            // // номер заказа
+            // // number of order
+            // $inv_id = 0;
+            //
+            // // описание заказа
+            // // order description
+            // $inv_desc = "Оплата заказа в Тестовом магазине ROBOKASSA";
+            //
+            // // сумма заказа
+            // // sum of order
+            // $out_summ = $totalPrice;
+            // // $IncSum = $totalPrice;
+            // // тип товара
+            // // code of goods
+            // $shp_item = 1;
+            //
+            // // язык
+            // // language
+            // $culture = "ru";
+            //
+            // // кодировка
+            // // encoding
+            // $encoding = "utf-8";
+            //
+            // // формирование подписи
+            // // generate signature
+            // $crc  = md5("$mrh_login:$out_summ:$inv_id:$mrh_pass1:shp_Item=$shp_item");
+            //
+            // // HTML-страница с кассой
+            // // ROBOKASSA HTML-page
+            // print "<html><script language=JavaScript ".
+            //       "src='https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?".
+            //       "MerchantLogin=$mrh_login&OutSum=$out_summ&InvId=$inv_id".
+            //       "&Description=$inv_desc&SignatureValue=$crc&shp_Item=$shp_item".
+            //       "&Culture=$culture&Encoding=$encoding'></script></html>";
 
             ?>
 

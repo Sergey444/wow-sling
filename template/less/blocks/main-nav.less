@@ -4,8 +4,8 @@
     width: auto;
     min-height: 51px;
 
-    //background-color: white; //Можно убрать
     background-color: #f2f2f2;
+    //background: linear-gradient(to right,  #f2f2f2 40%, blue  );
     text-align: center;
 }
 
@@ -134,18 +134,19 @@
 
 @media @mobile-widths-only {
 
+
+
     .main-nav--closed .main-nav__item,
     .main-nav--closed .main-nav__tools-item
     {
         display: none;
-
         &:active {
             display: block;
         }
     }
 
     .main-nav__link--catalog {
-            display: none;
+        display: none;
     }
 
     .main-nav__sub-menu {
@@ -159,6 +160,7 @@
     .main-nav--nojs .main-nav__item,
     .main-nav--nojs .main-nav__tools-item {
         display: block;
+
     }
 }
 

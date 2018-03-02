@@ -7,9 +7,9 @@
 
             <ul class="about-shop__content">
                 <li>Электронная почта: Slingostudio@gmail.com</li>
-                <li>Телефон/Viber/WhatsApp: 89220700090</li>
+                <li>Телефон/Viber/WhatsApp: <a href="tel:+79220700090">89220700090</a></li>
                 <li>Instagram: wow.sling</li>
-                <li>Vkontakte: vk.com/wowsling</li>
+                <li>Vkontakte: <a href="https://vk.com/wowsling" target="_blank">vk.com/wowsling</li>
             </ul>
         </div>
     </section>

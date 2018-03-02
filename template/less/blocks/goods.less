@@ -13,8 +13,8 @@
     .container-fluid();
     position: relative;
 
-    background-color: white;
-    box-shadow: 0 5px 10px 5px lightgrey;
+    background-color: @box-color;
+    box-shadow: @box-shadow-block;
 }
 .goods__title {
     text-align: left;
@@ -136,7 +136,7 @@
 
 @media @tablet-widths {
     .goods  {
-        padding: 0;
+        padding: 25px 0;
     }
     .goods__items {
         width: 400%;
@@ -164,7 +164,7 @@
 
         & img:hover {
             // box-shadow: 1px 0px 10px 0px @color-pink-title;
-            transform: scale(1.05);
+            //transform: scale(1.05);
         }
 
         // &::after {

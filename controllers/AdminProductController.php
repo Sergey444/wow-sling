@@ -7,17 +7,15 @@
  */
 class AdminProductController extends AdminBase
 {
-
     /**
      * Action для страницы управления товарами
      */
-    public function actionIndex()
+    public function actionIndex($category = false)
     {
         //Проверка доступа
         self::checkAdmin();
-
         //Получаем список товаров
-        $productsList = Product::getProductsList();
+        $productsList = Product::getProductsList($category);
 
         //Подключаем вид
         require_once(ROOT.'/views/admin_product/index.php');
@@ -47,6 +45,10 @@ class AdminProductController extends AdminBase
             //Если форма отправлена
             //Удаляем товар
             Product::deleteProductById($id);
+
+            if (file_exists($_SERVER['DOCUMENT_ROOT']."/template/catalog/".$id.".jpg")) {
+                unlink($_SERVER['DOCUMENT_ROOT']."/template/catalog/".$id.".jpg");
+            }
 
             //Перенаправляем пользователя на страницу управления товарами
             header("Location: /admin/product");
@@ -93,11 +95,12 @@ class AdminProductController extends AdminBase
                 $id = Product::createProduct($options);
                 //var_dump($id); die();
                 //Если запись добавлена
-                if ($id) {
+                // if (Product::createProduct($options)) {
                     //Проверим, загружалось ли через форму изображение
-
+                if ($id) {
                     //echo '<pre>'; print_r($_SERVER['DOCUMENT_ROOT']); die();
-                    if (is_uploaded_file($_FILES["img"]["tmp_name"])) {
+
+                    if (is_uploaded_file($_FILES['img']['tmp_name'])) {
                         //Если загружалось, поместим его в нужную папку, дадим новое имя
                         move_uploaded_file($_FILES["img"]["tmp_name"], $_SERVER['DOCUMENT_ROOT']."/template/catalog/".$id['id'].".jpg");
                     }
@@ -117,7 +120,7 @@ class AdminProductController extends AdminBase
         //Проверка доступа
         self::checkAdmin();
 
-        
+
         //Получаем данные о конкретном заказе
         $product = Product::getOneProduct($id);
 

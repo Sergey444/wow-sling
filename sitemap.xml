@@ -22,11 +22,6 @@
 	<priority>0.6</priority>
 </url>
 <url>
-	<loc>http://wowsling.ru/catalog/cocon/</loc>
-	<lastmod>2017-12-10T08:40:09+01:00</lastmod>
-	<priority>0.6</priority>
-</url>
-<url>
 	<loc>http://wowsling.ru/content/aboutus/</loc>
 	<lastmod>2017-12-10T08:40:09+01:00</lastmod>
 	<priority>0.6</priority>
@@ -36,11 +31,11 @@
 	<lastmod>2017-12-10T08:40:10+01:00</lastmod>
 	<priority>0.6</priority>
 </url>
-<url>
+<!-- <url>
 	<loc>http://wowsling.ru/cart/</loc>
 	<lastmod>2017-12-10T08:40:11+01:00</lastmod>
 	<priority>0.8</priority>
-</url>
+</url> -->
 <url>
 	<loc>http://wowsling.ru/content/contacts/</loc>
 	<lastmod>2017-12-10T08:40:36+01:00</lastmod>

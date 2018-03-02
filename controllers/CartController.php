@@ -5,16 +5,30 @@ class CartController
 {
     public function actionAdd($id)
     {
-
         //Добавляем товар в корзину
         Cart::addProduct($id);
-
         //Возвращаем пользователя на страницу
         $referrer = $_SERVER['HTTP_REFERER'];
-
         header("Location: $referrer");
-
     }
+
+    public function actionAddAjax($id)
+    {
+        //Добавляем товар в корзину
+        echo Cart::addProduct($id);
+        //var_dump($_SESSION['products']);
+        return true;
+    }
+
+    //Для добавления Ajax-ом в корзину
+    // public function actionCartAddAjax($id)
+    // {
+    //
+    //     echo Cart::addOneProduct($id).'/';
+    //     echo Cart::addProduct($id);
+    //     return true;
+    // }
+
 
     public function actionDelete($id)
     {
@@ -27,19 +41,21 @@ class CartController
 
     public function actionDeleteOne($id)
     {
-        echo Cart::deleteOneProduct($id);
-
-        header("Location: /cart/"); 
+        Cart::deleteOneProduct($id);
+        //return true;
+        header("Location: /cart/");
     }
 
-    public function actionAddAjax($id)
-    {
-        //Добавляем товар в корзину
-        echo Cart::addProduct($id);
-        //var_dump($_SESSION['products']);
+    //Для добавления Ajax-ом в корзину
+    // public function actionDeleteOneAjax($id)
+    // {
+    //     echo Cart::deleteOneProduct($id).'/';
+    //     echo Cart::countItems();
+    //
+    //     return true;
+    // }
 
-        return true;
-    }
+
 
     public function actionIndex()
     {

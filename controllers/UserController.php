@@ -4,7 +4,6 @@
 class UserController
 {
 
-
     public function actionLogin()
     {
         $login = '';

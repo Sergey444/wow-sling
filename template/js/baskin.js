@@ -21,14 +21,14 @@
         xhr.open( 'POST', '/cart/addAjax/' + id,  true) ;
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send();
-        
+
         xhr.onreadystatechange = function() {
             basc.textContent = xhr.responseText;
 
             formTrans.classList.add('modal-content--show');    //Переменная определена в buy.js
             overlay.classList.add('modal-content--show');
 
-            console.log();
+            //console.log(xhr.responseText);
             };
         }
 

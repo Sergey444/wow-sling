@@ -1,7 +1,7 @@
 User-Agent: *
 Sitemap: http://wowsling.ru/sitemap.xml
 
-Host: wowsling.ru
+Host: https://wowsling.ru
 
 Disallow: /cart
 Disallow: /page
@@ -11,6 +11,7 @@ Disallow: /vozvrat-slingov
 Disallow: /catalog/ergorukzak/
 Disallow: /catalog/mysling/
 Disallow: /catalog/bantik/
+Disallow: /catalog/cocon/
 
 Allow: /catalog/ergorukzak/$
 Allow: /catalog/mysling/$

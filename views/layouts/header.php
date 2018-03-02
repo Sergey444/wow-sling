@@ -3,12 +3,12 @@
 	<head>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111712996-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
+		<script type="text/javascript">
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
 
-		  gtag('config', 'UA-111712996-1');
+			  gtag('config', 'UA-111712996-1');
 		</script>
 
 		<meta charset="utf-8">
@@ -33,13 +33,11 @@
 		<!-- <script type="text/javascript" src="/template/js/jquery/flux-slider.js"> -->
 		<!-- </script> -->
 
-
-
 		<!-- <script src="/template/js/check-menu.js"></script> -->
 
  		<script type="text/javascript" src="//vk.com/js/api/openapi.js?150"></script> 		<!--Для виджета вконтакте -->
 	</head>
-	 <body>
+	 <body class="body">
         <header class="page-header">
 
             <nav class="main-nav  main-nav--closed  main-nav--nojs">
@@ -71,7 +69,7 @@
 						<img title="Телефон" src="/template/img/phone.png" width="20" height="20">
 						<img title="WhatsApp" src="/template/img/whatsapp.png" width="20" height="20">
 						<img title="Viber" src="/template/img/viber.png" width="20" height="20">
-						<span >89220700090</span>
+						<a href="tel:+79220700090">89220700090</a>
 					</div>
 					<ul class="main-nav__tools">
 						<li class="main-nav__item">

@@ -2,7 +2,7 @@
 
     <section class="catalog">
             <div class="catalog__wrapper">
-                 <?php echo $pagination->get(); ?>
+                <?php echo $pagination->get(); ?>
                  <!-- <h1 class="visually-hidden">Слинг, эргорюкзак, бант на выписку</h1> -->
                  <? if ($catalog[0]['category_id'] == 0) {
                         echo '<h1 class="visually-hidden">Эргорюкзаки</h1>';

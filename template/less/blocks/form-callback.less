@@ -6,8 +6,8 @@
 .form-callback__wrapper {
     .container-fluid();
 
-    background-color: white;
-    box-shadow: 0 5px 10px 5px lightgrey;
+    background-color: @box-color;
+    box-shadow: @box-shadow-block;
     overflow: hidden;
 
     border: 10px solid white;
@@ -53,7 +53,6 @@
     top: 15%;
     transform: rotate(-45deg);
     transition: 1s;
-
 }
 
 .form-callback__right {
@@ -98,23 +97,22 @@
     margin-left: 20px;
 }
 
+.form-callback__text {
+    margin: 20px 0;
+}
+
 
 @media @tablet-widths {
     .form-callback {
-        padding: 20px 10px;
+        padding: 25px 13px;
     }
 
     .form-callback__content {
         flex-direction: row;
     }
 
-    .form-callback__text {
-        margin: 20px 0; 
-    }
 
     .form-callback__right {
-
-
         max-width: 50%;
         order: 2;
     }

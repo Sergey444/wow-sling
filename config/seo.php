@@ -10,7 +10,7 @@
             "content/proizvodstvo-slingov" => "Производство слингов",
             "content/kak-nosit-sling" => "Как носить слинг, обучение",
             "content/oplata-i-dostavka" => "Оплата и доставка",
-            "" => "WoW Sling - слинги в Тюмени продажа доставка в любой район"
+            "" => "WoW Sling - слинги в Тюмени купить доставка в любой район"
     );
 
     $description = array(
