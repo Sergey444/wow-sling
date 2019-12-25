@@ -1,5 +1,5 @@
 # Интернет магазин слингов
 
-## [https://wowsling.ru/](https://wowsling.ru/)
+## [wowsling.ru](https://wowsling.ru/)
 
 
